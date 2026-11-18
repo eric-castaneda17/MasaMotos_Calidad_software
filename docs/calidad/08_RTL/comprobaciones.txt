@@ -1,0 +1,108 @@
+MASA MOTOS · Fase 3 · 18 de noviembre de 2026
+Rama verificada: feature/pruebas-rtl
+Node.js 24.21.0 · npm 11.19.0 · Vitest 4.1.12 · Next.js 16.3.4
+React Testing Library 16.3.3 · userEvent 14.6.12 · jest-dom 6.9.1 · jsdom 26.1.0
+
+Incidencias de preparación
+TypeScript identificó dos errores en los datos simulados (TS2739 y TS2322). Se corrigieron las propiedades del cliente simulado y el tipo de la respuesta simulada de acceso.
+Una ejecución de TypeScript simultánea a la compilación produjo TS6053 durante la regeneración de .next/types. La ejecución secuencial tras la compilación pasó.
+
+$ npm run test:rtl -- --reporter=verbose --reporter=json --outputFile.json=docs/calidad/08_RTL/resultados-vitest.json
+Código de salida: 0
+> masa-motos@1.0.0 test:rtl
+> vitest run --project rtl --reporter=verbose --reporter=json --outputFile.json=docs/calidad/08_RTL/resultados-vitest.json
+
+
+ RUN  v4.1.12 C:/Calidad de software/MasaMotos-Calidad
+
+ ✓ |rtl| docs/calidad/08_RTL/sign-in.test.tsx > Inicio de sesión > RTL-01 · SWR-AUTH-002 · asocia el aviso de formato con el correo y conserva lo escrito 1092ms
+ ✓ |rtl| docs/calidad/08_RTL/sign-in.test.tsx > Inicio de sesión > RTL-02 · SWR-AUTH-002 · muestra el rechazo genérico de credenciales 808ms
+ ✓ |rtl| docs/calidad/08_RTL/point-of-sale.test.tsx > Punto de venta > RTL-05 · SWR-BUS-005 · informa que una búsqueda no tuvo coincidencias 1042ms
+ ✓ |rtl| docs/calidad/08_RTL/point-of-sale.test.tsx > Punto de venta > RTL-06 · SWR-BUS-003 · muestra los seis datos del repuesto y distingue un agotado 141ms
+ ✓ |rtl| docs/calidad/08_RTL/sign-in.test.tsx > Inicio de sesión > RTL-03 · SWR-AUTH-004 · informa que una cuenta está desactivada 775ms
+ ✓ |rtl| docs/calidad/08_RTL/point-of-sale.test.tsx > Punto de venta > RTL-07 · SWR-VEN-001 · impide confirmar un carrito vacío 255ms
+ ✓ |rtl| docs/calidad/08_RTL/point-of-sale.test.tsx > Punto de venta > RTL-08 · SWR-VEN-001 · agrega dos repuestos y cambia solo una cantidad 443ms
+ ✓ |rtl| docs/calidad/08_RTL/sign-in.test.tsx > Inicio de sesión > RTL-04 · SWR-AUTH-002 · bloquea un segundo envío mientras llega la respuesta 855ms
+ ✓ |rtl| docs/calidad/08_RTL/point-of-sale.test.tsx > Punto de venta > RTL-09 · SWR-VEN-002 · limita el exceso escrito y explica cuántas unidades hay 354ms
+ ✓ |rtl| docs/calidad/08_RTL/point-of-sale.test.tsx > Punto de venta > RTL-10 · SWR-VEN-002 · distingue el límite del carrito y reabre la opción al reducir 389ms
+ ✓ |rtl| docs/calidad/08_RTL/point-of-sale.test.tsx > Punto de venta > RTL-11 · SWR-VEN-003 · actualiza subtotal, descuento, IVA y total al editar el porcentaje 319ms
+ ✓ |rtl| docs/calidad/08_RTL/point-of-sale.test.tsx > Punto de venta > RTL-12 · SWR-CPB-001 · muestra el número recibido y permite abrir la factura 410ms
+ ✓ |rtl| docs/calidad/08_RTL/point-of-sale.test.tsx > Punto de venta > RTL-13 · SWR-VEN-002 · informa el nuevo saldo si el servidor rechaza la venta 367ms
+
+ Test Files  2 passed (2)
+      Tests  13 passed (13)
+   Start at  00:15:47
+   Duration  13.74s (transform 1.71s, setup 6.37s, import 4.47s, tests 7.26s, environment 5.81s)
+
+JSON report written to C:/Calidad de software/MasaMotos-Calidad/docs/calidad/08_RTL/resultados-vitest.json
+
+$ npm run test:unit
+Código de salida: 0
+> masa-motos@1.0.0 test:unit
+> vitest run --project unit
+
+
+ RUN  v4.1.12 C:/Calidad de software/MasaMotos-Calidad
+
+
+ Test Files  3 passed (3)
+      Tests  11 passed (11)
+   Start at  00:15:47
+   Duration  1.88s (transform 840ms, setup 0ms, import 1.59s, tests 44ms, environment 1ms)
+
+$ npm run lint
+Código de salida: 0
+> masa-motos@1.0.0 lint
+> eslint .
+
+$ npm run build -- --webpack
+Código de salida: 0. Extracto de la salida de compilación.
+✓ Compiled successfully in 14.9s
+  Running TypeScript ...
+  Finished TypeScript in 8.0s ...
+Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/35) ...
+  Generating static pages using 7 workers (8/35) 
+  Generating static pages using 7 workers (17/35) 
+  Generating static pages using 7 workers (26/35) 
+✓ Generating static pages using 7 workers (35/35) in 1516ms
+  Finalizing page optimization ...
+  Collecting build traces ...
+
+Route (app)
+┌ ○ /_not-found
+├ ƒ /[locale]
+├ ƒ /[locale]/categorias
+├ ƒ /[locale]/clientes
+├ ƒ /[locale]/clientes/[id]
+├ ƒ /[locale]/configuracion
+├ ƒ /[locale]/facturas
+├ ƒ /[locale]/facturas/[id]
+├ ƒ /[locale]/inventario
+├ ƒ /[locale]/perfil
+├ ƒ /[locale]/productos
+├ ƒ /[locale]/productos/[id]
+├ ƒ /[locale]/productos/[id]/editar
+├ ƒ /[locale]/productos/nuevo
+├ ƒ /[locale]/proveedores
+├ ƒ /[locale]/proveedores/[id]
+├ ƒ /[locale]/reportes
+├   /[locale]/signin
+│ ├ ● /es/signin
+│ └ ● /en/signin
+├ ƒ /[locale]/usuarios
+├ ƒ /[locale]/ventas
+├ ƒ /[locale]/ventas/nueva
+├ ƒ /api/products/[id]/image
+├ ƒ /api/reports/export
+└ ○ /apple-icon.png
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+$ node node_modules/typescript/bin/tsc --noEmit --incremental false
+Código de salida: 0. Sin diagnósticos en la ejecución posterior a la compilación.

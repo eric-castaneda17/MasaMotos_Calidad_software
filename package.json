@@ -12,8 +12,9 @@
     "db:check": "node scripts/supabase-setup.mjs --check",
     "test:e2e": "node scripts/e2e-smoke.mjs",
     "evidence": "node scripts/capture-evidence.mjs",
-    "test:unit": "vitest run",
-    "test:unit:coverage": "vitest run --coverage"
+    "test:unit": "vitest run --project unit",
+    "test:unit:coverage": "vitest run --project unit --coverage",
+    "test:rtl": "vitest run --project rtl"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",
@@ -33,6 +34,10 @@
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
+    "@testing-library/dom": "^10.4.2",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.12",
     "@types/node": "^20.19.25",
     "@types/pg": "^8.23.1",
     "@types/react": "^19.2.1",
@@ -41,6 +46,7 @@
     "dotenv": "^18.0.10",
     "eslint": "^9.39.1",
     "eslint-config-next": "^16.3.4",
+    "jsdom": "^26.1.0",
     "pg": "^8.23.1",
     "playwright-core": "^1.65.1",
     "postcss": "^8.5.6",
