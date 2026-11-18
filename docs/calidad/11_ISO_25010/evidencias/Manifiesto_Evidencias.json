@@ -1,0 +1,328 @@
+{
+  "revision": "2026-11-18",
+  "baseCommit": "713b04e",
+  "branch": "feature/evaluacion-iso25010",
+  "fuentes": [
+    {
+      "ruta": "docs/calidad/01_Alcance_y_Trazabilidad.xlsx",
+      "sha256": "c228deb95d034025e8aad5456f8feb3d7860932ceebb9997f419e725167d3eba",
+      "bytes": 10625
+    },
+    {
+      "ruta": "docs/calidad/02_Verificacion_Requisitos.xlsx",
+      "sha256": "08bb8b3aabd2bc52971eede4717a708e0b2d9707c28d2ea0af2dc57458754e8f",
+      "bytes": 9699
+    },
+    {
+      "ruta": "docs/calidad/03_Validacion_Requisitos.xlsx",
+      "sha256": "e88adc04afefc36108995c7332a0c6bfaa4ba535bfee1e77afb74ff559b8a802",
+      "bytes": 6694
+    },
+    {
+      "ruta": "docs/calidad/04_Matriz_Pruebas.xlsx",
+      "sha256": "fc9cb285b720aa409bbfc5d03b56aab82ad3d31442aee4bdd7e0349d2649a684",
+      "bytes": 17743
+    },
+    {
+      "ruta": "docs/calidad/05_Caja_Negra_Navegador/README.md",
+      "sha256": "3598b84cc9ab4b722a318f3c095975918f9e0b0dce1c0bbdbf599cd9c7386da7",
+      "bytes": 16961
+    },
+    {
+      "ruta": "docs/calidad/06_Pruebas_Unitarias/README.md",
+      "sha256": "8c54e833274c23ced7ed1f622e5d03b7afd7a06c5016f32def5a2c502297e0e9",
+      "bytes": 2741
+    },
+    {
+      "ruta": "docs/calidad/06_Pruebas_Unitarias/cobertura-v8-resumen.json",
+      "sha256": "0df0f8893847485fe010aa36dc955459614d71be20812adb07e4540c9925397b",
+      "bytes": 1247
+    },
+    {
+      "ruta": "docs/calidad/06_Pruebas_Unitarias/resultados-vitest.json",
+      "sha256": "87d44c500cdc251acd0813241d27e08bd351a8b2d19a826d16d05e0343749e03",
+      "bytes": 16988
+    },
+    {
+      "ruta": "docs/calidad/07_Caja_Blanca/Analisis_Caja_Blanca.md",
+      "sha256": "b6d6a40853f8190d2f71e34026a7126506af56378c344698a502f9fd5517a055",
+      "bytes": 5298
+    },
+    {
+      "ruta": "docs/calidad/08_RTL/README.md",
+      "sha256": "913cfdadcd3f452bd770041eab50f3223b7876d7f6ca2539d07f9dfc93e4abf1",
+      "bytes": 2745
+    },
+    {
+      "ruta": "docs/calidad/08_RTL/resultados-vitest.json",
+      "sha256": "08925b8b00fbf86d33e24330675e44ec1e9e2c7c358594b54861c7f06fc5911f",
+      "bytes": 5081
+    },
+    {
+      "ruta": "docs/calidad/09_Postman/resultados-newman.json",
+      "sha256": "ac1d76aa71ce6f32e2bf8283f886867023ab5ebe0f6b3dcdb59958d5f60e3c39",
+      "bytes": 13767
+    },
+    {
+      "ruta": "docs/calidad/10_Playwright/Procedimiento_Reversion_SWR-REL-001.md",
+      "sha256": "6d8151f4ca5a7f83c0e488ec523342cf5e80e78b4f331e85ed7b4abb7863e0ef",
+      "bytes": 13261
+    },
+    {
+      "ruta": "docs/calidad/10_Playwright/README.md",
+      "sha256": "8ba5ebeef88601bebf0505a4b3313e1072722ff749e5202b8842572eac08c52d",
+      "bytes": 3347
+    },
+    {
+      "ruta": "docs/calidad/10_Playwright/Registro_Fase_4.md",
+      "sha256": "423356a6ab946a92f7ef1681a70c975588bc14988c517abb060729dfa4543589",
+      "bytes": 6007
+    },
+    {
+      "ruta": "docs/calidad/10_Playwright/comprobaciones.txt",
+      "sha256": "6cfebb9895ac0611719a97359772be5d1978f1eea666b8b42984402fe607ba16",
+      "bytes": 2707
+    },
+    {
+      "ruta": "docs/calidad/10_Playwright/evidencias-reversion/CA15-20261118174028/REL-001-01-estado-inicial.json",
+      "sha256": "f938d6770284ca41e25574934f5b1447d5db82a831fdc910189ec5af15f08720",
+      "bytes": 671
+    },
+    {
+      "ruta": "docs/calidad/10_Playwright/evidencias-reversion/CA15-20261118174028/REL-001-02-error-factura.json",
+      "sha256": "f3a4a06560bba3ead8cd5d686833b1875908144d749e1e746e61931a41e2a9c5",
+      "bytes": 242
+    },
+    {
+      "ruta": "docs/calidad/10_Playwright/evidencias-reversion/CA15-20261118174028/REL-001-03-tras-savepoint.json",
+      "sha256": "81b1b7c56bb726cc5254246692095703292eb3aedaa8d02bb4c5a2bc4357c7ab",
+      "bytes": 617
+    },
+    {
+      "ruta": "docs/calidad/10_Playwright/evidencias-reversion/CA15-20261118174028/REL-001-04-estado-final.json",
+      "sha256": "f938d6770284ca41e25574934f5b1447d5db82a831fdc910189ec5af15f08720",
+      "bytes": 671
+    },
+    {
+      "ruta": "docs/calidad/10_Playwright/evidencias-reversion/CA15-20261118174028/REL-001-05-resumen.json",
+      "sha256": "64d3d2a164e20664ff5e62c8ea5e5aaa093cc56fd9b82ce034463bee1cc2a761",
+      "bytes": 575
+    },
+    {
+      "ruta": "docs/calidad/10_Playwright/resultados-playwright.json",
+      "sha256": "e92dcfc975741fab2507be3a76d8a8a5cd6f4fe34da67dcad310d1d7930b24f4",
+      "bytes": 4170
+    },
+    {
+      "ruta": "docs/calidad/11_ISO_25010/evidencias/Diagnostico_Auth_Admin_2026-11-18.json",
+      "sha256": "956b1c63923cfd5f043f1a5486faf3adabfcc180bbfca121568e0c9462dc477c",
+      "bytes": 896
+    },
+    {
+      "ruta": "docs/calidad/Matriz_Maestra_Trazabilidad.xlsx",
+      "sha256": "0dceba94c9f58d9bf822dc3ced943258b939f4112f8e25246044dd7090efc6df",
+      "bytes": 10240
+    },
+    {
+      "ruta": "docs/calidad/SRS_Masa_Motos_v0.2.pdf",
+      "sha256": "88c37bbc8621500c18e966113ef47179c79a444f46a40cdc6b462351257acfcb",
+      "bytes": 248682
+    },
+    {
+      "ruta": "scripts/lib/browser.mjs",
+      "sha256": "a97adb745161da84d359d58bc3b010c079b007b0501a550f6d4d303144e928d9",
+      "bytes": 1867
+    },
+    {
+      "ruta": "scripts/lib/qa-credentials.mjs",
+      "sha256": "a677ba25a6f15ad4fa69916b582888d54e20ade5faa43c5b45c9432939b76496",
+      "bytes": 570
+    },
+    {
+      "ruta": "scripts/qa-fixtures.mjs",
+      "sha256": "93115b82650921fb1625861a9bacae28bb57976bebdfc2864622ae6247df1553",
+      "bytes": 13773
+    },
+    {
+      "ruta": "scripts/qa-reversion.mjs",
+      "sha256": "1ba38f30320c92f26c006db4a1958d81bc8cead4931d9276dd19e7f917d66247",
+      "bytes": 12594
+    },
+    {
+      "ruta": "scripts/qa-reversion.test.mjs",
+      "sha256": "372b16ef8a93d083feaca2a0a11f14842b56f62de26ef6f1ccefbb90e273e86d",
+      "bytes": 15182
+    },
+    {
+      "ruta": "scripts/supabase-setup.mjs",
+      "sha256": "8bb9b082b239aafbe15e9009c7443e11c07bdc9a6c363916d9a6c1dc88a9dac7",
+      "bytes": 8182
+    },
+    {
+      "ruta": "src/components/invoices/InvoiceDocument.tsx",
+      "sha256": "19a948b23c63263a995a3c30d7aefc197b0cf02ef06b8a95ee526c0c0abe8ef7",
+      "bytes": 8593
+    },
+    {
+      "ruta": "src/components/pos/CartTable.tsx",
+      "sha256": "3a0b105d3052ea28cf51053759ed77a3a4356fd1da5ccd8a617f6ffe2b069c06",
+      "bytes": 4264
+    },
+    {
+      "ruta": "src/components/pos/PaymentPanel.tsx",
+      "sha256": "737cb8d5d9d64055c73d430b5ebab3f403626c1e24935d0aeb896801501629b1",
+      "bytes": 6782
+    },
+    {
+      "ruta": "src/components/pos/PosScreen.tsx",
+      "sha256": "6fca53ea1651dff74ba747f4273e88a337326f330054c6ab5b8b23d63453e242",
+      "bytes": 8619
+    },
+    {
+      "ruta": "src/components/pos/ProductSearch.tsx",
+      "sha256": "31983c2798ca4fddc1f3e0628ba85c385408330eb288a61414ee0d811c37004d",
+      "bytes": 6395
+    },
+    {
+      "ruta": "src/components/users/UserManager.tsx",
+      "sha256": "b687eeed7228ebc8961305993efe9f0adf9255ece9192fbaa64a2d29028cb990",
+      "bytes": 8030
+    },
+    {
+      "ruta": "src/lib/actions/helpers.ts",
+      "sha256": "d562824384dec8819a69be6a890b399b28abff193471b171047a260b559683af",
+      "bytes": 3014
+    },
+    {
+      "ruta": "src/lib/actions/users.ts",
+      "sha256": "08a03fa86c63695a63064af43e38399c4114a2533ec758463aafdf6b547b0b0b",
+      "bytes": 7289
+    },
+    {
+      "ruta": "src/lib/auth/dal.ts",
+      "sha256": "2ffd5b2fc969a4662b08777a64dc534c47f5f114cca9aa4d371b1b2c7cfdd0fa",
+      "bytes": 1906
+    },
+    {
+      "ruta": "src/lib/data/pagination.ts",
+      "sha256": "f54e0f67b1eb9eb9a6e6ef47b7f1e5388b5cc7b80f48a24d00264b5454ea9fff",
+      "bytes": 746
+    },
+    {
+      "ruta": "src/lib/data/products.ts",
+      "sha256": "2b8d3418dd70c75e185f56974f50619946284f4f839fa4bb8f26d338143732d8",
+      "bytes": 5294
+    },
+    {
+      "ruta": "src/lib/data/search.ts",
+      "sha256": "0aec7102bae706e34975b1fff080a7413d3106f502cd776c4d1688351f3ada8a",
+      "bytes": 296
+    },
+    {
+      "ruta": "src/lib/permissions.ts",
+      "sha256": "203aea0b32caa2cf335ee36973e7f9e6221de373893eaa7a694d76a7598ae18a",
+      "bytes": 1013
+    },
+    {
+      "ruta": "src/lib/supabase/admin.ts",
+      "sha256": "1e0c5bad6853f7ba563a661c9c77163a4be296f1c3d177eab9212a01ca99a595",
+      "bytes": 593
+    },
+    {
+      "ruta": "src/lib/validation/schemas.ts",
+      "sha256": "b44220f28d1464528723472feaea21118940dac30066ba217634ce4665a8d55c",
+      "bytes": 6396
+    },
+    {
+      "ruta": "supabase/migrations/001_schema.sql",
+      "sha256": "b2f9377bb2f6c2213239e61aff8c323cc43aaaffb0782965d5abb59d1c9279f7",
+      "bytes": 9822
+    },
+    {
+      "ruta": "supabase/migrations/002_security.sql",
+      "sha256": "57014a51fdfb73d293ab1b214d996da3b32f4be458046ae23fcb25ceff92dadf",
+      "bytes": 9021
+    },
+    {
+      "ruta": "supabase/migrations/003_functions.sql",
+      "sha256": "d1f67e1f7a1d6a6515f8096d8b7aef749930c48e15e03332bd2d4f9810f98966",
+      "bytes": 21494
+    }
+  ],
+  "guiaExterna": {
+    "nombre": "ProyectoFinalCalidad2026.docx",
+    "enRepositorio": false,
+    "sha256": "7e38c22f9a9e69a5f815834422a9247202710ea9fd510e4ac678181c97ba39e7"
+  },
+  "procedenciaDiagnostico": "E16 es una transcripción explícita de lectura previa en esta conversación. No se volvió a ejecutar en Fase 5.",
+  "capturasManuales": "Siete capturas conservadas fuera de la entrega y pendientes de revisión.",
+  "entregables": [
+    {
+      "ruta": "docs/calidad/11_ISO_25010/11_Errores_Defectos_Fallas_Incidentes.xlsx",
+      "sha256": "f297bb13bac1bbeb4a07af29e32a86f97c4b46e775976bd63dba048a6a9e31c9",
+      "bytes": 14376
+    },
+    {
+      "ruta": "docs/calidad/11_ISO_25010/12_ISO25010.xlsx",
+      "sha256": "e85215c348e1bb3755603d01e66cc68acbf9fa407781ae46d54096e162cd8e8c",
+      "bytes": 16523
+    },
+    {
+      "ruta": "docs/calidad/11_ISO_25010/evidencias/Diagnostico_Auth_Admin_2026-11-18.json",
+      "sha256": "956b1c63923cfd5f043f1a5486faf3adabfcc180bbfca121568e0c9462dc477c",
+      "bytes": 896
+    },
+    {
+      "ruta": "docs/calidad/11_ISO_25010/Informe_Evaluacion_ISO25010.pdf",
+      "sha256": "c8adced21b82f00a8e1117dc9ce28400d9dfd34139062246ab0c44e0cdaf9766",
+      "bytes": 27599
+    },
+    {
+      "ruta": "docs/calidad/11_ISO_25010/Procedimiento_Mediciones_Rendimiento.md",
+      "sha256": "ee61fd7af909cc997d2cef5b2e3739e592b171e0b829daf420f4501c920f2fa5",
+      "bytes": 10299
+    },
+    {
+      "ruta": "docs/calidad/11_ISO_25010/Procedimiento_Sesion_Exploratoria.md",
+      "sha256": "00601dbb28e1850b3378a5d1e52971803a83a07ceda3e0feaa3ec8cb233db4b4",
+      "bytes": 9605
+    },
+    {
+      "ruta": "docs/calidad/11_ISO_25010/README.md",
+      "sha256": "fd434181c421514bb6a26d244581fdff11a2cf2e7dab590613737460e0ca57b7",
+      "bytes": 5620
+    },
+    {
+      "ruta": "docs/calidad/11_ISO_25010/Referencias_y_Evidencias.md",
+      "sha256": "a3a65bc6f17ba25ea955d0e33f508569f1f76c7ac39681410cde969e268b93df",
+      "bytes": 7971
+    },
+    {
+      "ruta": "docs/calidad/11_ISO_25010/Revision_Cierre_Documental.md",
+      "sha256": "f56d7b26fef92508c243e72c898bde560b3a4e5a9a4b76fd1a35bd5c7f58c4ea",
+      "bytes": 6113
+    },
+    {
+      "ruta": "docs/calidad/Matriz_Maestra_Trazabilidad.xlsx",
+      "sha256": "0dceba94c9f58d9bf822dc3ced943258b939f4112f8e25246044dd7090efc6df",
+      "bytes": 10240
+    },
+    {
+      "ruta": "docs/calidad/11_ISO_25010/.gitattributes",
+      "sha256": "284315762a8cd5db190b72990682461b102fb0bf4d6d5f5eeb9b98c9e3e0dd17",
+      "bytes": 76
+    }
+  ],
+  "revisionCierre": {
+    "fecha": "2026-11-18",
+    "rama": "feature/evaluacion-iso25010",
+    "guiaVerificada": true,
+    "transcripcionArquitecturaExacta": true,
+    "sesionExploratoria": "PENDIENTE",
+    "medicionesRendimiento": "PENDIENTE",
+    "ca15": "PASS",
+    "manualesSinAprobacionDocumental": 12,
+    "notaHuellas": "El manifiesto se excluye de sus propias huellas para evitar autorreferencia.",
+    "formatoGit": "PDF conservado como binario. Markdown y JSON de Fase 5 conservados con LF."
+  }
+}
