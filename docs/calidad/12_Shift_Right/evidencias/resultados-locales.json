@@ -1,0 +1,342 @@
+{
+  "startedAt": "2026-11-18T19:48:19.810Z",
+  "finishedAt": "2026-11-18T19:48:24.014Z",
+  "origin": "local-production-server",
+  "supabaseWritesAuthorized": false,
+  "scope": "Inicio, bloqueo sin sesión y rechazo de formato previo a Supabase. No ejecuta los casos BB manuales.",
+  "results": [
+    {
+      "id": "SR-00",
+      "status": "PASS_LOCAL",
+      "expectedEvent": "APPLICATION_STARTED",
+      "observed": "Inicio real del servidor compilado."
+    },
+    {
+      "id": "SR-02",
+      "status": "PASS_LOCAL",
+      "expectedEvent": "ACCESS_DENIED",
+      "observed": "Ruta protegida redirige a /signin sin sesión.",
+      "httpStatus": 307
+    },
+    {
+      "id": "SR-06",
+      "status": "PASS_LOCAL",
+      "expectedEvent": "AUTH_VALIDATION_REJECTED",
+      "observed": "La acción real rechazó el formato antes de crear el cliente Supabase."
+    }
+  ],
+  "authorizedExecution": {
+    "startedAt": "2026-11-18T20:37:29.514Z",
+    "finishedAt": "2026-11-18T20:37:41.369Z",
+    "lot": "QA_SR-MWMKXTFW",
+    "supabaseWritesAuthorized": true,
+    "results": [
+      {
+        "id": "SR-05",
+        "status": "PASS_REAL",
+        "event": "ACTION_ERROR",
+        "correlationId": "d6d967c0-c410-43ae-b81b-44364f4703a4",
+        "observed": "Bloqueo local del RPC anterior al fetch original."
+      },
+      {
+        "id": "INTEGRITY",
+        "status": "PASS_REAL",
+        "beforeBlockedRequest": {
+          "products": [
+            {
+              "code": "QA_SR-MWMKXTFW-RACE",
+              "stock": 0
+            },
+            {
+              "code": "QA_SR-MWMKXTFW-SALE",
+              "stock": 1
+            }
+          ],
+          "sales": 2,
+          "items": 2,
+          "movements": 2,
+          "invoices": 2,
+          "counter": 95
+        },
+        "afterRace": {
+          "products": [
+            {
+              "code": "QA_SR-MWMKXTFW-RACE",
+              "stock": 0
+            },
+            {
+              "code": "QA_SR-MWMKXTFW-SALE",
+              "stock": 1
+            }
+          ],
+          "sales": 2,
+          "items": 2,
+          "movements": 2,
+          "invoices": 2,
+          "counter": 95
+        },
+        "final": {
+          "products": [
+            {
+              "code": "QA_SR-MWMKXTFW-RACE",
+              "stock": 0
+            },
+            {
+              "code": "QA_SR-MWMKXTFW-SALE",
+              "stock": 1
+            }
+          ],
+          "sales": 2,
+          "items": 2,
+          "movements": 2,
+          "invoices": 2,
+          "counter": 95
+        },
+        "transportBlockedBeforeSend": true,
+        "protectedFixturesUnchanged": true,
+        "structureUnchanged": true,
+        "sales": [
+          {
+            "id": 94,
+            "notes": "QA_SR-MWMKXTFW-SR03",
+            "total": "29750.00",
+            "invoice_id": 94,
+            "number": "MM-000093"
+          },
+          {
+            "id": 95,
+            "notes": "QA_SR-MWMKXTFW-SR04-PREP",
+            "total": "29750.00",
+            "invoice_id": 95,
+            "number": "MM-000094"
+          }
+        ]
+      }
+    ],
+    "transportBlocks": [
+      {
+        "qaTransportBlock": true,
+        "forwarded": false,
+        "operation": "create_sale",
+        "timestamp": "2026-11-18T20:37:39.827Z"
+      }
+    ],
+    "fixturePrepared": true,
+    "verificationDiagnosis": {
+      "component": "test-verifier",
+      "cause": "toast-role-status-not-alert",
+      "correction": "getByRole(status)",
+      "applicationChanged": false,
+      "resumeOnly": "SR-05",
+      "noSalesRetried": true
+    }
+  },
+  "executionHistory": [
+    {
+      "startedAt": "2026-11-18T20:29:43.692Z",
+      "finishedAt": "2026-11-18T20:29:48.948Z",
+      "lot": "QA_SR-MWMKRNV0",
+      "supabaseWritesAuthorized": true,
+      "results": [
+        {
+          "id": "SR-01",
+          "status": "BLOQUEADO",
+          "category": "Error",
+          "code": null
+        }
+      ],
+      "transportBlocks": [],
+      "fixturePrepared": false,
+      "conclusion": "AUTH_LOGIN_FAILED/WARN real con status 400. Comprobación posterior del navegador interrumpida. No se guardó detalle diagnóstico suficiente para identificar la causa exacta del fallo del verificador. Sin reintentos. Datos sintéticos no preparados y ventas no iniciadas."
+    },
+    {
+      "startedAt": "2026-11-18T20:34:30.860Z",
+      "finishedAt": "2026-11-18T20:34:56.281Z",
+      "lot": "QA_SR-MWMKXTFW",
+      "supabaseWritesAuthorized": true,
+      "results": [
+        {
+          "id": "SR-01",
+          "status": "PASS_REAL",
+          "event": "AUTH_LOGIN_FAILED",
+          "correlationId": "e37ac397-a0fc-42ae-a6ef-07a3ba11f025",
+          "observed": "Rechazo visible del login incorrecto real."
+        },
+        {
+          "id": "SR-07",
+          "status": "PASS_REAL",
+          "event": "AUTH_LOGIN_SUCCEEDED",
+          "correlationId": "ca2ae86a-a2b1-4db3-9198-7845c5bf8bd9",
+          "observed": "Acceso real de vendedor activo y duración registrada."
+        },
+        {
+          "id": "SR-03",
+          "status": "BLOQUEADO",
+          "diagnostic": {
+            "strictMode": false,
+            "timeout": true,
+            "assertion": false,
+            "location": [
+              "59",
+              "79"
+            ]
+          },
+          "category": "TimeoutError",
+          "code": null
+        }
+      ],
+      "transportBlocks": [],
+      "fixturePrepared": true,
+      "verificationDiagnosis": {
+        "component": "test-verifier",
+        "cause": "strict-mode-ambiguous-alert",
+        "globalAlerts": 2,
+        "scopedAlerts": 1,
+        "announcers": 1,
+        "correction": "form getByRole(alert)",
+        "applicationChanged": false
+      }
+    },
+    {
+      "startedAt": "2026-11-18T20:35:51.600Z",
+      "finishedAt": "2026-11-18T20:36:12.258Z",
+      "lot": "QA_SR-MWMKXTFW",
+      "supabaseWritesAuthorized": true,
+      "results": [
+        {
+          "id": "SR-03",
+          "status": "PASS_REAL",
+          "event": "SALE_CREATED",
+          "correlationId": "65135d12-2b1e-4a8e-a09c-40998e8c84cd",
+          "observed": "Venta real, factura y duración observadas."
+        },
+        {
+          "id": "SR-04",
+          "status": "BLOQUEADO",
+          "diagnostic": {
+            "strictMode": false,
+            "timeout": true,
+            "assertion": false,
+            "location": [
+              "120",
+              "95"
+            ]
+          },
+          "category": "Error",
+          "code": null
+        }
+      ],
+      "transportBlocks": [],
+      "fixturePrepared": true,
+      "verificationDiagnosis": {
+        "component": "test-verifier",
+        "cause": "synthetic-query-underscore-normalization",
+        "correction": "search distinctive suffix without underscore",
+        "applicationChanged": false,
+        "reusedFixture": true
+      }
+    }
+  ],
+  "consolidatedResults": [
+    {
+      "id": "SR-00",
+      "status": "PASS_LOCAL",
+      "expectedEvent": "APPLICATION_STARTED",
+      "observed": "Inicio real del servidor compilado."
+    },
+    {
+      "id": "SR-01",
+      "status": "PASS_REAL",
+      "event": "AUTH_LOGIN_FAILED",
+      "correlationId": "e37ac397-a0fc-42ae-a6ef-07a3ba11f025",
+      "observed": "Rechazo visible del login incorrecto real."
+    },
+    {
+      "id": "SR-02",
+      "status": "PASS_LOCAL",
+      "expectedEvent": "ACCESS_DENIED",
+      "observed": "Ruta protegida redirige a /signin sin sesión.",
+      "httpStatus": 307
+    },
+    {
+      "id": "SR-03",
+      "status": "PASS_REAL",
+      "event": "SALE_CREATED",
+      "correlationId": "65135d12-2b1e-4a8e-a09c-40998e8c84cd",
+      "observed": "Venta real, factura y duración observadas."
+    },
+    {
+      "id": "SR-04",
+      "status": "PASS_REAL",
+      "event": "SALE_STOCK_REJECTED",
+      "correlationId": "abc7e812-0a91-4bc1-bed9-d447235a2009",
+      "observed": "Rechazo real por stock 0 en carrito desactualizado. Dos ventas autorizadas persistidas, sin tercera venta. Verificado mediante WARN correlacionados y consulta final de solo lectura.",
+      "limitation": "La comprobación del toast expiró porque el verificador buscaba alert y el contenedor usa status. No se repitió la venta ni se declara aprobada esa aserción visual."
+    },
+    {
+      "id": "SR-05",
+      "status": "PASS_REAL",
+      "event": "ACTION_ERROR",
+      "correlationId": "d6d967c0-c410-43ae-b81b-44364f4703a4",
+      "observed": "Bloqueo local del RPC anterior al fetch original."
+    },
+    {
+      "id": "SR-06",
+      "status": "PASS_LOCAL",
+      "expectedEvent": "AUTH_VALIDATION_REJECTED",
+      "observed": "La acción real rechazó el formato antes de crear el cliente Supabase."
+    },
+    {
+      "id": "SR-07",
+      "status": "PASS_REAL",
+      "event": "AUTH_LOGIN_SUCCEEDED",
+      "correlationId": "ca2ae86a-a2b1-4db3-9198-7845c5bf8bd9",
+      "observed": "Acceso real de vendedor activo y duración registrada."
+    }
+  ],
+  "verifierDiagnosis": {
+    "applicationDefect": false,
+    "applicationChanged": false,
+    "sr01": "Selector global role=alert ambiguo: alerta del formulario y next-route-announcer. Se corrigió a form.getByRole(alert). Rechazo visible y log AUTH_LOGIN_FAILED verificados.",
+    "customerSearch": "El buscador normaliza el guion bajo del lote sintético. Se consultó el sufijo distintivo sin guion bajo, reutilizando los mismos datos.",
+    "toast": "El contenedor de ToastContext usa role=status. Se corrigió únicamente el verificador temporal. SR-04 se validó por logs y datos sin repetir escrituras. SR-05 comprobó el mensaje con status.",
+    "retryPolicy": "Continuaciones dirigidas tras diagnóstico. No hubo bucles de reintento ni repetición de ventas confirmadas.",
+    "reproduction": "Verificador temporal de ejecución, externo al código funcional. Correcciones y secuencia preservadas en executionHistory."
+  },
+  "guide182": {
+    "status": "COMPROBADO",
+    "objectives": [
+      {
+        "goal": "Credenciales incorrectas",
+        "case": "SR-01"
+      },
+      {
+        "goal": "Flujo principal",
+        "case": "SR-03"
+      },
+      {
+        "goal": "Validación rechazada",
+        "case": "SR-06"
+      },
+      {
+        "goal": "Error controlado",
+        "case": "SR-05"
+      },
+      {
+        "goal": "Duración de operación relevante",
+        "case": "SR-03",
+        "durationMs": 382.91
+      }
+    ],
+    "scope": "Servidor de producción local y Supabase académico. Error controlado por bloqueo local del RPC antes de enviarlo. No representa caída real de Supabase ni medición estadística de rendimiento."
+  },
+  "conclusions": {
+    "lot": "QA_SR-MWMKXTFW",
+    "salesCreated": 2,
+    "retainedAcademicData": true,
+    "failedRequests": "Rechazo por stock sin tercera venta. Fallo local de transporte sin cambios entre estado anterior y final: stock, ventas, líneas, movimientos SALE, facturas y consecutivo 95.",
+    "security": "Datos reservados comprobados sin cambios en la sesión final. Estructura sin cambios. Sin modificaciones de Auth, políticas o funciones. Bloqueo local retirado y servidor temporal cerrado.",
+    "pending": "Pruebas manuales sin evidencia validada, rendimiento, exploración y defectos de seguridad históricos conservan su estado. CA-15 conserva PASS.",
+    "documentSnapshot": "Cierre documental actualizado en README, documentación técnica, procedimiento, incidentes e informe existente. Las matrices y los resultados consolidados contienen el estado definitivo. Historial de ejecuciones conservado."
+  }
+}

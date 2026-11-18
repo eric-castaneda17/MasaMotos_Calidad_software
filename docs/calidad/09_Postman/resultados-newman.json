@@ -1,0 +1,604 @@
+{
+  "runner": "Newman",
+  "lot": "QA_TEST-MWLP83ZG",
+  "executedAt": "2026-11-18T05:56:37.354Z",
+  "cases": [
+    {
+      "id": "API-01",
+      "expectedRequests": 1,
+      "expectedAssertions": 2,
+      "requests": [
+        {
+          "name": "API-01 · Credenciales válidas",
+          "http": 200,
+          "transportError": false
+        }
+      ],
+      "assertions": [
+        {
+          "name": "HTTP 200",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "Sesión para la cuenta QA",
+          "passed": true,
+          "skipped": false
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "API-02",
+      "expectedRequests": 2,
+      "expectedAssertions": 4,
+      "requests": [
+        {
+          "name": "API-02 · Cuenta existente con contraseña incorrecta",
+          "http": 400,
+          "transportError": false
+        },
+        {
+          "name": "API-02 · Cuenta inexistente",
+          "http": 400,
+          "transportError": false
+        }
+      ],
+      "assertions": [
+        {
+          "name": "HTTP 400",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "Rechazo uniforme sin sesión",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "HTTP 400",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "Rechazo uniforme sin sesión",
+          "passed": true,
+          "skipped": false
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "API-03",
+      "expectedRequests": 1,
+      "expectedAssertions": 2,
+      "requests": [
+        {
+          "name": "API-03 · Consulta las tres referencias sintéticas",
+          "http": 200,
+          "transportError": false
+        }
+      ],
+      "assertions": [
+        {
+          "name": "HTTP 200",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "Datos del catálogo y fronteras de stock",
+          "passed": true,
+          "skipped": false
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "API-04",
+      "expectedRequests": 7,
+      "expectedAssertions": 14,
+      "requests": [
+        {
+          "name": "API-04 · Saldo inicial",
+          "http": 200,
+          "transportError": false
+        },
+        {
+          "name": "API-04 · Sin venta del cliente identificado",
+          "http": 200,
+          "transportError": false
+        },
+        {
+          "name": "API-04 · Sin movimiento de venta del producto",
+          "http": 200,
+          "transportError": false
+        },
+        {
+          "name": "API-04 · Cantidad cero",
+          "http": 400,
+          "transportError": false
+        },
+        {
+          "name": "API-04 · Saldo final",
+          "http": 200,
+          "transportError": false
+        },
+        {
+          "name": "API-04 · Sin venta del cliente identificado",
+          "http": 200,
+          "transportError": false
+        },
+        {
+          "name": "API-04 · Sin movimiento de venta del producto",
+          "http": 200,
+          "transportError": false
+        }
+      ],
+      "assertions": [
+        {
+          "name": "HTTP 200",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "Un repuesto y saldo 3",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "HTTP 200",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "No hay venta parcial del cliente sintético",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "HTTP 200",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "No hay movimiento SALE",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "HTTP 400",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "Error PostgreSQL de dominio",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "HTTP 200",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "Un repuesto y saldo 3",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "HTTP 200",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "No hay venta parcial del cliente sintético",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "HTTP 200",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "No hay movimiento SALE",
+          "passed": true,
+          "skipped": false
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "API-05",
+      "expectedRequests": 7,
+      "expectedAssertions": 15,
+      "requests": [
+        {
+          "name": "API-05 · Saldo inicial",
+          "http": 200,
+          "transportError": false
+        },
+        {
+          "name": "API-05 · Sin venta del cliente identificado",
+          "http": 200,
+          "transportError": false
+        },
+        {
+          "name": "API-05 · Sin movimiento de venta del producto",
+          "http": 200,
+          "transportError": false
+        },
+        {
+          "name": "API-05 · Solicita cuatro con saldo tres",
+          "http": 400,
+          "transportError": false
+        },
+        {
+          "name": "API-05 · Saldo final",
+          "http": 200,
+          "transportError": false
+        },
+        {
+          "name": "API-05 · Sin venta del cliente identificado",
+          "http": 200,
+          "transportError": false
+        },
+        {
+          "name": "API-05 · Sin movimiento de venta del producto",
+          "http": 200,
+          "transportError": false
+        }
+      ],
+      "assertions": [
+        {
+          "name": "HTTP 200",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "Un repuesto y saldo 3",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "HTTP 200",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "No hay venta parcial del cliente sintético",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "HTTP 200",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "No hay movimiento SALE",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "HTTP 400",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "Error PostgreSQL de dominio",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "Disponibilidad reportada",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "HTTP 200",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "Un repuesto y saldo 3",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "HTTP 200",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "No hay venta parcial del cliente sintético",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "HTTP 200",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "No hay movimiento SALE",
+          "passed": true,
+          "skipped": false
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "API-06",
+      "expectedRequests": 6,
+      "expectedAssertions": 12,
+      "requests": [
+        {
+          "name": "API-06 · Saldo inicial",
+          "http": 200,
+          "transportError": false
+        },
+        {
+          "name": "API-06 · Registra dos con descuento",
+          "http": 200,
+          "transportError": false
+        },
+        {
+          "name": "API-06 · Saldo después de la venta",
+          "http": 200,
+          "transportError": false
+        },
+        {
+          "name": "API-06 · Importes persistidos",
+          "http": 200,
+          "transportError": false
+        },
+        {
+          "name": "API-06 · Movimiento asociado",
+          "http": 200,
+          "transportError": false
+        },
+        {
+          "name": "API-06 · Comprobante de la misma venta",
+          "http": 200,
+          "transportError": false
+        }
+      ],
+      "assertions": [
+        {
+          "name": "HTTP 200",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "Un repuesto y saldo 10",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "HTTP 200",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "Identificadores de venta y comprobante",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "HTTP 200",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "Un repuesto y saldo 8",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "HTTP 200",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "Subtotal, descuento, IVA y total",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "HTTP 200",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "SALE por dos de 10 a 8",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "HTTP 200",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "Número y venta coinciden",
+          "passed": true,
+          "skipped": false
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "API-07",
+      "expectedRequests": 2,
+      "expectedAssertions": 4,
+      "requests": [
+        {
+          "name": "API-07 · Sin sesión",
+          "http": 401,
+          "transportError": false
+        },
+        {
+          "name": "API-07 · Con sesión normal de vendedor",
+          "http": 403,
+          "transportError": false
+        }
+      ],
+      "assertions": [
+        {
+          "name": "HTTP 401",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "Sin archivo CSV",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "HTTP 403",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "Sin descarga para vendedor",
+          "passed": true,
+          "skipped": false
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "API-08",
+      "expectedRequests": 5,
+      "expectedAssertions": 10,
+      "requests": [
+        {
+          "name": "API-08 · Prepara primera venta del caso",
+          "http": 200,
+          "transportError": false
+        },
+        {
+          "name": "API-08 · Prepara segunda venta del caso",
+          "http": 200,
+          "transportError": false
+        },
+        {
+          "name": "API-08 · Lee ambos comprobantes",
+          "http": 200,
+          "transportError": false
+        },
+        {
+          "name": "API-08 · Vendedor, medio y total de ambas ventas",
+          "http": 200,
+          "transportError": false
+        },
+        {
+          "name": "API-08 · Líneas de ambos comprobantes",
+          "http": 200,
+          "transportError": false
+        }
+      ],
+      "assertions": [
+        {
+          "name": "HTTP 200",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "Identificadores de venta y comprobante",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "HTTP 200",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "Identificadores de venta y comprobante",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "HTTP 200",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "Dos números consecutivos y fechas de emisión",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "HTTP 200",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "Ambas ventas del cliente y del vendedor de QA",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "HTTP 200",
+          "passed": true,
+          "skipped": false
+        },
+        {
+          "name": "Detalle de una unidad a 25.000 por venta",
+          "passed": true,
+          "skipped": false
+        }
+      ],
+      "status": "PASS"
+    }
+  ],
+  "stats": {
+    "iterations": {
+      "total": 1,
+      "pending": 0,
+      "failed": 0
+    },
+    "items": {
+      "total": 31,
+      "pending": 0,
+      "failed": 0
+    },
+    "scripts": {
+      "total": 31,
+      "pending": 0,
+      "failed": 0
+    },
+    "prerequests": {
+      "total": 31,
+      "pending": 0,
+      "failed": 0
+    },
+    "requests": {
+      "total": 31,
+      "pending": 0,
+      "failed": 0
+    },
+    "tests": {
+      "total": 31,
+      "pending": 0,
+      "failed": 0
+    },
+    "assertions": {
+      "total": 63,
+      "pending": 0,
+      "failed": 0
+    },
+    "testScripts": {
+      "total": 31,
+      "pending": 0,
+      "failed": 0
+    },
+    "prerequestScripts": {
+      "total": 0,
+      "pending": 0,
+      "failed": 0
+    }
+  }
+}

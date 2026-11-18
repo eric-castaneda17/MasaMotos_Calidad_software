@@ -13,6 +13,7 @@ import { config } from "dotenv";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import pg from "pg";
+import { qaCredentials } from "./lib/qa-credentials.mjs";
 
 config({ path: ".env.local" });
 config();
@@ -36,9 +37,9 @@ const TABLES = [
   "roles", "profiles", "categories", "suppliers", "products", "customers",
   "payment_methods", "sales", "sale_items", "invoices", "inventory_movements", "settings",
 ];
-const TEST_USERS = [
-  { email: "admin@masamotos.com", password: "Admin123*", name: "Administrador MASA", role: "ADMIN" },
-  { email: "vendedor@masamotos.com", password: "Vendedor123*", name: "Camila Vendedora", role: "SELLER" },
+const TEST_USERS = CHECK_ONLY ? [] : [
+  { ...qaCredentials("ADMIN"), name: "Administrador MASA", role: "ADMIN" },
+  { ...qaCredentials("SELLER"), name: "Camila Vendedora", role: "SELLER" },
 ];
 
 const db = new pg.Client({ connectionString: DB_URL, ssl: { rejectUnauthorized: false } });
@@ -175,12 +176,12 @@ try {
   const ok = await verify();
   console.log(ok ? "\n✔ Base de datos lista." : "\n✘ Hay problemas en la base de datos.");
   if (!CHECK_ONLY) {
-    console.log("\nCredenciales de prueba:");
-    TEST_USERS.forEach((u) => console.log(`  ${u.role.padEnd(7)} ${u.email} / ${u.password}`));
+    console.log("\nUsuarios de prueba preparados:");
+    TEST_USERS.forEach((u) => console.log(`  ${u.role}: credenciales configuradas en el entorno privado.`));
   }
   process.exitCode = ok ? 0 : 1;
-} catch (err) {
-  console.error("✘ Error:", err.message ?? err);
+} catch {
+  console.error("✘ Error en la preparación. Revise la configuración y la conexión privadas.");
   process.exitCode = 1;
 } finally {
   await db.end().catch(() => {});

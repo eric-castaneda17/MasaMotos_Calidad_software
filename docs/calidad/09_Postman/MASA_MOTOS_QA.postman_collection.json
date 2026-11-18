@@ -1,0 +1,1066 @@
+{
+  "info": {
+    "name": "MASA MOTOS · QA API",
+    "description": "Requiere el lote QA_TEST y el proyecto de QA autorizado. Los ocho casos incluyen solicitudes auxiliares.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Autenticación",
+      "item": [
+        {
+          "name": "API-01 · Abre sesión de vendedor QA",
+          "description": "SWR-AUTH-004 · CA-02 (apoyo)",
+          "item": [
+            {
+              "name": "Credenciales válidas",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "apikey",
+                    "value": "{{publicKey}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{supabaseUrl}}/auth/v1/token?grant_type=password",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"{{sellerEmail}}\",\n  \"password\": \"{{sellerPassword}}\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"HTTP 200\", function () { pm.response.to.have.status(200); });",
+                      "pm.test(\"Sesión para la cuenta QA\", function () { const r=pm.response.json(); pm.expect(typeof r.access_token==='string'&&r.access_token.length>0).to.be.true; pm.expect(typeof r.user.id==='string'&&r.user.id.length>0).to.be.true; pm.expect(r.user.email.toLowerCase()===pm.environment.get('sellerEmail').toLowerCase()).to.be.true; });",
+                      "if(pm.response.code===200) pm.environment.set('sellerToken',pm.response.json().access_token);",
+                      "if(pm.response.code===200) pm.environment.set('sellerId',pm.response.json().user.id);"
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "API-02 · Credenciales inválidas",
+          "description": "SWR-AUTH-002 · CA-01 (apoyo)",
+          "item": [
+            {
+              "name": "Cuenta existente con contraseña incorrecta",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "apikey",
+                    "value": "{{publicKey}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{supabaseUrl}}/auth/v1/token?grant_type=password",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"{{sellerEmail}}\",\n  \"password\": \"rechazo-del-caso-QA\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"HTTP 400\", function () { pm.response.to.have.status(400); });",
+                      "pm.test(\"Rechazo uniforme sin sesión\", function () { const r=pm.response.json(); pm.expect(r.error_code||r.code).to.eql('invalid_credentials'); pm.expect(Boolean(r.access_token)||Boolean(r.refresh_token)).to.be.false; });"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Cuenta inexistente",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "apikey",
+                    "value": "{{publicKey}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{supabaseUrl}}/auth/v1/token?grant_type=password",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"{{unknownEmail}}\",\n  \"password\": \"rechazo-del-caso-QA\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"HTTP 400\", function () { pm.response.to.have.status(400); });",
+                      "pm.test(\"Rechazo uniforme sin sesión\", function () { const r=pm.response.json(); pm.expect(r.error_code||r.code).to.eql('invalid_credentials'); pm.expect(Boolean(r.access_token)||Boolean(r.refresh_token)).to.be.false; });"
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Catálogo",
+      "item": [
+        {
+          "name": "API-03 · Estados de stock",
+          "description": "SWR-BUS-003 · CA-05",
+          "item": [
+            {
+              "name": "Consulta las tres referencias sintéticas",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "apikey",
+                    "value": "{{publicKey}}"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{sellerToken}}"
+                  }
+                ],
+                "url": "{{supabaseUrl}}/rest/v1/products_view?id=in.({{catAvailableId}},{{catLowId}},{{catZeroId}})&select=id,name,code,brand,sale_price,stock,min_stock,stock_status"
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"HTTP 200\", function () { pm.response.to.have.status(200); });",
+                      "pm.test(\"Datos del catálogo y fronteras de stock\", function () { const rows=pm.response.json(); pm.expect(rows.length).to.eql(3); for (const [key,qty,state,brand] of [['catAvailableId',4,'available','Yamaha'],['catLowId',2,'low','Honda'],['catZeroId',0,'out','Yamaha']]) { const r=rows.find(p=>String(p.id)===String(pm.environment.get(key))); pm.expect(r).to.exist; pm.expect(r.name).to.eql(r.code); pm.expect(r.code.startsWith(pm.environment.get('runId'))).to.be.true; pm.expect(r.brand).to.eql(brand); pm.expect(Number(r.sale_price)).to.eql(25000); pm.expect(r.stock).to.eql(qty); pm.expect(r.min_stock).to.eql(2); pm.expect(r.stock_status).to.eql(state); } });"
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ventas e inventario",
+      "item": [
+        {
+          "name": "API-04 · Rechaza cantidad cero",
+          "description": "SWR-VEN-001 · CA-08 y SWR-REL-001 · CA-15 parcial",
+          "item": [
+            {
+              "name": "Saldo inicial",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "apikey",
+                    "value": "{{publicKey}}"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{sellerToken}}"
+                  }
+                ],
+                "url": "{{supabaseUrl}}/rest/v1/products_view?id=eq.{{zeroProductId}}&select=id,stock"
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"HTTP 200\", function () { pm.response.to.have.status(200); });",
+                      "pm.test(\"Un repuesto y saldo 3\", function () { const rows=pm.response.json(); pm.expect(rows.length).to.eql(1); pm.expect(rows[0].stock).to.eql(3); });"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Sin venta del cliente identificado",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "apikey",
+                    "value": "{{publicKey}}"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{sellerToken}}"
+                  }
+                ],
+                "url": "{{supabaseUrl}}/rest/v1/sales?customer_id=eq.{{zeroCustomerId}}&select=id"
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"HTTP 200\", function () { pm.response.to.have.status(200); });",
+                      "pm.test(\"No hay venta parcial del cliente sintético\", function () { pm.expect(pm.response.json()).to.eql([]); });"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Sin movimiento de venta del producto",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "apikey",
+                    "value": "{{publicKey}}"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{sellerToken}}"
+                  }
+                ],
+                "url": "{{supabaseUrl}}/rest/v1/inventory_movements?product_id=eq.{{zeroProductId}}&type=eq.SALE&select=id"
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"HTTP 200\", function () { pm.response.to.have.status(200); });",
+                      "pm.test(\"No hay movimiento SALE\", function () { pm.expect(pm.response.json()).to.eql([]); });"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Cantidad cero",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "apikey",
+                    "value": "{{publicKey}}"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{sellerToken}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{supabaseUrl}}/rest/v1/rpc/create_sale",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"p_customer_id\": {{zeroCustomerId}},\n  \"p_payment_method_id\": {{cashId}},\n  \"p_discount_type\": \"PERCENT\",\n  \"p_discount_value\": 0,\n  \"p_amount_received\": null,\n  \"p_notes\": \"{{runId}}-API04\",\n  \"p_items\": [\n    {\n      \"productId\": {{zeroProductId}},\n      \"quantity\": 0\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"HTTP 400\", function () { pm.response.to.have.status(400); });",
+                      "pm.test(\"Error PostgreSQL de dominio\", function () { const r=pm.response.json(); pm.expect(r.code).to.eql('P0001'); pm.expect(r.message).to.eql(\"validation\"); pm.expect(r.saleId).to.equal(undefined); pm.expect(r.invoiceId).to.equal(undefined); });"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Saldo final",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "apikey",
+                    "value": "{{publicKey}}"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{sellerToken}}"
+                  }
+                ],
+                "url": "{{supabaseUrl}}/rest/v1/products_view?id=eq.{{zeroProductId}}&select=id,stock"
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"HTTP 200\", function () { pm.response.to.have.status(200); });",
+                      "pm.test(\"Un repuesto y saldo 3\", function () { const rows=pm.response.json(); pm.expect(rows.length).to.eql(1); pm.expect(rows[0].stock).to.eql(3); });"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Sin venta del cliente identificado",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "apikey",
+                    "value": "{{publicKey}}"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{sellerToken}}"
+                  }
+                ],
+                "url": "{{supabaseUrl}}/rest/v1/sales?customer_id=eq.{{zeroCustomerId}}&select=id"
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"HTTP 200\", function () { pm.response.to.have.status(200); });",
+                      "pm.test(\"No hay venta parcial del cliente sintético\", function () { pm.expect(pm.response.json()).to.eql([]); });"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Sin movimiento de venta del producto",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "apikey",
+                    "value": "{{publicKey}}"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{sellerToken}}"
+                  }
+                ],
+                "url": "{{supabaseUrl}}/rest/v1/inventory_movements?product_id=eq.{{zeroProductId}}&type=eq.SALE&select=id"
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"HTTP 200\", function () { pm.response.to.have.status(200); });",
+                      "pm.test(\"No hay movimiento SALE\", function () { pm.expect(pm.response.json()).to.eql([]); });"
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "API-05 · Rechaza falta de stock",
+          "description": "SWR-VEN-002 · CA-09, SWR-INV-006 · CA-14 y SWR-REL-001 · CA-15 parcial",
+          "item": [
+            {
+              "name": "Saldo inicial",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "apikey",
+                    "value": "{{publicKey}}"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{sellerToken}}"
+                  }
+                ],
+                "url": "{{supabaseUrl}}/rest/v1/products_view?id=eq.{{lowProductId}}&select=id,stock"
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"HTTP 200\", function () { pm.response.to.have.status(200); });",
+                      "pm.test(\"Un repuesto y saldo 3\", function () { const rows=pm.response.json(); pm.expect(rows.length).to.eql(1); pm.expect(rows[0].stock).to.eql(3); });"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Sin venta del cliente identificado",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "apikey",
+                    "value": "{{publicKey}}"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{sellerToken}}"
+                  }
+                ],
+                "url": "{{supabaseUrl}}/rest/v1/sales?customer_id=eq.{{lowCustomerId}}&select=id"
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"HTTP 200\", function () { pm.response.to.have.status(200); });",
+                      "pm.test(\"No hay venta parcial del cliente sintético\", function () { pm.expect(pm.response.json()).to.eql([]); });"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Sin movimiento de venta del producto",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "apikey",
+                    "value": "{{publicKey}}"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{sellerToken}}"
+                  }
+                ],
+                "url": "{{supabaseUrl}}/rest/v1/inventory_movements?product_id=eq.{{lowProductId}}&type=eq.SALE&select=id"
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"HTTP 200\", function () { pm.response.to.have.status(200); });",
+                      "pm.test(\"No hay movimiento SALE\", function () { pm.expect(pm.response.json()).to.eql([]); });"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Solicita cuatro con saldo tres",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "apikey",
+                    "value": "{{publicKey}}"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{sellerToken}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{supabaseUrl}}/rest/v1/rpc/create_sale",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"p_customer_id\": {{lowCustomerId}},\n  \"p_payment_method_id\": {{cashId}},\n  \"p_discount_type\": \"PERCENT\",\n  \"p_discount_value\": 0,\n  \"p_amount_received\": null,\n  \"p_notes\": \"{{runId}}-API05\",\n  \"p_items\": [\n    {\n      \"productId\": {{lowProductId}},\n      \"quantity\": 4\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"HTTP 400\", function () { pm.response.to.have.status(400); });",
+                      "pm.test(\"Error PostgreSQL de dominio\", function () { const r=pm.response.json(); pm.expect(r.code).to.eql('P0001'); pm.expect(r.message).to.eql(\"insufficientStock\"); pm.expect(r.saleId).to.equal(undefined); pm.expect(r.invoiceId).to.equal(undefined); });",
+                      "pm.test(\"Disponibilidad reportada\", function () { const d=pm.response.json().details; pm.expect((typeof d==='string'?JSON.parse(d):d).available).to.eql(3); });"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Saldo final",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "apikey",
+                    "value": "{{publicKey}}"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{sellerToken}}"
+                  }
+                ],
+                "url": "{{supabaseUrl}}/rest/v1/products_view?id=eq.{{lowProductId}}&select=id,stock"
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"HTTP 200\", function () { pm.response.to.have.status(200); });",
+                      "pm.test(\"Un repuesto y saldo 3\", function () { const rows=pm.response.json(); pm.expect(rows.length).to.eql(1); pm.expect(rows[0].stock).to.eql(3); });"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Sin venta del cliente identificado",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "apikey",
+                    "value": "{{publicKey}}"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{sellerToken}}"
+                  }
+                ],
+                "url": "{{supabaseUrl}}/rest/v1/sales?customer_id=eq.{{lowCustomerId}}&select=id"
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"HTTP 200\", function () { pm.response.to.have.status(200); });",
+                      "pm.test(\"No hay venta parcial del cliente sintético\", function () { pm.expect(pm.response.json()).to.eql([]); });"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Sin movimiento de venta del producto",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "apikey",
+                    "value": "{{publicKey}}"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{sellerToken}}"
+                  }
+                ],
+                "url": "{{supabaseUrl}}/rest/v1/inventory_movements?product_id=eq.{{lowProductId}}&type=eq.SALE&select=id"
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"HTTP 200\", function () { pm.response.to.have.status(200); });",
+                      "pm.test(\"No hay movimiento SALE\", function () { pm.expect(pm.response.json()).to.eql([]); });"
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "API-06 · Venta transaccional, total y saldo",
+          "description": "SWR-VEN-003 · CA-10, SWR-VEN-009 · CA-11 y SWR-CPB-001 · CA-12",
+          "item": [
+            {
+              "name": "Saldo inicial",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "apikey",
+                    "value": "{{publicKey}}"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{sellerToken}}"
+                  }
+                ],
+                "url": "{{supabaseUrl}}/rest/v1/products_view?id=eq.{{saleProductId}}&select=id,stock"
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"HTTP 200\", function () { pm.response.to.have.status(200); });",
+                      "pm.test(\"Un repuesto y saldo 10\", function () { const rows=pm.response.json(); pm.expect(rows.length).to.eql(1); pm.expect(rows[0].stock).to.eql(10); });"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Registra dos con descuento",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "apikey",
+                    "value": "{{publicKey}}"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{sellerToken}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{supabaseUrl}}/rest/v1/rpc/create_sale",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"p_customer_id\": {{saleCustomerId}},\n  \"p_payment_method_id\": {{cashId}},\n  \"p_discount_type\": \"PERCENT\",\n  \"p_discount_value\": 10,\n  \"p_amount_received\": null,\n  \"p_notes\": \"{{runId}}-API06\",\n  \"p_items\": [\n    {\n      \"productId\": {{saleProductId}},\n      \"quantity\": 2\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"HTTP 200\", function () { pm.response.to.have.status(200); });",
+                      "pm.test(\"Identificadores de venta y comprobante\", function () { const r=pm.response.json(); pm.expect(Number.isInteger(r.saleId)&&r.saleId>0).to.be.true; pm.expect(Number.isInteger(r.invoiceId)&&r.invoiceId>0).to.be.true; pm.expect(typeof r.invoiceNumber==='string'&&r.invoiceNumber.length>0).to.be.true; });",
+                      "if (pm.response.code===200) { const r=pm.response.json(); pm.environment.set('positiveSaleId',r.saleId); pm.environment.set('positiveInvoiceId',r.invoiceId); pm.environment.set('positiveNumber',r.invoiceNumber); }"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Saldo después de la venta",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "apikey",
+                    "value": "{{publicKey}}"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{sellerToken}}"
+                  }
+                ],
+                "url": "{{supabaseUrl}}/rest/v1/products_view?id=eq.{{saleProductId}}&select=id,stock"
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"HTTP 200\", function () { pm.response.to.have.status(200); });",
+                      "pm.test(\"Un repuesto y saldo 8\", function () { const rows=pm.response.json(); pm.expect(rows.length).to.eql(1); pm.expect(rows[0].stock).to.eql(8); });"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Importes persistidos",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "apikey",
+                    "value": "{{publicKey}}"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{sellerToken}}"
+                  }
+                ],
+                "url": "{{supabaseUrl}}/rest/v1/sales?id=eq.{{positiveSaleId}}&select=subtotal,discount,tax_amount,total"
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"HTTP 200\", function () { pm.response.to.have.status(200); });",
+                      "pm.test(\"Subtotal, descuento, IVA y total\", function () { const rows=pm.response.json(); pm.expect(rows.length).to.eql(1); const r=rows[0]; pm.expect([r.subtotal,r.discount,r.tax_amount,r.total].map(Number)).to.eql([50000,5000,8550,53550]); });"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Movimiento asociado",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "apikey",
+                    "value": "{{publicKey}}"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{sellerToken}}"
+                  }
+                ],
+                "url": "{{supabaseUrl}}/rest/v1/inventory_movements?sale_id=eq.{{positiveSaleId}}&select=product_id,type,quantity,stock_before,stock_after"
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"HTTP 200\", function () { pm.response.to.have.status(200); });",
+                      "pm.test(\"SALE por dos de 10 a 8\", function () { const rows=pm.response.json(); pm.expect(rows.length).to.eql(1); const r=rows[0]; pm.expect(String(r.product_id)).to.eql(String(pm.environment.get('saleProductId'))); pm.expect([r.type,r.quantity,r.stock_before,r.stock_after]).to.eql(['SALE',2,10,8]); });"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Comprobante de la misma venta",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "apikey",
+                    "value": "{{publicKey}}"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{sellerToken}}"
+                  }
+                ],
+                "url": "{{supabaseUrl}}/rest/v1/invoices?id=eq.{{positiveInvoiceId}}&select=number,sale_id"
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"HTTP 200\", function () { pm.response.to.have.status(200); });",
+                      "pm.test(\"Número y venta coinciden\", function () { const rows=pm.response.json(); pm.expect(rows.length).to.eql(1); pm.expect(rows[0].number).to.eql(pm.environment.get('positiveNumber')); pm.expect(String(rows[0].sale_id)).to.eql(String(pm.environment.get('positiveSaleId'))); });"
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Permisos",
+      "item": [
+        {
+          "name": "API-07 · Exportación protegida",
+          "description": "SWR-AUTH-006 · CA-03",
+          "item": [
+            {
+              "name": "Sin sesión",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": "{{appUrl}}/api/reports/export?type=sales"
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"HTTP 401\", function () { pm.response.to.have.status(401); });",
+                      "pm.test(\"Sin archivo CSV\", function () { pm.expect(pm.response.headers.has('Content-Disposition')).to.be.false; pm.expect((pm.response.headers.get('Content-Type')||'').includes('text/csv')).to.be.false; });"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Con sesión normal de vendedor",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Cookie",
+                    "value": "{{appCookie}}"
+                  }
+                ],
+                "url": "{{appUrl}}/api/reports/export?type=sales"
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"HTTP 403\", function () { pm.response.to.have.status(403); });",
+                      "pm.test(\"Sin descarga para vendedor\", function () { pm.expect(pm.response.headers.has('Content-Disposition')).to.be.false; pm.expect((pm.response.headers.get('Content-Type')||'').includes('text/csv')).to.be.false; });"
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Comprobantes",
+      "item": [
+        {
+          "name": "API-08 · Comprobantes consecutivos con detalle",
+          "description": "SWR-CPB-001 · CA-12, SWR-CPB-002 · CA-13",
+          "item": [
+            {
+              "name": "Prepara primera venta del caso",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "apikey",
+                    "value": "{{publicKey}}"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{sellerToken}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{supabaseUrl}}/rest/v1/rpc/create_sale",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"p_customer_id\": {{invoiceCustomerId}},\n  \"p_payment_method_id\": {{cashId}},\n  \"p_discount_type\": \"PERCENT\",\n  \"p_discount_value\": 0,\n  \"p_amount_received\": null,\n  \"p_notes\": \"{{runId}}-API08A\",\n  \"p_items\": [\n    {\n      \"productId\": {{invoiceProductId}},\n      \"quantity\": 1\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"HTTP 200\", function () { pm.response.to.have.status(200); });",
+                      "pm.test(\"Identificadores de venta y comprobante\", function () { const r=pm.response.json(); pm.expect(Number.isInteger(r.saleId)&&r.saleId>0).to.be.true; pm.expect(Number.isInteger(r.invoiceId)&&r.invoiceId>0).to.be.true; pm.expect(typeof r.invoiceNumber==='string'&&r.invoiceNumber.length>0).to.be.true; });",
+                      "if (pm.response.code===200) { const r=pm.response.json(); pm.environment.set('firstSaleId',r.saleId); pm.environment.set('firstInvoiceId',r.invoiceId); pm.environment.set('firstNumber',r.invoiceNumber); }"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Prepara segunda venta del caso",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "apikey",
+                    "value": "{{publicKey}}"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{sellerToken}}"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": "{{supabaseUrl}}/rest/v1/rpc/create_sale",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"p_customer_id\": {{invoiceCustomerId}},\n  \"p_payment_method_id\": {{cashId}},\n  \"p_discount_type\": \"PERCENT\",\n  \"p_discount_value\": 0,\n  \"p_amount_received\": null,\n  \"p_notes\": \"{{runId}}-API08B\",\n  \"p_items\": [\n    {\n      \"productId\": {{invoiceProductId}},\n      \"quantity\": 1\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"HTTP 200\", function () { pm.response.to.have.status(200); });",
+                      "pm.test(\"Identificadores de venta y comprobante\", function () { const r=pm.response.json(); pm.expect(Number.isInteger(r.saleId)&&r.saleId>0).to.be.true; pm.expect(Number.isInteger(r.invoiceId)&&r.invoiceId>0).to.be.true; pm.expect(typeof r.invoiceNumber==='string'&&r.invoiceNumber.length>0).to.be.true; });",
+                      "if (pm.response.code===200) { const r=pm.response.json(); pm.environment.set('secondSaleId',r.saleId); pm.environment.set('secondInvoiceId',r.invoiceId); pm.environment.set('secondNumber',r.invoiceNumber); }"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Lee ambos comprobantes",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "apikey",
+                    "value": "{{publicKey}}"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{sellerToken}}"
+                  }
+                ],
+                "url": "{{supabaseUrl}}/rest/v1/invoices?id=in.({{firstInvoiceId}},{{secondInvoiceId}})&select=id,sale_id,number,issued_at"
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"HTTP 200\", function () { pm.response.to.have.status(200); });",
+                      "pm.test(\"Dos números consecutivos y fechas de emisión\", function () { const rows=pm.response.json(); pm.expect(rows.length).to.eql(2); const a=rows.find(r=>String(r.id)===String(pm.environment.get('firstInvoiceId'))); const b=rows.find(r=>String(r.id)===String(pm.environment.get('secondInvoiceId'))); pm.expect(String(a.sale_id)).to.eql(String(pm.environment.get('firstSaleId'))); pm.expect(String(b.sale_id)).to.eql(String(pm.environment.get('secondSaleId'))); pm.expect(a.number).to.eql(pm.environment.get('firstNumber')); pm.expect(b.number).to.eql(pm.environment.get('secondNumber')); const aa=a.number.match(/^(.*-)(\\d+)$/); const bb=b.number.match(/^(.*-)(\\d+)$/); pm.expect(aa[1]).to.eql(bb[1]); pm.expect(Number(bb[2])-Number(aa[2])).to.eql(1); pm.expect(Number.isFinite(Date.parse(a.issued_at))&&Date.parse(b.issued_at)>=Date.parse(a.issued_at)).to.be.true; });"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Vendedor, medio y total de ambas ventas",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "apikey",
+                    "value": "{{publicKey}}"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{sellerToken}}"
+                  }
+                ],
+                "url": "{{supabaseUrl}}/rest/v1/sales?id=in.({{firstSaleId}},{{secondSaleId}})&select=id,customer_id,user_id,payment_method_id,total"
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"HTTP 200\", function () { pm.response.to.have.status(200); });",
+                      "pm.test(\"Ambas ventas del cliente y del vendedor de QA\", function () { const rows=pm.response.json(); pm.expect(rows.length).to.eql(2); for(const r of rows){ pm.expect(String(r.customer_id)).to.eql(String(pm.environment.get('invoiceCustomerId'))); pm.expect(String(r.user_id)).to.eql(String(pm.environment.get('sellerId'))); pm.expect(String(r.payment_method_id)).to.eql(String(pm.environment.get('cashId'))); pm.expect(Number(r.total)).to.eql(29750); } });"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Líneas de ambos comprobantes",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "apikey",
+                    "value": "{{publicKey}}"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{sellerToken}}"
+                  }
+                ],
+                "url": "{{supabaseUrl}}/rest/v1/sale_items?sale_id=in.({{firstSaleId}},{{secondSaleId}})&select=sale_id,product_id,product_code,quantity,unit_price,line_total"
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"HTTP 200\", function () { pm.response.to.have.status(200); });",
+                      "pm.test(\"Detalle de una unidad a 25.000 por venta\", function () { const rows=pm.response.json(); pm.expect(rows.length).to.eql(2); pm.expect(rows.map(r=>String(r.sale_id)).sort()).to.eql([String(pm.environment.get('firstSaleId')),String(pm.environment.get('secondSaleId'))].sort()); for(const r of rows){ pm.expect(String(r.product_id)).to.eql(String(pm.environment.get('invoiceProductId'))); pm.expect(r.product_code.startsWith(pm.environment.get('runId'))).to.be.true; pm.expect([r.quantity,Number(r.unit_price),Number(r.line_total)]).to.eql([1,25000,25000]); } });"
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

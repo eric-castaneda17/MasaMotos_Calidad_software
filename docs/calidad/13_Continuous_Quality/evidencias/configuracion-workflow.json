@@ -1,0 +1,15 @@
+{
+  "workflow": ".github/workflows/continuous-quality.yml",
+  "yamlParse": "PASS",
+  "structure": "PASS",
+  "triggers": [
+    "push",
+    "pull_request",
+    "workflow_dispatch"
+  ],
+  "jobs": 1,
+  "steps": 11,
+  "secretsReferences": 0,
+  "remoteExecution": "PENDIENTE",
+  "scope": "Validación sintáctica YAML y comprobaciones estructurales locales. No reemplaza la validación del servicio GitHub Actions."
+}

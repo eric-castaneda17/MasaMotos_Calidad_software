@@ -1,0 +1,143 @@
+{
+  "runner": "Playwright",
+  "lot": "QA_TEST-MWLP83ZG",
+  "baseURL": "http://localhost:3106",
+  "cases": [
+    {
+      "id": "E2E-01",
+      "status": "PASS",
+      "executedAt": "2026-11-18T06:05:55.795Z",
+      "durationMs": 4138,
+      "observed": "Redirección a login y posterior ingreso de vendedor al catálogo."
+    },
+    {
+      "id": "E2E-02",
+      "status": "PASS",
+      "executedAt": "2026-11-18T06:06:00.424Z",
+      "durationMs": 7874,
+      "observed": "Venta y comprobante por 53.550 COP, saldo 8 y movimiento de venta por 2."
+    },
+    {
+      "id": "E2E-03",
+      "status": "PASS",
+      "executedAt": "2026-11-18T06:10:47.751Z",
+      "durationMs": 13955,
+      "observed": "Alta única, duplicado rechazado y venta exacta de dos unidades con comprobante y saldo 0."
+    },
+    {
+      "id": "E2E-04",
+      "status": "PASS",
+      "executedAt": "2026-11-18T06:09:21.776Z",
+      "durationMs": 13152,
+      "observed": "El segundo carrito se rechaza con saldo cero y sin factura de ese cliente."
+    },
+    {
+      "id": "E2E-05",
+      "status": "PASS",
+      "executedAt": "2026-11-18T06:06:44.291Z",
+      "durationMs": 7453,
+      "observed": "Vendedor redirigido; administrador accede al formulario."
+    }
+  ],
+  "attempts": [
+    [
+      {
+        "id": "E2E-01",
+        "status": "PASS",
+        "executedAt": "2026-11-18T06:02:13.960Z",
+        "durationMs": 6009,
+        "observed": "Redirección a login y posterior ingreso de vendedor al catálogo."
+      },
+      {
+        "id": "E2E-02",
+        "status": "FAIL",
+        "executedAt": "2026-11-18T06:02:20.453Z",
+        "durationMs": 7261,
+        "observed": "Selector ambiguo en el catálogo"
+      },
+      {
+        "id": "E2E-03",
+        "status": "FAIL",
+        "executedAt": "2026-11-18T06:02:28.700Z",
+        "durationMs": 75106,
+        "observed": "Límite de tiempo de Playwright"
+      },
+      {
+        "id": "E2E-04",
+        "status": "FAIL",
+        "executedAt": "2026-11-18T06:03:45.254Z",
+        "durationMs": 11890,
+        "observed": "Selector ambiguo en el catálogo"
+      },
+      {
+        "id": "E2E-05",
+        "status": "PASS",
+        "executedAt": "2026-11-18T06:03:58.428Z",
+        "durationMs": 6214,
+        "observed": "Vendedor redirigido; administrador accede al formulario."
+      }
+    ],
+    [
+      {
+        "id": "E2E-01",
+        "status": "PASS",
+        "executedAt": "2026-11-18T06:05:55.795Z",
+        "durationMs": 4138,
+        "observed": "Redirección a login y posterior ingreso de vendedor al catálogo."
+      },
+      {
+        "id": "E2E-02",
+        "status": "PASS",
+        "executedAt": "2026-11-18T06:06:00.424Z",
+        "durationMs": 7874,
+        "observed": "Venta y comprobante por 53.550 COP, saldo 8 y movimiento de venta por 2."
+      },
+      {
+        "id": "E2E-03",
+        "status": "FAIL",
+        "executedAt": "2026-11-18T06:06:08.316Z",
+        "durationMs": 5850,
+        "observed": "Selector ambiguo en el catálogo"
+      },
+      {
+        "id": "E2E-04",
+        "status": "FAIL",
+        "executedAt": "2026-11-18T06:06:15.177Z",
+        "durationMs": 27771,
+        "observed": "Límite de tiempo de Playwright"
+      },
+      {
+        "id": "E2E-05",
+        "status": "PASS",
+        "executedAt": "2026-11-18T06:06:44.291Z",
+        "durationMs": 7453,
+        "observed": "Vendedor redirigido; administrador accede al formulario."
+      }
+    ],
+    [
+      {
+        "id": "E2E-03",
+        "status": "FAIL",
+        "executedAt": "2026-11-18T06:08:51.640Z",
+        "durationMs": 28726,
+        "observed": "Límite de tiempo de Playwright"
+      },
+      {
+        "id": "E2E-04",
+        "status": "PASS",
+        "executedAt": "2026-11-18T06:09:21.776Z",
+        "durationMs": 13152,
+        "observed": "El segundo carrito se rechaza con saldo cero y sin factura de ese cliente."
+      }
+    ],
+    [
+      {
+        "id": "E2E-03",
+        "status": "PASS",
+        "executedAt": "2026-11-18T06:10:47.751Z",
+        "durationMs": 13955,
+        "observed": "Alta única, duplicado rechazado y venta exacta de dos unidades con comprobante y saldo 0."
+      }
+    ]
+  ]
+}

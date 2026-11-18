@@ -1,0 +1,290 @@
+{
+  "startedAt": "2026-11-18T22:09:22.741Z",
+  "method": "Consultas SQL parametrizadas en transacción REPEATABLE READ READ ONLY, reloj monotónico del cliente; incluye ida/vuelta de la consulta. No mide interfaz, RLS del vendedor, API ni generación imprimible.",
+  "academicTargetVerified": true,
+  "writes": false,
+  "samples": [
+    {
+      "scenario": "SEARCH-MATCH",
+      "sample": 1,
+      "cache": "no controlada; primera consulta de esta serie",
+      "durationMs": 113.58,
+      "rows": 3,
+      "users": 1,
+      "result": "LECTURA_COMPLETADA",
+      "scope": "SQL + ida/vuelta; no comparable al máximo UI del SRS"
+    },
+    {
+      "scenario": "SEARCH-MATCH",
+      "sample": 2,
+      "cache": "no controlada; consulta posterior",
+      "durationMs": 111.79,
+      "rows": 3,
+      "users": 1,
+      "result": "LECTURA_COMPLETADA",
+      "scope": "SQL + ida/vuelta; no comparable al máximo UI del SRS"
+    },
+    {
+      "scenario": "SEARCH-MATCH",
+      "sample": 3,
+      "cache": "no controlada; consulta posterior",
+      "durationMs": 110.71,
+      "rows": 3,
+      "users": 1,
+      "result": "LECTURA_COMPLETADA",
+      "scope": "SQL + ida/vuelta; no comparable al máximo UI del SRS"
+    },
+    {
+      "scenario": "SEARCH-EMPTY",
+      "sample": 1,
+      "cache": "no controlada; primera consulta de esta serie",
+      "durationMs": 111.86,
+      "rows": 0,
+      "users": 1,
+      "result": "LECTURA_COMPLETADA",
+      "scope": "SQL + ida/vuelta; no comparable al máximo UI del SRS"
+    },
+    {
+      "scenario": "SEARCH-EMPTY",
+      "sample": 2,
+      "cache": "no controlada; consulta posterior",
+      "durationMs": 111.19,
+      "rows": 0,
+      "users": 1,
+      "result": "LECTURA_COMPLETADA",
+      "scope": "SQL + ida/vuelta; no comparable al máximo UI del SRS"
+    },
+    {
+      "scenario": "SEARCH-EMPTY",
+      "sample": 3,
+      "cache": "no controlada; consulta posterior",
+      "durationMs": 113.42,
+      "rows": 0,
+      "users": 1,
+      "result": "LECTURA_COMPLETADA",
+      "scope": "SQL + ida/vuelta; no comparable al máximo UI del SRS"
+    },
+    {
+      "scenario": "REPORT-12M-SQL",
+      "sample": 1,
+      "cache": "no controlada; primera consulta de esta serie",
+      "durationMs": 114.34,
+      "rows": 3,
+      "users": 1,
+      "result": "LECTURA_COMPLETADA",
+      "scope": "SQL + ida/vuelta; no comparable al máximo UI del SRS"
+    },
+    {
+      "scenario": "REPORT-12M-SQL",
+      "sample": 2,
+      "cache": "no controlada; consulta posterior",
+      "durationMs": 112.26,
+      "rows": 3,
+      "users": 1,
+      "result": "LECTURA_COMPLETADA",
+      "scope": "SQL + ida/vuelta; no comparable al máximo UI del SRS"
+    },
+    {
+      "scenario": "REPORT-12M-SQL",
+      "sample": 3,
+      "cache": "no controlada; consulta posterior",
+      "durationMs": 111,
+      "rows": 3,
+      "users": 1,
+      "result": "LECTURA_COMPLETADA",
+      "scope": "SQL + ida/vuelta; no comparable al máximo UI del SRS"
+    }
+  ],
+  "previousAttempts": [
+    {
+      "startedAt": "2026-11-18T22:08:41.649Z",
+      "status": "INCONCLUSO",
+      "error": {
+        "category": "Error",
+        "code": "ENOTFOUND"
+      },
+      "samples": 0,
+      "writes": false
+    }
+  ],
+  "readOnlyConfirmed": true,
+  "volumes": {
+    "products": 49,
+    "sales": 91
+  },
+  "academicProducts": [
+    {
+      "code": "QA_TEST-MWLP83ZG-BB_INVOICE",
+      "stock": 4
+    },
+    {
+      "code": "QA_TEST-MWLP83ZG-BB_SALE",
+      "stock": 8
+    }
+  ],
+  "duplicateReference": {
+    "equivalent_codes": 1
+  },
+  "academicSales": [
+    {
+      "sale_id": 96,
+      "status": "COMPLETED",
+      "subtotal": "50000.00",
+      "discount": "5000.00",
+      "tax_amount": "8550.00",
+      "total": "53550.00",
+      "created_at": "2026-11-18T22:00:50.286Z",
+      "invoice_number": "MM-000095",
+      "product_code": "QA_TEST-MWLP83ZG-BB_SALE",
+      "quantity": 2,
+      "stock_before": 10,
+      "stock_after": 8
+    }
+  ],
+  "status": "LECTURAS_COMPLETADAS",
+  "rollbackConfirmed": true,
+  "finishedAt": "2026-11-18T22:09:25.733Z",
+  "historicalSaleActionDurations": [
+    {
+      "timestamp": "2026-11-18T20:36:00.915Z",
+      "correlationId": "65135d12-2b1e-4a8e-a09c-40998e8c84cd",
+      "durationMs": 382.91,
+      "saleId": 94,
+      "scope": "Acción de servidor histórica de Shift Right, no medición BB manual ni intervalo completo UI."
+    },
+    {
+      "timestamp": "2026-11-18T20:36:06.748Z",
+      "correlationId": "218f8899-3df3-4c90-aa5c-837a7e21600a",
+      "durationMs": 362.68,
+      "saleId": 95,
+      "scope": "Acción de servidor histórica de Shift Right, no medición BB manual ni intervalo completo UI."
+    }
+  ],
+  "srsConclusions": {
+    "PERF001": "PARCIAL: SQL de lectura; faltan debounce, API y render, 10000 repuestos y 5 usuarios.",
+    "PERF002": "PARCIAL: duración histórica de acción; falta clic final a acuse UI. No se repiten ventas.",
+    "PERF003": "NO EVALUADA: sin intervalo acuse a comprobante imprimible.",
+    "PERF004": "PARCIAL: agregado SQL de 12 meses, no reporte completo de interfaz o archivo.",
+    "PERF005": "NO EVALUADA: volumen objetivo y motocicletas sin representar."
+  },
+  "statistics": {
+    "SEARCH-MATCH": {
+      "samples": 3,
+      "minMs": 110.71,
+      "medianMs": 111.79,
+      "p95Ms": 113.58,
+      "maxMs": 113.58,
+      "errors": 0,
+      "scope": "Solo SQL con ida y vuelta. No se aprueba el máximo UI del SRS."
+    },
+    "SEARCH-EMPTY": {
+      "samples": 3,
+      "minMs": 111.19,
+      "medianMs": 111.86,
+      "p95Ms": 113.42,
+      "maxMs": 113.42,
+      "errors": 0,
+      "scope": "Solo SQL con ida y vuelta. No se aprueba el máximo UI del SRS."
+    },
+    "REPORT-12M-SQL": {
+      "samples": 3,
+      "minMs": 111,
+      "medianMs": 112.26,
+      "p95Ms": 114.34,
+      "maxMs": 114.34,
+      "errors": 0,
+      "scope": "Solo SQL con ida y vuelta. No se aprueba el máximo UI del SRS."
+    }
+  },
+  "protocol": {
+    "transaction": "BEGIN TRANSACTION ISOLATION LEVEL REPEATABLE READ READ ONLY",
+    "readOnlyCheck": "SHOW transaction_read_only = on",
+    "statementTimeout": "5s",
+    "lockTimeout": "1s",
+    "end": "ROLLBACK confirmado",
+    "searchSql": "select code,stock from public.products_view where name ilike $1 or code ilike $1 or compatible_model ilike $1 order by name,id limit 10",
+    "searchParameters": [
+      "%MWLP83ZG-CAT%",
+      "%QA-SIN-COINCIDENCIAS%"
+    ],
+    "reportSql": "select date_trunc('month',created_at) as month,count(*),sum(total) from public.sales where created_at >= $1::timestamptz and created_at < $2::timestamptz group by 1 order by 1",
+    "reportInterval": [
+      "2025-11-19T00:00:00-05:00",
+      "2026-11-19T00:00:00-05:00"
+    ],
+    "reportDataPrivacy": "Solo se guardaron duración y cantidad de filas del agregado; no importes ni datos de clientes."
+  },
+  "functionalComparison": {
+    "BB09": {
+      "reported": "10 a 8; factura generada",
+      "readVerified": true,
+      "invoice": "MM-000095"
+    },
+    "BB10": {
+      "reported": "Dos facturas consecutivas, 29.750 cada una, Consumidor final y 4 a 2.",
+      "state": "PASS EN ALCANCE COMPROBADO",
+      "readVerified": true,
+      "productCode": "QA_TEST-MWLP83ZG-BB_INVOICE",
+      "finalStock": 2,
+      "invoices": [
+        "MM-000096",
+        "MM-000097"
+      ],
+      "clientVariation": "Consumidor final en vez del cliente académico previsto; no altera los criterios de consecutivo ni datos de facturación evaluados.",
+      "initialObservation": {
+        "timestamp": "2026-11-18T22:09:22.741Z",
+        "stock": 4,
+        "associatedSales": 0,
+        "interpretation": "Lectura previa a las ventas de 17:15 y 17:16 Bogotá. Diferencia temporal aclarada; sin defecto atribuido."
+      },
+      "finalObservationAt": "2026-11-18T22:18:02.242Z"
+    },
+    "BB07": {
+      "readObserved": "Una referencia equivalente ignorando mayúsculas.",
+      "browserEvidenceAfterAttempt": false,
+      "scope": "Comprobación auxiliar SQL; no reemplaza la segunda observación manual del caso."
+    }
+  },
+  "bb10Followup": [
+    {
+      "startedAt": "2026-11-18T22:18:00.762Z",
+      "scope": "Lectura dirigida a facturas informadas por el usuario. Sin repetir ventas ni mediciones.",
+      "writes": false,
+      "readOnlyConfirmed": true,
+      "rows": [
+        {
+          "invoice_number": "MM-000096",
+          "issued_at": "2026-11-18T22:15:31.183Z",
+          "sale_id": 97,
+          "status": "COMPLETED",
+          "total": "29750.00",
+          "consumer_final": true,
+          "product_code": "QA_TEST-MWLP83ZG-BB_INVOICE",
+          "quantity": 1,
+          "unit_price": "25000.00",
+          "current_stock": 2,
+          "stock_before": 4,
+          "stock_after": 3
+        },
+        {
+          "invoice_number": "MM-000097",
+          "issued_at": "2026-11-18T22:16:09.592Z",
+          "sale_id": 98,
+          "status": "COMPLETED",
+          "total": "29750.00",
+          "consumer_final": true,
+          "product_code": "QA_TEST-MWLP83ZG-BB_INVOICE",
+          "quantity": 1,
+          "unit_price": "25000.00",
+          "current_stock": 2,
+          "stock_before": 3,
+          "stock_after": 2
+        }
+      ],
+      "status": "LECTURA_COMPLETADA",
+      "rollbackConfirmed": true,
+      "finishedAt": "2026-11-18T22:18:02.242Z"
+    }
+  ],
+  "snapshotScope": "academicProducts, academicSales y volumes describen la lectura inicial de 17:09 Bogotá. bb10Followup y functionalComparison.BB10 contienen la verificación posterior de 17:18 y prevalecen para BB-10. No se repitieron mediciones ni ventas."
+}

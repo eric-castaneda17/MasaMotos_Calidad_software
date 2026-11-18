@@ -4,6 +4,7 @@
  * sin descargar navegadores adicionales.
  */
 import { chromium } from "playwright-core";
+import { qaCredentials } from "./qa-credentials.mjs";
 
 export const BASE_URL = process.env.BASE_URL ?? "http://localhost:3000";
 
@@ -37,5 +38,11 @@ export async function login(page, email, password) {
   await page.waitForLoadState("networkidle");
 }
 
-export const ADMIN = { email: "admin@masamotos.com", password: "Admin123*" };
-export const SELLER = { email: "vendedor@masamotos.com", password: "Vendedor123*" };
+export const ADMIN = {
+  get email() { return qaCredentials("ADMIN").email; },
+  get password() { return qaCredentials("ADMIN").password; },
+};
+export const SELLER = {
+  get email() { return qaCredentials("SELLER").email; },
+  get password() { return qaCredentials("SELLER").password; },
+};

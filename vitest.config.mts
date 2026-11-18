@@ -29,6 +29,19 @@ export default defineConfig({
           setupFiles: ["docs/calidad/08_RTL/setup.ts"],
         },
       },
+      {
+        resolve: {
+          alias: {
+            "@": fileURLToPath(new URL("./src", import.meta.url)),
+            "server-only": fileURLToPath(new URL("./docs/calidad/12_Shift_Right/server-only.ts", import.meta.url)),
+          },
+        },
+        test: {
+          name: "observability",
+          environment: "node",
+          include: ["docs/calidad/12_Shift_Right/*.test.ts"],
+        },
+      },
     ],
     coverage: {
       provider: "v8",

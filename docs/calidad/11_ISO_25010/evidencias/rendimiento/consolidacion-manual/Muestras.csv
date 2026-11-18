@@ -1,0 +1,10 @@
+escenario,muestra,duracion_ms,filas,usuarios,alcance
+SEARCH-MATCH,1,113.58,3,1,SQL_con_ida_y_vuelta
+SEARCH-MATCH,2,111.79,3,1,SQL_con_ida_y_vuelta
+SEARCH-MATCH,3,110.71,3,1,SQL_con_ida_y_vuelta
+SEARCH-EMPTY,1,111.86,0,1,SQL_con_ida_y_vuelta
+SEARCH-EMPTY,2,111.19,0,1,SQL_con_ida_y_vuelta
+SEARCH-EMPTY,3,113.42,0,1,SQL_con_ida_y_vuelta
+REPORT-12M-SQL,1,114.34,3,1,SQL_con_ida_y_vuelta
+REPORT-12M-SQL,2,112.26,3,1,SQL_con_ida_y_vuelta
+REPORT-12M-SQL,3,111,3,1,SQL_con_ida_y_vuelta

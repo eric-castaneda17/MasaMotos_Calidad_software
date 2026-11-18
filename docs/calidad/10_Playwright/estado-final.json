@@ -1,0 +1,132 @@
+{
+  "objects": {
+    "table": 19,
+    "policy": 23,
+    "function": 21,
+    "trigger": 20
+  },
+  "structuralHash": "97bedf65b378ba6bc3de4bf5e30382d969ce58eea3d96c88f690ee16ba02ed2b",
+  "counts": {
+    "existing_products": 29,
+    "other_sales": 78,
+    "total_invoices": 88,
+    "total_movements": 229
+  },
+  "settings": {
+    "tax_rate": "19.00",
+    "tax_enabled": true,
+    "next_invoice_number": 93
+  },
+  "cashActive": true,
+  "lot": "QA_TEST-MWLP83ZG",
+  "products": [
+    {
+      "code": "QA_TEST-MWLP83ZG-API_INVOICE",
+      "stock": 2,
+      "sale_movements": 2,
+      "sales": 2
+    },
+    {
+      "code": "QA_TEST-MWLP83ZG-API_LOW",
+      "stock": 3,
+      "sale_movements": 0,
+      "sales": 0
+    },
+    {
+      "code": "QA_TEST-MWLP83ZG-API_SALE",
+      "stock": 8,
+      "sale_movements": 1,
+      "sales": 1
+    },
+    {
+      "code": "QA_TEST-MWLP83ZG-API_ZERO",
+      "stock": 3,
+      "sale_movements": 0,
+      "sales": 0
+    },
+    {
+      "code": "QA_TEST-MWLP83ZG-BB_BOUNDARY",
+      "stock": 3,
+      "sale_movements": 0,
+      "sales": 0
+    },
+    {
+      "code": "QA_TEST-MWLP83ZG-BB_INVOICE",
+      "stock": 4,
+      "sale_movements": 0,
+      "sales": 0
+    },
+    {
+      "code": "QA_TEST-MWLP83ZG-BB_SALE",
+      "stock": 10,
+      "sale_movements": 0,
+      "sales": 0
+    },
+    {
+      "code": "QA_TEST-MWLP83ZG-CAT_AVAILABLE",
+      "stock": 4,
+      "sale_movements": 0,
+      "sales": 0
+    },
+    {
+      "code": "QA_TEST-MWLP83ZG-CAT_LOW",
+      "stock": 2,
+      "sale_movements": 0,
+      "sales": 0
+    },
+    {
+      "code": "QA_TEST-MWLP83ZG-CAT_ZERO",
+      "stock": 0,
+      "sale_movements": 0,
+      "sales": 0
+    },
+    {
+      "code": "QA_TEST-MWLP83ZG-E2E_RACE",
+      "stock": 0,
+      "sale_movements": 1,
+      "sales": 1
+    },
+    {
+      "code": "QA_TEST-MWLP83ZG-E2E_SALE",
+      "stock": 8,
+      "sale_movements": 1,
+      "sales": 1
+    },
+    {
+      "code": "QA_TEST-MWLP83ZG-E2E03-PX46E",
+      "stock": 2,
+      "sale_movements": 0,
+      "sales": 0
+    },
+    {
+      "code": "QA_TEST-MWLP83ZG-E2E03-Q0NJI",
+      "stock": 0,
+      "sale_movements": 1,
+      "sales": 1
+    },
+    {
+      "code": "QA_TEST-MWLP83ZG-E2E03-Q35JE",
+      "stock": 0,
+      "sale_movements": 1,
+      "sales": 1
+    },
+    {
+      "code": "QA_TEST-MWLP83ZG-RMWLPWQN3-E2E-RACE",
+      "stock": 0,
+      "sale_movements": 1,
+      "sales": 1
+    },
+    {
+      "code": "QA_TEST-MWLP83ZG-RMWLPWQN3-E2E-SALE",
+      "stock": 8,
+      "sale_movements": 1,
+      "sales": 1
+    },
+    {
+      "code": "QA_TEST-MWLP83ZG-RMWLQ0I8C-E2E-RACE",
+      "stock": 0,
+      "sale_movements": 1,
+      "sales": 1
+    }
+  ]
+}

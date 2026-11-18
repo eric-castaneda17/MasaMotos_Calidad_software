@@ -1,0 +1,84 @@
+{
+  "date": "2026-11-18",
+  "branch": "feature/shift-right-observabilidad",
+  "baseCommit": "0dce1715",
+  "checks": [
+    {
+      "command": "npm run test:unit",
+      "exitCode": 0,
+      "passed": 11,
+      "scope": "regresión local sin Supabase"
+    },
+    {
+      "command": "npm run test:rtl",
+      "exitCode": 0,
+      "passed": 13,
+      "scope": "regresión jsdom con acciones simuladas"
+    },
+    {
+      "command": "node --test scripts/qa-reversion.test.mjs",
+      "exitCode": 0,
+      "passed": 15,
+      "scope": "simulaciones; no se ejecuta CA-15 real"
+    },
+    {
+      "command": "node node_modules/vitest/vitest.mjs run --project observability",
+      "exitCode": 0,
+      "passed": 25,
+      "scope": "14 logger y 11 integración con dependencias simuladas"
+    },
+    {
+      "command": "npm run lint",
+      "exitCode": 0
+    },
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run build -- --webpack",
+      "exitCode": 0,
+      "evidence": "compilacion.txt"
+    },
+    {
+      "command": "node scripts/qa-shift-right-readonly.mjs",
+      "exitCode": 0,
+      "passed": 3,
+      "scope": "servidor local real; inicio, denegación sin sesión y formato inválido"
+    }
+  ],
+  "initialFindings": [
+    {
+      "command": "TypeScript",
+      "result": "TS18048 en error.status",
+      "resolution": "Valor ausente normalizado; comprobación final aprobada."
+    },
+    {
+      "command": "Compilación",
+      "result": "EPERM en .next/types",
+      "resolution": "Ejecución local autorizada fuera del sandbox; compilación final aprobada."
+    }
+  ],
+  "provenance": "Resumen de las salidas efectivamente observadas en esta sesión. Los resultados JSON del mecanismo y del servidor y la salida de build se conservan por separado.",
+  "supabaseWrites": false,
+  "manualBBExecuted": false,
+  "supabaseWritesScope": "Comprobaciones locales iniciales listadas en checks. La ejecución académica posterior autorizada se registra por separado.",
+  "authorizedRealExecution": {
+    "evidence": "resultados-locales.json",
+    "lot": "QA_SR-MWMKXTFW",
+    "salesCreated": 2,
+    "guide182": "COMPROBADO",
+    "unrelatedTestsRepeated": false
+  },
+  "evidenceClosure": {
+    "date": "2026-11-18",
+    "sensitiveValuesAbsent": true,
+    "textEvidenceFilesChecked": 7,
+    "originalMasterSheetsPreserved": true,
+    "CA15": "PASS",
+    "manualBB": "12 PENDIENTE sin evidencia validada",
+    "existingReportUpdated": true,
+    "newReportsCreated": 0,
+    "unrelatedChecksRepeated": false
+  }
+}

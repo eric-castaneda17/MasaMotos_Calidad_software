@@ -1,0 +1,244 @@
+{
+  "archivos": [
+    {
+      "rectangulosOpacos": [
+        [
+          1675,
+          58,
+          49,
+          52
+        ],
+        [
+          1729,
+          62,
+          137,
+          24
+        ],
+        [
+          415,
+          168,
+          145,
+          37
+        ],
+        [
+          345,
+          240,
+          1550,
+          771
+        ]
+      ],
+      "original": "BB-01-01-panel.png",
+      "sha256Original": "CF7E64D9D26A7191B39A7195650C4C74537B69BAD041CC560C55CB77EFBC6FED",
+      "copia": "BB-01-01-panel-depurada.png",
+      "sha256Copia": "FF182D4EFE58D9D2EDF20F210108F17C492B5CD4A39FFDD9F41EB0FD9FB0D4F6",
+      "pixelesFueraDeOcultacionesIdenticos": true
+    },
+    {
+      "rectangulosOpacos": [
+        [
+          1673,
+          55,
+          49,
+          52
+        ],
+        [
+          1725,
+          58,
+          139,
+          25
+        ],
+        [
+          421,
+          372,
+          1105,
+          637
+        ]
+      ],
+      "original": "BB-01-02-catalogo.png",
+      "sha256Original": "F1E7AFD892A922A879DECC0B5E65A1999B63526CF80ED443E610112002AA06EA",
+      "copia": "BB-01-02-catalogo-depurada.png",
+      "sha256Copia": "A9A7CCAD4C87F02CEC843D8834719E16B3560093FD4CB47316B02BE56969DD0D",
+      "pixelesFueraDeOcultacionesIdenticos": true
+    },
+    {
+      "rectangulosOpacos": [
+        [
+          268,
+          539,
+          420,
+          28
+        ],
+        [
+          268,
+          632,
+          420,
+          25
+        ]
+      ],
+      "original": "BB-02-01-aviso-correo-existente.png",
+      "sha256Original": "B2FDDD5F6EB21D842BA1B046188848EAF96AE1D95B4AEB24268924E811A6B42D",
+      "copia": "BB-02-01-aviso-correo-existente-depurada.png",
+      "sha256Copia": "9EDA3239F6125F4664C603F7C64C95B32442D7EEEC6B1D18BAEC949FEF0E19A9",
+      "pixelesFueraDeOcultacionesIdenticos": true
+    },
+    {
+      "rectangulosOpacos": [],
+      "original": "BB-02-02-ruta-correo-existente.png",
+      "sha256Original": "B445B6BCE60AD875D14E80B7B258FC424D8E9BD0C09EDFA254011CA828F3463C",
+      "copia": "BB-02-02-ruta-correo-existente-depurada.png",
+      "sha256Copia": "B445B6BCE60AD875D14E80B7B258FC424D8E9BD0C09EDFA254011CA828F3463C",
+      "pixelesFueraDeOcultacionesIdenticos": true
+    },
+    {
+      "rectangulosOpacos": [
+        [
+          265,
+          591,
+          420,
+          25
+        ]
+      ],
+      "original": "BB-02-03-aviso-correo-inexistente.png",
+      "sha256Original": "08686C0CE33F16526D8463723C5A669F96A69025B28DA263D7CFC9108E5D7017",
+      "copia": "BB-02-03-aviso-correo-inexistente-depurada.png",
+      "sha256Copia": "77F1B2BECFFFD9551AD8B9FB5A9268A1AE92AC7E591A02785A12EC893D56783E",
+      "pixelesFueraDeOcultacionesIdenticos": true
+    },
+    {
+      "rectangulosOpacos": [],
+      "original": "BB-02-04-ruta-correo-inexistente.png",
+      "sha256Original": "22A82735718B0C3917B50971B1DE369E32CB58ECB5EC94E8D3F76666D9A9CA52",
+      "copia": "BB-02-04-ruta-correo-inexistente-depurada.png",
+      "sha256Copia": "22A82735718B0C3917B50971B1DE369E32CB58ECB5EC94E8D3F76666D9A9CA52",
+      "pixelesFueraDeOcultacionesIdenticos": true
+    },
+    {
+      "rectangulosOpacos": [],
+      "original": "BB-03-01-redireccion.png",
+      "sha256Original": "77FBC8AAEE52D9038AE3C7B2C392378182F13CF5E07607A0BB0B7F805B0431C0",
+      "copia": "BB-03-01-redireccion-depurada.png",
+      "sha256Copia": "77FBC8AAEE52D9038AE3C7B2C392378182F13CF5E07607A0BB0B7F805B0431C0",
+      "pixelesFueraDeOcultacionesIdenticos": true
+    },
+    {
+      "pixelesFueraDeOcultacionesIdenticos": true,
+      "copia": "BB-03-02-ruta-solicitada-depurada.png",
+      "rectangulosOpacos": [],
+      "sha256Copia": "3E252DA7DF850C75197C4A756B36B2B56C03BD28003F60FAA767CEE16ED086BB",
+      "original": "BB-03-02-ruta-solicitada.png",
+      "sha256Original": "3E252DA7DF850C75197C4A756B36B2B56C03BD28003F60FAA767CEE16ED086BB"
+    },
+    {
+      "pixelesFueraDeOcultacionesIdenticos": true,
+      "copia": "BB-03-03-redireccion-depurada.png",
+      "rectangulosOpacos": [],
+      "sha256Copia": "6363032C046BEBF368E6C91245E3EE5AE2059BC7633D9108A1677C6317A6CADF",
+      "original": "BB-03-03-redireccion.png",
+      "sha256Original": "6363032C046BEBF368E6C91245E3EE5AE2059BC7633D9108A1677C6317A6CADF"
+    },
+    {
+      "pixelesFueraDeOcultacionesIdenticos": true,
+      "copia": "BB-05-01-filtros-combinados-depurada.png",
+      "rectangulosOpacos": [
+        [
+          1690,
+          47,
+          51,
+          50
+        ],
+        [
+          1743,
+          53,
+          137,
+          23
+        ]
+      ],
+      "sha256Copia": "DC08DA2FF91579E68DFD86E31BA862785548A6AE9E2D62A0054CC1489D17D265",
+      "original": "BB-05-01-filtros-combinados.png",
+      "sha256Original": "0F7E850E242F552BBBAB20C505D109017F97B933C1420ABCFCEDC6BD32477A8A"
+    },
+    {
+      "pixelesFueraDeOcultacionesIdenticos": true,
+      "copia": "BB-06-01-sin-resultados-depurada.png",
+      "rectangulosOpacos": [
+        [
+          1690,
+          58,
+          49,
+          52
+        ],
+        [
+          1740,
+          64,
+          145,
+          22
+        ]
+      ],
+      "sha256Copia": "5DDF1830FF9383AA7EB66ED16EA260CD4D81411B5BF2D2C742671FA60CB06F91",
+      "original": "BB-06-01-sin-resultados.png",
+      "sha256Original": "C02313B7FAC6530F6E2F186545F862142F39BA738230A23E01FBD030265C4D55"
+    },
+    {
+      "pixelesFueraDeOcultacionesIdenticos": true,
+      "copia": "BB-11-01-catalogo-vendedor-depurada.png",
+      "rectangulosOpacos": [
+        [
+          1678,
+          16,
+          48,
+          49
+        ],
+        [
+          1728,
+          23,
+          140,
+          23
+        ],
+        [
+          424,
+          334,
+          1110,
+          638
+        ]
+      ],
+      "sha256Copia": "47B88BC230A920C75A02BD2C90D26D7E3CAA9B7D720A060B0E366BE853DA2D59",
+      "original": "BB-11-01-catalogo-vendedor.png",
+      "sha256Original": "B873FF9591E7799241D8C194F9BB242D097E64B8479C2C9C62F475493135AEEC"
+    },
+    {
+      "pixelesFueraDeOcultacionesIdenticos": true,
+      "copia": "BB-11-02-acceso-denegado-depurada.png",
+      "rectangulosOpacos": [
+        [
+          1675,
+          59,
+          49,
+          52
+        ],
+        [
+          1729,
+          65,
+          137,
+          24
+        ],
+        [
+          415,
+          169,
+          145,
+          37
+        ],
+        [
+          345,
+          242,
+          1550,
+          766
+        ]
+      ],
+      "sha256Copia": "AFA3B736C1FF884E2F325AB8E518F82C25E9309281F74B178D202FF8D77D4715",
+      "original": "BB-11-02-acceso-denegado.png",
+      "sha256Original": "CAB4A5E6DF7EA9FB5B965FB0F0156B5B8F0E2E03CB06BCEECFD462871E00A322"
+    }
+  ],
+  "aprobacionCasos": "PENDIENTE de comprobar suficiencia y pasos manuales",
+  "metodo": "Ocultaciones negras opacas. Sin reconstrucción, reemplazo de datos ni alteración de URL o mensajes. Copias sin ocultación conservadas byte por byte. Originales intactos comprobados mediante SHA-256."
+}

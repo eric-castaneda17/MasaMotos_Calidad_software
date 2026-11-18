@@ -1,0 +1,22 @@
+{
+  "fecha": "2026-11-18",
+  "procedencia": "Transcripción depurada de la consulta de solo lectura realizada en esta conversación durante el diagnóstico previo a Fase 5.",
+  "nuevaEjecucionEnFase5": false,
+  "operacion": "auth.admin.getUserById",
+  "destinoAcademicoValidado": true,
+  "variableAdministrativaPresente": true,
+  "resultado": {
+    "http": 401,
+    "categoria": "credencial rechazada"
+  },
+  "cuentasQA": {
+    "administradorExisteYActivo": true,
+    "vendedorExisteYActivo": true
+  },
+  "limites": "No se incluyen correos, UUID, tokens, contraseñas, claves ni hashes de contraseña. No se verificó la contraseña intentada por el usuario ni si su operación anterior fue parcial.",
+  "respaldoEstático": [
+    "src/lib/supabase/admin.ts",
+    "src/lib/actions/users.ts"
+  ],
+  "retest": "PENDIENTE tras corregir configuración. No se repitió la consulta remota en Fase 5."
+}
