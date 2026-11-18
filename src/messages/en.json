@@ -1,0 +1,730 @@
+{
+  "common": {
+    "appName": "MASA MOTOS",
+    "appTagline": "Motorcycle parts and accessories",
+    "home": "Home",
+    "save": "Save",
+    "saving": "Saving…",
+    "saveChanges": "Save changes",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
+    "close": "Close",
+    "create": "Create",
+    "new": "New",
+    "search": "Search",
+    "filter": "Filter",
+    "clearFilters": "Clear filters",
+    "actions": "Actions",
+    "back": "Back",
+    "view": "View",
+    "details": "View details",
+    "yes": "Yes",
+    "no": "No",
+    "confirm": "Confirm",
+    "loading": "Loading…",
+    "all": "All",
+    "active": "Active",
+    "inactive": "Inactive",
+    "activate": "Activate",
+    "deactivate": "Deactivate",
+    "status": "Status",
+    "optional": "Optional",
+    "export": "Export",
+    "exportCsv": "Export CSV",
+    "print": "Print",
+    "downloadPdf": "Download PDF",
+    "previous": "Previous",
+    "next": "Next",
+    "pageOf": "Page {page} of {total}",
+    "showing": "Showing {from}–{to} of {total}",
+    "select": "Select…",
+    "none": "None",
+    "notes": "Notes",
+    "date": "Date",
+    "total": "Total",
+    "from": "From",
+    "to": "To",
+    "apply": "Apply",
+    "units": "{count, plural, =1 {# unit} other {# units}}",
+    "noData": "No data to display",
+    "emptyTitle": "No records",
+    "emptySearch": "No results match your search.",
+    "required": "Required",
+    "copyright": "© {year} MASA MOTOS. All rights reserved."
+  },
+  "nav": {
+    "groups": {
+      "operation": "Operations",
+      "management": "Management",
+      "administration": "Administration"
+    },
+    "items": {
+      "dashboard": "Dashboard",
+      "newSale": "New sale",
+      "sales": "Sales",
+      "invoices": "Invoices",
+      "products": "Products",
+      "inventory": "Inventory",
+      "categories": "Categories",
+      "customers": "Customers",
+      "suppliers": "Suppliers",
+      "reports": "Reports",
+      "users": "Users",
+      "settings": "Settings",
+      "profile": "My profile"
+    }
+  },
+  "header": {
+    "toggleSidebar": "Show or hide menu",
+    "toggleTheme": "Toggle light or dark theme",
+    "toggleMenu": "More options",
+    "searchPlaceholder": "Search parts by name or code…",
+    "language": "Language",
+    "changeLanguage": "Change language",
+    "notifications": {
+      "title": "Inventory alerts",
+      "empty": "No alerts. Inventory is in good shape.",
+      "lowStock": "Low stock: {stock} of minimum {min}",
+      "outOfStock": "Out of stock",
+      "viewAll": "View low-stock products"
+    }
+  },
+  "userDropdown": {
+    "profile": "My profile",
+    "settings": "Settings",
+    "signOut": "Sign out"
+  },
+  "roles": {
+    "ADMIN": "Administrator",
+    "SELLER": "Salesperson"
+  },
+  "auth": {
+    "title": "Sign in",
+    "subtitle": "Enter your email and password to access the system.",
+    "email": "Email",
+    "emailPlaceholder": "user@masamotos.com",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "submit": "Sign in",
+    "submitting": "Signing in…",
+    "brandTitle": "Sales and inventory system",
+    "brandText": "Manage MASA MOTOS parts, sales, invoicing and customers from a single place."
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Real-time business overview",
+    "greeting": "Hello, {name}",
+    "metrics": {
+      "totalProducts": "Registered products",
+      "available": "Available",
+      "lowStock": "Low stock",
+      "outOfStock": "Out of stock",
+      "salesToday": "Today's sales",
+      "salesMonth": "This month's sales",
+      "totalRevenue": "Total revenue",
+      "invoices": "Invoices issued",
+      "salesCount": "{count, plural, =0 {no sales} =1 {# sale} other {# sales}}",
+      "activeProducts": "active products",
+      "needRestock": "need restocking",
+      "withoutStock": "with no stock",
+      "withStock": "with enough stock",
+      "historical": "all-time total",
+      "issued": "issued in total"
+    },
+    "charts": {
+      "dailyTitle": "Sales by day",
+      "dailySubtitle": "Last 30 days",
+      "monthlyTitle": "Sales by month",
+      "monthlySubtitle": "Last 12 months",
+      "revenue": "Revenue",
+      "salesCount": "Sales",
+      "daily": "Daily",
+      "monthly": "Monthly"
+    },
+    "topProducts": {
+      "title": "Best-selling products",
+      "units": "Units",
+      "revenue": "Revenue",
+      "empty": "No sales have been recorded yet."
+    },
+    "recentMovements": {
+      "title": "Latest inventory movements",
+      "empty": "No movements have been recorded yet.",
+      "viewAll": "View history"
+    },
+    "lowStock": {
+      "title": "Inventory alerts",
+      "empty": "All products have enough stock.",
+      "viewAll": "View all"
+    },
+    "quickActions": {
+      "newSale": "New sale",
+      "newProduct": "New product",
+      "registerEntry": "Register stock entry"
+    }
+  },
+  "products": {
+    "title": "Products",
+    "subtitle": "Parts and accessories catalog",
+    "new": "New product",
+    "edit": "Edit product",
+    "detail": "Product details",
+    "sections": {
+      "general": "General information",
+      "pricing": "Pricing",
+      "inventory": "Inventory",
+      "image": "Product image"
+    },
+    "fields": {
+      "code": "Code / reference",
+      "name": "Part name",
+      "description": "Description",
+      "category": "Category",
+      "brand": "Brand",
+      "compatibleModel": "Compatible motorcycle model",
+      "purchasePrice": "Purchase price",
+      "salePrice": "Sale price",
+      "margin": "Margin",
+      "stock": "Stock",
+      "initialStock": "Initial stock",
+      "minStock": "Minimum stock",
+      "supplier": "Supplier",
+      "image": "Image",
+      "status": "Status",
+      "active": "Active product (available for sale)",
+      "updatedAt": "Last updated"
+    },
+    "placeholders": {
+      "code": "e.g. PAS-BWS-125",
+      "name": "e.g. Front brake pads",
+      "description": "Technical details, material, packaging…",
+      "brand": "e.g. Yamaha, Honda, Generic",
+      "compatibleModel": "e.g. Yamaha BWS 125, NMAX 155"
+    },
+    "hints": {
+      "initialStock": "Units the product starts with in inventory.",
+      "minStock": "An alert is raised when stock reaches this value.",
+      "image": "JPG, PNG or WEBP. 2 MB max.",
+      "stockReadonly": "Stock is changed from Inventory through entries, exits or adjustments."
+    },
+    "filters": {
+      "searchPlaceholder": "Search by name, code or model…",
+      "allCategories": "All categories",
+      "allBrands": "All brands",
+      "allStatuses": "All statuses",
+      "sortBy": "Sort by"
+    },
+    "sort": {
+      "name_asc": "Name (A–Z)",
+      "name_desc": "Name (Z–A)",
+      "code_asc": "Code",
+      "price_asc": "Price: low to high",
+      "price_desc": "Price: high to low",
+      "stock_asc": "Stock: low to high",
+      "stock_desc": "Stock: high to low",
+      "recent": "Most recent"
+    },
+    "stockStatus": {
+      "available": "Available",
+      "low": "Low stock",
+      "out": "Out of stock",
+      "inactive": "Inactive"
+    },
+    "noSupplier": "No supplier",
+    "noImage": "No image",
+    "removeImage": "Remove image",
+    "changeImage": "Change image",
+    "selectImage": "Select image",
+    "empty": "No products have been registered yet.",
+    "emptyAction": "Register the first product",
+    "confirmDeactivateTitle": "Deactivate product?",
+    "confirmDeactivate": "“{name}” will no longer appear at the point of sale. Its history is kept and you can reactivate it at any time.",
+    "confirmDeleteTitle": "Permanently delete product?",
+    "confirmDelete": "“{name}” will be deleted. This cannot be undone. Only possible if the product has no sales or movements.",
+    "salesStats": {
+      "unitsSold": "Units sold",
+      "revenue": "Revenue generated"
+    },
+    "movementsTitle": "Movement history",
+    "registerMovement": "Register movement",
+    "stockAlert": "This product is below its minimum stock.",
+    "outAlert": "This product is out of stock and cannot be sold.",
+    "minShort": "min. {min}"
+  },
+  "inventory": {
+    "title": "Inventory",
+    "subtitle": "Stock entries, exits, adjustments and movement history",
+    "registerMovement": "Register movement",
+    "types": {
+      "ENTRY": "Entry",
+      "EXIT": "Exit",
+      "SALE": "Sale",
+      "VOID": "Void",
+      "ADJUSTMENT": "Adjustment"
+    },
+    "typeHelp": {
+      "ENTRY": "Adds units (supplier purchase, customer return).",
+      "EXIT": "Removes units (damage, loss, return to supplier).",
+      "ADJUSTMENT": "Sets stock to the physically counted value."
+    },
+    "fields": {
+      "product": "Product",
+      "type": "Movement type",
+      "quantity": "Quantity",
+      "countedStock": "Counted stock",
+      "reason": "Reason / note",
+      "date": "Date",
+      "user": "User",
+      "before": "Before",
+      "after": "After",
+      "reference": "Reference"
+    },
+    "reasons": {
+      "initialStock": "Initial stock"
+    },
+    "placeholders": {
+      "reason": "e.g. Purchase invoice #123 from Distrimotos"
+    },
+    "currentStock": "Current stock: {stock}",
+    "resultingStock": "Resulting stock: {stock}",
+    "negativeWarning": "This operation would leave negative stock.",
+    "filters": {
+      "allTypes": "All types",
+      "searchPlaceholder": "Search by product or code…"
+    },
+    "empty": "No movements match the selected filters.",
+    "summary": {
+      "lowStock": "Low-stock products",
+      "outOfStock": "Out-of-stock products"
+    }
+  },
+  "categories": {
+    "title": "Categories",
+    "subtitle": "Parts classification",
+    "new": "New category",
+    "edit": "Edit category",
+    "fields": {
+      "name": "Name",
+      "description": "Description",
+      "active": "Active category",
+      "products": "Products"
+    },
+    "placeholders": {
+      "name": "e.g. Brakes",
+      "description": "Short description of the category"
+    },
+    "searchPlaceholder": "Search category…",
+    "empty": "No categories registered.",
+    "confirmDeleteTitle": "Delete category?",
+    "confirmDelete": "The category “{name}” will be deleted. Only possible if it has no related products."
+  },
+  "customers": {
+    "title": "Customers",
+    "subtitle": "Customer registration and lookup",
+    "new": "New customer",
+    "edit": "Edit customer",
+    "detail": "Customer details",
+    "fields": {
+      "fullName": "Full name",
+      "documentType": "Document type",
+      "documentNumber": "ID number",
+      "document": "ID",
+      "phone": "Phone",
+      "email": "Email",
+      "address": "Address",
+      "purchases": "Purchases",
+      "totalSpent": "Total spent",
+      "lastPurchase": "Last purchase",
+      "since": "Customer since"
+    },
+    "placeholders": {
+      "fullName": "e.g. John Smith",
+      "documentNumber": "e.g. 1075234567",
+      "phone": "e.g. 310 555 1234",
+      "email": "customer@email.com",
+      "address": "e.g. 8th Street # 5-20, Neiva"
+    },
+    "documentTypes": {
+      "CC": "Citizenship ID",
+      "CE": "Foreigner ID",
+      "NIT": "Tax ID (NIT)",
+      "PP": "Passport",
+      "TI": "Minor's ID"
+    },
+    "searchPlaceholder": "Search by name, ID, email or phone…",
+    "empty": "No customers registered.",
+    "purchaseHistory": "Purchase history",
+    "noPurchases": "This customer has no purchases yet.",
+    "confirmDeleteTitle": "Delete customer?",
+    "confirmDelete": "“{name}” will be deleted. Only possible if they have no recorded purchases."
+  },
+  "suppliers": {
+    "title": "Suppliers",
+    "subtitle": "Parts suppliers and their contact information",
+    "new": "New supplier",
+    "edit": "Edit supplier",
+    "detail": "Supplier details",
+    "fields": {
+      "name": "Company name",
+      "taxId": "Tax ID (NIT)",
+      "contactName": "Contact person",
+      "phone": "Phone",
+      "email": "Email",
+      "address": "Address",
+      "city": "City",
+      "active": "Active supplier",
+      "products": "Products"
+    },
+    "placeholders": {
+      "name": "e.g. Parts Distributor Inc.",
+      "taxId": "e.g. 900123456-7",
+      "contactName": "e.g. Laura Mendez",
+      "city": "e.g. Neiva"
+    },
+    "searchPlaceholder": "Search by name, tax ID, contact or city…",
+    "empty": "No suppliers registered.",
+    "productsTitle": "Supplied products",
+    "noProducts": "This supplier has no related products.",
+    "contactInfo": "Contact information",
+    "confirmDeleteTitle": "Delete supplier?",
+    "confirmDelete": "“{name}” will be deleted. Only possible if it has no related products."
+  },
+  "pos": {
+    "title": "New sale",
+    "subtitle": "Point of sale",
+    "searchPlaceholder": "Search product by name, code, brand or model…",
+    "searchHint": "Type to search. Press Enter to add the first result.",
+    "noResults": "No active products found.",
+    "add": "Add",
+    "available": "{stock} avail.",
+    "outOfStock": "Out of stock",
+    "stockLimit": "Only {stock} units of {product} are available.",
+    "cart": {
+      "title": "Cart",
+      "empty": "The cart is empty",
+      "emptyHint": "Search for products and add them to start the sale.",
+      "product": "Product",
+      "quantity": "Quantity",
+      "unitPrice": "Unit price",
+      "subtotal": "Subtotal",
+      "remove": "Remove",
+      "clear": "Clear cart",
+      "increase": "Increase quantity",
+      "decrease": "Decrease quantity",
+      "items": "{count, plural, =1 {# product} other {# products}}"
+    },
+    "customer": {
+      "title": "Customer",
+      "searchPlaceholder": "Search customer by name or ID…",
+      "change": "Change",
+      "new": "Register customer",
+      "required": "Select or register a customer.",
+      "noResults": "Customer not found."
+    },
+    "payment": {
+      "title": "Payment",
+      "method": "Payment method",
+      "amountReceived": "Cash received",
+      "change": "Change due"
+    },
+    "discount": {
+      "title": "Discount",
+      "percent": "%",
+      "amount": "$",
+      "percentLabel": "Percentage",
+      "amountLabel": "Fixed amount"
+    },
+    "summary": {
+      "subtotal": "Subtotal",
+      "discount": "Discount",
+      "tax": "VAT ({rate}%)",
+      "taxDisabled": "No tax applied",
+      "total": "Total due"
+    },
+    "notesPlaceholder": "Sale notes (optional)",
+    "confirm": "Confirm sale",
+    "confirming": "Recording sale…",
+    "confirmTitle": "Confirm the sale?",
+    "confirmMessage": "A sale of {total} will be recorded for {customer}, inventory will be updated and the invoice will be generated.",
+    "successTitle": "Sale recorded!",
+    "successMessage": "Invoice {number} was generated.",
+    "viewInvoice": "View invoice",
+    "newSale": "New sale"
+  },
+  "paymentMethods": {
+    "CASH": "Cash",
+    "TRANSFER": "Bank transfer",
+    "CARD": "Debit / credit card"
+  },
+  "sales": {
+    "title": "Sales",
+    "subtitle": "History of recorded sales",
+    "fields": {
+      "invoice": "Invoice",
+      "date": "Date",
+      "customer": "Customer",
+      "seller": "Salesperson",
+      "paymentMethod": "Payment method",
+      "items": "Items",
+      "total": "Total",
+      "status": "Status"
+    },
+    "status": {
+      "COMPLETED": "Completed",
+      "VOIDED": "Voided"
+    },
+    "allStatuses": "All statuses",
+    "searchPlaceholder": "Search by invoice, customer or ID…",
+    "empty": "No sales match the selected filters.",
+    "void": {
+      "button": "Void sale",
+      "title": "Void this sale?",
+      "message": "The sale will be voided and the sold units will return to inventory. This cannot be undone.",
+      "reason": "Reason for voiding",
+      "reasonPlaceholder": "e.g. Wrong product invoiced",
+      "confirm": "Yes, void sale"
+    }
+  },
+  "invoices": {
+    "title": "Invoices",
+    "subtitle": "Look up, print and download invoices",
+    "searchPlaceholder": "Search by invoice number, customer or ID…",
+    "empty": "No invoices match the selected filters.",
+    "documentTitle": "Sales invoice",
+    "number": "No.",
+    "issuedAt": "Issue date",
+    "billTo": "Customer",
+    "seller": "Served by",
+    "code": "Code",
+    "description": "Description",
+    "quantity": "Qty",
+    "unitPrice": "Unit price",
+    "amount": "Amount",
+    "subtotal": "Subtotal",
+    "discount": "Discount",
+    "tax": "VAT ({rate}%)",
+    "total": "Total due",
+    "paymentMethod": "Payment method",
+    "amountReceived": "Received",
+    "change": "Change",
+    "notes": "Notes",
+    "thanks": "Thank you for your purchase!",
+    "legalNotice": "Document generated by the MASA MOTOS internal system. It is not an electronic sales invoice validated by DIAN (Colombian tax authority).",
+    "voided": "VOIDED",
+    "voidReason": "Void reason: {reason}",
+    "nit": "Tax ID {value}",
+    "phone": "Phone {value}",
+    "back": "Back to invoices",
+    "generatingPdf": "Generating PDF…"
+  },
+  "reports": {
+    "title": "Reports",
+    "subtitle": "Sales, product and inventory analysis",
+    "range": {
+      "from": "From",
+      "to": "To",
+      "apply": "Run report",
+      "presets": {
+        "today": "Today",
+        "last7": "Last 7 days",
+        "last30": "Last 30 days",
+        "thisMonth": "This month",
+        "thisYear": "This year"
+      },
+      "period": "Period: {from} – {to}"
+    },
+    "summary": {
+      "revenue": "Revenue for the period",
+      "sales": "Sales made",
+      "averageTicket": "Average ticket",
+      "units": "Units sold",
+      "discounts": "Discounts granted",
+      "taxes": "Taxes collected"
+    },
+    "salesByDay": "Sales by day",
+    "salesByMonth": "Sales by month",
+    "topProducts": "Best-selling products",
+    "lowStock": "Low-inventory products",
+    "byPaymentMethod": "Revenue by payment method",
+    "history": "Sales history",
+    "export": {
+      "sales": "Sales (CSV)",
+      "products": "Best sellers (CSV)",
+      "lowStock": "Low inventory (CSV)",
+      "daily": "Sales by day (CSV)"
+    },
+    "csv": {
+      "day": "Date",
+      "month": "Month",
+      "count": "Sales",
+      "total": "Total"
+    }
+  },
+  "users": {
+    "title": "Users",
+    "subtitle": "System accounts and roles",
+    "new": "New user",
+    "edit": "Edit user",
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "role": "Role",
+      "password": "Password",
+      "newPassword": "New password",
+      "active": "Active user",
+      "lastLogin": "Last sign-in",
+      "sales": "Sales"
+    },
+    "hints": {
+      "password": "At least 8 characters, with letters and numbers.",
+      "passwordEdit": "Leave blank to keep the current password."
+    },
+    "never": "Never",
+    "you": "You",
+    "searchPlaceholder": "Search by name or email…",
+    "empty": "No users.",
+    "roleDescriptions": {
+      "ADMIN": "Full access: products, inventory, users, suppliers, sales and reports.",
+      "SELLER": "Records sales, looks up products, manages customers and issues invoices."
+    },
+    "confirmDeactivateTitle": "Deactivate user?",
+    "confirmDeactivate": "“{name}” will not be able to sign in until reactivated."
+  },
+  "settings": {
+    "title": "Settings",
+    "subtitle": "Company details, taxes, invoicing and payment methods",
+    "company": {
+      "title": "Company details",
+      "name": "Trade name",
+      "taxId": "Tax ID (NIT)",
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email"
+    },
+    "billing": {
+      "title": "Taxes and invoicing",
+      "taxEnabled": "Apply tax (VAT) to sales",
+      "taxRate": "VAT rate (%)",
+      "invoicePrefix": "Invoice prefix",
+      "nextNumber": "Next sequence number: {number}",
+      "footer": "Invoice footer text",
+      "footerPlaceholder": "e.g. 30-day warranty on electrical parts with invoice.",
+      "dianNotice": "Invoices are internal system documents. Electronic invoicing with DIAN requires integrating an authorized technology provider."
+    },
+    "paymentMethods": {
+      "title": "Payment methods",
+      "subtitle": "Payment options available at the point of sale",
+      "new": "New method",
+      "edit": "Edit payment method",
+      "name": "Name",
+      "active": "Available at the point of sale",
+      "placeholder": "e.g. Nequi, Daviplata"
+    }
+  },
+  "profile": {
+    "title": "My profile",
+    "info": {
+      "title": "Personal information",
+      "name": "Name",
+      "email": "Email",
+      "role": "Role"
+    },
+    "password": {
+      "title": "Change password",
+      "current": "Current password",
+      "new": "New password",
+      "confirm": "Confirm new password",
+      "submit": "Update password"
+    }
+  },
+  "validation": {
+    "required": "This field is required.",
+    "tooLong": "The text is too long.",
+    "invalidEmail": "Enter a valid email address.",
+    "invalidPhone": "Enter a valid phone number (7 to 20 digits).",
+    "invalidNumber": "Enter a valid number.",
+    "nonNegative": "The value cannot be negative.",
+    "positive": "The value must be greater than zero.",
+    "integer": "Must be a whole number.",
+    "tooLarge": "The value is too large.",
+    "invalidCode": "Use only letters, numbers, hyphens or dots.",
+    "invalidDocument": "Invalid ID number.",
+    "salePriceBelowCost": "The sale price cannot be lower than the purchase price.",
+    "passwordMin": "The password must be at least 8 characters long.",
+    "passwordWeak": "The password must combine letters and numbers.",
+    "passwordMismatch": "Passwords do not match.",
+    "emptyCart": "Add at least one product."
+  },
+  "errors": {
+    "generic": "An unexpected error occurred. Please try again.",
+    "validation": "Please review the highlighted fields.",
+    "unauthorized": "Your session has expired. Please sign in again.",
+    "forbidden": "You don't have permission to perform this action.",
+    "notFound": "The record does not exist or was deleted.",
+    "duplicate": "A record with that data already exists.",
+    "duplicateCode": "A product with this code already exists.",
+    "duplicateCategory": "A category with this name already exists.",
+    "duplicateDocument": "A customer with this ID already exists.",
+    "duplicateTaxId": "A supplier with this tax ID already exists.",
+    "duplicateEmail": "A user with this email already exists.",
+    "duplicatePaymentMethod": "A payment method with this name already exists.",
+    "insufficientStock": "Insufficient stock for “{product}” (available: {available}).",
+    "productInactive": "The product “{product}” is inactive.",
+    "inUse": "Cannot delete because it has related records.",
+    "invalidCredentials": "Incorrect email or password.",
+    "inactiveUser": "Your user is deactivated. Contact the administrator.",
+    "emptyCart": "The cart is empty.",
+    "imageTooLarge": "The image exceeds the 2 MB size limit.",
+    "imageType": "Image format not allowed (use JPG, PNG or WEBP).",
+    "cannotDemoteSelf": "You cannot deactivate your own user or remove your own administrator role.",
+    "lastAdmin": "There must be at least one active administrator.",
+    "alreadyVoided": "The sale was already voided.",
+    "productHasHistory": "The product has sales or movements; deactivate it instead of deleting it.",
+    "categoryInUse": "The category has {count} related products.",
+    "customerHasSales": "The customer has {count} recorded purchases.",
+    "supplierInUse": "The supplier has {count} related products.",
+    "wrongPassword": "The current password is incorrect.",
+    "customerRequired": "Select a valid customer.",
+    "paymentMethodRequired": "Select an available payment method.",
+    "amountReceivedTooLow": "The amount received is less than the total.",
+    "noStockChange": "This movement doesn't change the stock.",
+    "loadFailed": "The information could not be loaded.",
+    "stockViaMovements": "Stock can only be changed through inventory movements."
+  },
+  "toast": {
+    "productCreated": "Product registered successfully.",
+    "productUpdated": "Product updated successfully.",
+    "productDeactivated": "Product deactivated.",
+    "productActivated": "Product activated.",
+    "productDeleted": "Product deleted.",
+    "movementRegistered": "Inventory movement recorded.",
+    "categoryCreated": "Category created.",
+    "categoryUpdated": "Category updated.",
+    "categoryDeleted": "Category deleted.",
+    "customerCreated": "Customer registered.",
+    "customerUpdated": "Customer updated.",
+    "customerDeleted": "Customer deleted.",
+    "supplierCreated": "Supplier registered.",
+    "supplierUpdated": "Supplier updated.",
+    "supplierDeleted": "Supplier deleted.",
+    "saleCreated": "Sale recorded and invoice generated.",
+    "saleVoided": "Sale voided. Inventory was restored.",
+    "userCreated": "User created.",
+    "userUpdated": "User updated.",
+    "userActivated": "User activated.",
+    "userDeactivated": "User deactivated.",
+    "profileUpdated": "Profile updated.",
+    "passwordChanged": "Password updated.",
+    "settingsSaved": "Settings saved.",
+    "paymentMethodSaved": "Payment method saved.",
+    "languageChanged": "Language changed to English."
+  },
+  "notFound": {
+    "error": "ERROR",
+    "message": "We can't find the page you're looking for.",
+    "backHome": "Back to home"
+  }
+}

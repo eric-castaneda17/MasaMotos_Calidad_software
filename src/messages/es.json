@@ -1,0 +1,730 @@
+{
+  "common": {
+    "appName": "MASA MOTOS",
+    "appTagline": "Repuestos y accesorios para motocicletas",
+    "home": "Inicio",
+    "save": "Guardar",
+    "saving": "Guardando…",
+    "saveChanges": "Guardar cambios",
+    "cancel": "Cancelar",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "close": "Cerrar",
+    "create": "Crear",
+    "new": "Nuevo",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "clearFilters": "Limpiar filtros",
+    "actions": "Acciones",
+    "back": "Volver",
+    "view": "Ver",
+    "details": "Ver detalle",
+    "yes": "Sí",
+    "no": "No",
+    "confirm": "Confirmar",
+    "loading": "Cargando…",
+    "all": "Todos",
+    "active": "Activo",
+    "inactive": "Inactivo",
+    "activate": "Activar",
+    "deactivate": "Desactivar",
+    "status": "Estado",
+    "optional": "Opcional",
+    "export": "Exportar",
+    "exportCsv": "Exportar CSV",
+    "print": "Imprimir",
+    "downloadPdf": "Descargar PDF",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "pageOf": "Página {page} de {total}",
+    "showing": "Mostrando {from}–{to} de {total}",
+    "select": "Seleccione…",
+    "none": "Ninguno",
+    "notes": "Notas",
+    "date": "Fecha",
+    "total": "Total",
+    "from": "Desde",
+    "to": "Hasta",
+    "apply": "Aplicar",
+    "units": "{count, plural, =1 {# unidad} other {# unidades}}",
+    "noData": "Sin datos para mostrar",
+    "emptyTitle": "No hay registros",
+    "emptySearch": "No se encontraron resultados para su búsqueda.",
+    "required": "Obligatorio",
+    "copyright": "© {year} MASA MOTOS. Todos los derechos reservados."
+  },
+  "nav": {
+    "groups": {
+      "operation": "Operación",
+      "management": "Gestión",
+      "administration": "Administración"
+    },
+    "items": {
+      "dashboard": "Panel principal",
+      "newSale": "Nueva venta",
+      "sales": "Ventas",
+      "invoices": "Facturas",
+      "products": "Productos",
+      "inventory": "Inventario",
+      "categories": "Categorías",
+      "customers": "Clientes",
+      "suppliers": "Proveedores",
+      "reports": "Reportes",
+      "users": "Usuarios",
+      "settings": "Configuración",
+      "profile": "Mi perfil"
+    }
+  },
+  "header": {
+    "toggleSidebar": "Mostrar u ocultar menú",
+    "toggleTheme": "Cambiar tema claro u oscuro",
+    "toggleMenu": "Más opciones",
+    "searchPlaceholder": "Buscar repuesto por nombre o código…",
+    "language": "Idioma",
+    "changeLanguage": "Cambiar idioma",
+    "notifications": {
+      "title": "Alertas de inventario",
+      "empty": "No hay alertas. El inventario está en orden.",
+      "lowStock": "Stock bajo: {stock} de mínimo {min}",
+      "outOfStock": "Agotado",
+      "viewAll": "Ver productos con stock bajo"
+    }
+  },
+  "userDropdown": {
+    "profile": "Mi perfil",
+    "settings": "Configuración",
+    "signOut": "Cerrar sesión"
+  },
+  "roles": {
+    "ADMIN": "Administrador",
+    "SELLER": "Vendedor"
+  },
+  "auth": {
+    "title": "Iniciar sesión",
+    "subtitle": "Ingrese su correo y contraseña para acceder al sistema.",
+    "email": "Correo electrónico",
+    "emailPlaceholder": "usuario@masamotos.com",
+    "password": "Contraseña",
+    "passwordPlaceholder": "Ingrese su contraseña",
+    "showPassword": "Mostrar contraseña",
+    "hidePassword": "Ocultar contraseña",
+    "submit": "Ingresar",
+    "submitting": "Ingresando…",
+    "brandTitle": "Sistema de ventas e inventario",
+    "brandText": "Gestione repuestos, ventas, facturación y clientes de MASA MOTOS desde un solo lugar."
+  },
+  "dashboard": {
+    "title": "Panel principal",
+    "subtitle": "Resumen del negocio en tiempo real",
+    "greeting": "Hola, {name}",
+    "metrics": {
+      "totalProducts": "Productos registrados",
+      "available": "Disponibles",
+      "lowStock": "Stock bajo",
+      "outOfStock": "Agotados",
+      "salesToday": "Ventas del día",
+      "salesMonth": "Ventas del mes",
+      "totalRevenue": "Ingresos totales",
+      "invoices": "Facturas generadas",
+      "salesCount": "{count, plural, =0 {sin ventas} =1 {# venta} other {# ventas}}",
+      "activeProducts": "productos activos",
+      "needRestock": "requieren reposición",
+      "withoutStock": "sin existencias",
+      "withStock": "con stock suficiente",
+      "historical": "histórico acumulado",
+      "issued": "emitidas en total"
+    },
+    "charts": {
+      "dailyTitle": "Ventas por día",
+      "dailySubtitle": "Últimos 30 días",
+      "monthlyTitle": "Ventas por mes",
+      "monthlySubtitle": "Últimos 12 meses",
+      "revenue": "Ingresos",
+      "salesCount": "Ventas",
+      "daily": "Diario",
+      "monthly": "Mensual"
+    },
+    "topProducts": {
+      "title": "Productos más vendidos",
+      "units": "Unidades",
+      "revenue": "Ingresos",
+      "empty": "Aún no hay ventas registradas."
+    },
+    "recentMovements": {
+      "title": "Últimos movimientos de inventario",
+      "empty": "Aún no hay movimientos registrados.",
+      "viewAll": "Ver historial"
+    },
+    "lowStock": {
+      "title": "Alertas de inventario",
+      "empty": "Todos los productos tienen stock suficiente.",
+      "viewAll": "Ver todos"
+    },
+    "quickActions": {
+      "newSale": "Nueva venta",
+      "newProduct": "Nuevo producto",
+      "registerEntry": "Registrar entrada"
+    }
+  },
+  "products": {
+    "title": "Productos",
+    "subtitle": "Catálogo de repuestos y accesorios",
+    "new": "Nuevo producto",
+    "edit": "Editar producto",
+    "detail": "Detalle del producto",
+    "sections": {
+      "general": "Información general",
+      "pricing": "Precios",
+      "inventory": "Inventario",
+      "image": "Imagen del producto"
+    },
+    "fields": {
+      "code": "Código / referencia",
+      "name": "Nombre del repuesto",
+      "description": "Descripción",
+      "category": "Categoría",
+      "brand": "Marca",
+      "compatibleModel": "Modelo de moto compatible",
+      "purchasePrice": "Precio de compra",
+      "salePrice": "Precio de venta",
+      "margin": "Margen",
+      "stock": "Existencias",
+      "initialStock": "Stock inicial",
+      "minStock": "Stock mínimo",
+      "supplier": "Proveedor",
+      "image": "Imagen",
+      "status": "Estado",
+      "active": "Producto activo (disponible para la venta)",
+      "updatedAt": "Última actualización"
+    },
+    "placeholders": {
+      "code": "Ej. PAS-BWS-125",
+      "name": "Ej. Pastillas de freno delanteras",
+      "description": "Detalles técnicos, material, presentación…",
+      "brand": "Ej. Yamaha, Honda, Genérico",
+      "compatibleModel": "Ej. Yamaha BWS 125, NMAX 155"
+    },
+    "hints": {
+      "initialStock": "Unidades con las que el producto ingresa al inventario.",
+      "minStock": "Se genera una alerta cuando las existencias lleguen a este valor.",
+      "image": "JPG, PNG o WEBP. Máximo 2 MB.",
+      "stockReadonly": "Las existencias se modifican desde Inventario mediante entradas, salidas o ajustes."
+    },
+    "filters": {
+      "searchPlaceholder": "Buscar por nombre, código o modelo…",
+      "allCategories": "Todas las categorías",
+      "allBrands": "Todas las marcas",
+      "allStatuses": "Todos los estados",
+      "sortBy": "Ordenar por"
+    },
+    "sort": {
+      "name_asc": "Nombre (A–Z)",
+      "name_desc": "Nombre (Z–A)",
+      "code_asc": "Código",
+      "price_asc": "Precio: menor a mayor",
+      "price_desc": "Precio: mayor a menor",
+      "stock_asc": "Existencias: menor a mayor",
+      "stock_desc": "Existencias: mayor a menor",
+      "recent": "Más recientes"
+    },
+    "stockStatus": {
+      "available": "Disponible",
+      "low": "Stock bajo",
+      "out": "Agotado",
+      "inactive": "Inactivo"
+    },
+    "noSupplier": "Sin proveedor",
+    "noImage": "Sin imagen",
+    "removeImage": "Quitar imagen",
+    "changeImage": "Cambiar imagen",
+    "selectImage": "Seleccionar imagen",
+    "empty": "Aún no hay productos registrados.",
+    "emptyAction": "Registre el primer producto",
+    "confirmDeactivateTitle": "¿Desactivar producto?",
+    "confirmDeactivate": "«{name}» dejará de aparecer en el punto de venta. Su historial se conserva y puede reactivarlo cuando quiera.",
+    "confirmDeleteTitle": "¿Eliminar producto definitivamente?",
+    "confirmDelete": "Se eliminará «{name}». Esta acción no se puede deshacer. Solo es posible si el producto no tiene ventas ni movimientos.",
+    "salesStats": {
+      "unitsSold": "Unidades vendidas",
+      "revenue": "Ingresos generados"
+    },
+    "movementsTitle": "Historial de movimientos",
+    "registerMovement": "Registrar movimiento",
+    "stockAlert": "Este producto está por debajo del stock mínimo.",
+    "outAlert": "Este producto está agotado y no puede venderse.",
+    "minShort": "mín. {min}"
+  },
+  "inventory": {
+    "title": "Inventario",
+    "subtitle": "Entradas, salidas, ajustes e historial de movimientos",
+    "registerMovement": "Registrar movimiento",
+    "types": {
+      "ENTRY": "Entrada",
+      "EXIT": "Salida",
+      "SALE": "Venta",
+      "VOID": "Anulación",
+      "ADJUSTMENT": "Ajuste"
+    },
+    "typeHelp": {
+      "ENTRY": "Suma unidades (compra a proveedor, devolución de cliente).",
+      "EXIT": "Resta unidades (daño, pérdida, devolución a proveedor).",
+      "ADJUSTMENT": "Fija las existencias al valor contado físicamente."
+    },
+    "fields": {
+      "product": "Producto",
+      "type": "Tipo de movimiento",
+      "quantity": "Cantidad",
+      "countedStock": "Existencias contadas",
+      "reason": "Motivo / observación",
+      "date": "Fecha",
+      "user": "Usuario",
+      "before": "Antes",
+      "after": "Después",
+      "reference": "Referencia"
+    },
+    "reasons": {
+      "initialStock": "Inventario inicial"
+    },
+    "placeholders": {
+      "reason": "Ej. Factura de compra #123 de Distrimotos"
+    },
+    "currentStock": "Existencias actuales: {stock}",
+    "resultingStock": "Existencias resultantes: {stock}",
+    "negativeWarning": "La operación dejaría existencias negativas.",
+    "filters": {
+      "allTypes": "Todos los tipos",
+      "searchPlaceholder": "Buscar por producto o código…"
+    },
+    "empty": "No hay movimientos para los filtros seleccionados.",
+    "summary": {
+      "lowStock": "Productos con stock bajo",
+      "outOfStock": "Productos agotados"
+    }
+  },
+  "categories": {
+    "title": "Categorías",
+    "subtitle": "Clasificación de los repuestos",
+    "new": "Nueva categoría",
+    "edit": "Editar categoría",
+    "fields": {
+      "name": "Nombre",
+      "description": "Descripción",
+      "active": "Categoría activa",
+      "products": "Productos"
+    },
+    "placeholders": {
+      "name": "Ej. Frenos",
+      "description": "Breve descripción de la categoría"
+    },
+    "searchPlaceholder": "Buscar categoría…",
+    "empty": "No hay categorías registradas.",
+    "confirmDeleteTitle": "¿Eliminar categoría?",
+    "confirmDelete": "Se eliminará la categoría «{name}». Solo es posible si no tiene productos asociados."
+  },
+  "customers": {
+    "title": "Clientes",
+    "subtitle": "Registro y consulta de clientes",
+    "new": "Nuevo cliente",
+    "edit": "Editar cliente",
+    "detail": "Detalle del cliente",
+    "fields": {
+      "fullName": "Nombre completo",
+      "documentType": "Tipo de documento",
+      "documentNumber": "Número de identificación",
+      "document": "Identificación",
+      "phone": "Teléfono",
+      "email": "Correo electrónico",
+      "address": "Dirección",
+      "purchases": "Compras",
+      "totalSpent": "Total comprado",
+      "lastPurchase": "Última compra",
+      "since": "Cliente desde"
+    },
+    "placeholders": {
+      "fullName": "Ej. Juan Pérez Gómez",
+      "documentNumber": "Ej. 1075234567",
+      "phone": "Ej. 310 555 1234",
+      "email": "cliente@correo.com",
+      "address": "Ej. Calle 8 # 5-20, Neiva"
+    },
+    "documentTypes": {
+      "CC": "Cédula de ciudadanía",
+      "CE": "Cédula de extranjería",
+      "NIT": "NIT",
+      "PP": "Pasaporte",
+      "TI": "Tarjeta de identidad"
+    },
+    "searchPlaceholder": "Buscar por nombre, documento, correo o teléfono…",
+    "empty": "No hay clientes registrados.",
+    "purchaseHistory": "Historial de compras",
+    "noPurchases": "Este cliente aún no tiene compras.",
+    "confirmDeleteTitle": "¿Eliminar cliente?",
+    "confirmDelete": "Se eliminará a «{name}». Solo es posible si no tiene compras registradas."
+  },
+  "suppliers": {
+    "title": "Proveedores",
+    "subtitle": "Proveedores de repuestos y su información de contacto",
+    "new": "Nuevo proveedor",
+    "edit": "Editar proveedor",
+    "detail": "Detalle del proveedor",
+    "fields": {
+      "name": "Razón social",
+      "taxId": "NIT",
+      "contactName": "Persona de contacto",
+      "phone": "Teléfono",
+      "email": "Correo electrónico",
+      "address": "Dirección",
+      "city": "Ciudad",
+      "active": "Proveedor activo",
+      "products": "Productos"
+    },
+    "placeholders": {
+      "name": "Ej. Distribuidora de Repuestos S.A.S.",
+      "taxId": "Ej. 900123456-7",
+      "contactName": "Ej. Laura Méndez",
+      "city": "Ej. Neiva"
+    },
+    "searchPlaceholder": "Buscar por nombre, NIT, contacto o ciudad…",
+    "empty": "No hay proveedores registrados.",
+    "productsTitle": "Productos suministrados",
+    "noProducts": "Este proveedor no tiene productos asociados.",
+    "contactInfo": "Información de contacto",
+    "confirmDeleteTitle": "¿Eliminar proveedor?",
+    "confirmDelete": "Se eliminará «{name}». Solo es posible si no tiene productos asociados."
+  },
+  "pos": {
+    "title": "Nueva venta",
+    "subtitle": "Punto de venta",
+    "searchPlaceholder": "Buscar producto por nombre, código, marca o modelo…",
+    "searchHint": "Escriba para buscar. Presione Enter para agregar el primer resultado.",
+    "noResults": "No se encontraron productos activos.",
+    "add": "Agregar",
+    "available": "{stock} disp.",
+    "outOfStock": "Agotado",
+    "stockLimit": "Solo hay {stock} unidades disponibles de {product}.",
+    "cart": {
+      "title": "Carrito",
+      "empty": "El carrito está vacío",
+      "emptyHint": "Busque productos y agréguelos para iniciar la venta.",
+      "product": "Producto",
+      "quantity": "Cantidad",
+      "unitPrice": "Precio unit.",
+      "subtotal": "Subtotal",
+      "remove": "Quitar",
+      "clear": "Vaciar carrito",
+      "increase": "Aumentar cantidad",
+      "decrease": "Disminuir cantidad",
+      "items": "{count, plural, =1 {# producto} other {# productos}}"
+    },
+    "customer": {
+      "title": "Cliente",
+      "searchPlaceholder": "Buscar cliente por nombre o documento…",
+      "change": "Cambiar",
+      "new": "Registrar cliente",
+      "required": "Seleccione o registre un cliente.",
+      "noResults": "No se encontró el cliente."
+    },
+    "payment": {
+      "title": "Pago",
+      "method": "Método de pago",
+      "amountReceived": "Efectivo recibido",
+      "change": "Cambio a devolver"
+    },
+    "discount": {
+      "title": "Descuento",
+      "percent": "%",
+      "amount": "$",
+      "percentLabel": "Porcentaje",
+      "amountLabel": "Valor fijo"
+    },
+    "summary": {
+      "subtotal": "Subtotal",
+      "discount": "Descuento",
+      "tax": "IVA ({rate}%)",
+      "taxDisabled": "Impuesto no aplicado",
+      "total": "Total a pagar"
+    },
+    "notesPlaceholder": "Observaciones de la venta (opcional)",
+    "confirm": "Confirmar venta",
+    "confirming": "Registrando venta…",
+    "confirmTitle": "¿Confirmar la venta?",
+    "confirmMessage": "Se registrará la venta por {total} a nombre de {customer}, se descontará el inventario y se generará la factura.",
+    "successTitle": "¡Venta registrada!",
+    "successMessage": "Se generó la factura {number}.",
+    "viewInvoice": "Ver factura",
+    "newSale": "Nueva venta"
+  },
+  "paymentMethods": {
+    "CASH": "Efectivo",
+    "TRANSFER": "Transferencia",
+    "CARD": "Tarjeta débito / crédito"
+  },
+  "sales": {
+    "title": "Ventas",
+    "subtitle": "Historial de ventas registradas",
+    "fields": {
+      "invoice": "Factura",
+      "date": "Fecha",
+      "customer": "Cliente",
+      "seller": "Vendedor",
+      "paymentMethod": "Método de pago",
+      "items": "Ítems",
+      "total": "Total",
+      "status": "Estado"
+    },
+    "status": {
+      "COMPLETED": "Completada",
+      "VOIDED": "Anulada"
+    },
+    "allStatuses": "Todos los estados",
+    "searchPlaceholder": "Buscar por factura, cliente o documento…",
+    "empty": "No hay ventas para los filtros seleccionados.",
+    "void": {
+      "button": "Anular venta",
+      "title": "¿Anular esta venta?",
+      "message": "La venta quedará anulada y las unidades vendidas regresarán al inventario. Esta acción no se puede deshacer.",
+      "reason": "Motivo de la anulación",
+      "reasonPlaceholder": "Ej. Error en el producto facturado",
+      "confirm": "Sí, anular venta"
+    }
+  },
+  "invoices": {
+    "title": "Facturas",
+    "subtitle": "Consulta, impresión y descarga de facturas",
+    "searchPlaceholder": "Buscar por número de factura, cliente o documento…",
+    "empty": "No hay facturas para los filtros seleccionados.",
+    "documentTitle": "Factura de venta",
+    "number": "No.",
+    "issuedAt": "Fecha de emisión",
+    "billTo": "Cliente",
+    "seller": "Atendido por",
+    "code": "Código",
+    "description": "Descripción",
+    "quantity": "Cant.",
+    "unitPrice": "Valor unitario",
+    "amount": "Valor total",
+    "subtotal": "Subtotal",
+    "discount": "Descuento",
+    "tax": "IVA ({rate}%)",
+    "total": "Total a pagar",
+    "paymentMethod": "Método de pago",
+    "amountReceived": "Recibido",
+    "change": "Cambio",
+    "notes": "Observaciones",
+    "thanks": "¡Gracias por su compra!",
+    "legalNotice": "Documento generado por el sistema interno de MASA MOTOS. No constituye factura electrónica de venta validada por la DIAN.",
+    "voided": "ANULADA",
+    "voidReason": "Motivo de anulación: {reason}",
+    "nit": "NIT {value}",
+    "phone": "Tel. {value}",
+    "back": "Volver a facturas",
+    "generatingPdf": "Generando PDF…"
+  },
+  "reports": {
+    "title": "Reportes",
+    "subtitle": "Análisis de ventas, productos e inventario",
+    "range": {
+      "from": "Desde",
+      "to": "Hasta",
+      "apply": "Consultar",
+      "presets": {
+        "today": "Hoy",
+        "last7": "Últimos 7 días",
+        "last30": "Últimos 30 días",
+        "thisMonth": "Este mes",
+        "thisYear": "Este año"
+      },
+      "period": "Periodo: {from} – {to}"
+    },
+    "summary": {
+      "revenue": "Ingresos del periodo",
+      "sales": "Ventas realizadas",
+      "averageTicket": "Ticket promedio",
+      "units": "Unidades vendidas",
+      "discounts": "Descuentos otorgados",
+      "taxes": "Impuestos recaudados"
+    },
+    "salesByDay": "Ventas por día",
+    "salesByMonth": "Ventas por mes",
+    "topProducts": "Productos más vendidos",
+    "lowStock": "Productos con bajo inventario",
+    "byPaymentMethod": "Ingresos por método de pago",
+    "history": "Historial de ventas",
+    "export": {
+      "sales": "Ventas (CSV)",
+      "products": "Más vendidos (CSV)",
+      "lowStock": "Bajo inventario (CSV)",
+      "daily": "Ventas por día (CSV)"
+    },
+    "csv": {
+      "day": "Fecha",
+      "month": "Mes",
+      "count": "Ventas",
+      "total": "Total"
+    }
+  },
+  "users": {
+    "title": "Usuarios",
+    "subtitle": "Cuentas de acceso y roles del sistema",
+    "new": "Nuevo usuario",
+    "edit": "Editar usuario",
+    "fields": {
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "role": "Rol",
+      "password": "Contraseña",
+      "newPassword": "Nueva contraseña",
+      "active": "Usuario activo",
+      "lastLogin": "Último acceso",
+      "sales": "Ventas"
+    },
+    "hints": {
+      "password": "Mínimo 8 caracteres, con letras y números.",
+      "passwordEdit": "Déjela en blanco para conservar la contraseña actual."
+    },
+    "never": "Nunca",
+    "you": "Tú",
+    "searchPlaceholder": "Buscar por nombre o correo…",
+    "empty": "No hay usuarios.",
+    "roleDescriptions": {
+      "ADMIN": "Acceso total: productos, inventario, usuarios, proveedores, ventas y reportes.",
+      "SELLER": "Registra ventas, consulta productos, gestiona clientes y genera facturas."
+    },
+    "confirmDeactivateTitle": "¿Desactivar usuario?",
+    "confirmDeactivate": "«{name}» no podrá iniciar sesión hasta que sea reactivado."
+  },
+  "settings": {
+    "title": "Configuración",
+    "subtitle": "Datos de la empresa, impuestos, facturación y métodos de pago",
+    "company": {
+      "title": "Datos de la empresa",
+      "name": "Nombre comercial",
+      "taxId": "NIT",
+      "address": "Dirección",
+      "phone": "Teléfono",
+      "email": "Correo electrónico"
+    },
+    "billing": {
+      "title": "Impuestos y facturación",
+      "taxEnabled": "Aplicar impuesto (IVA) a las ventas",
+      "taxRate": "Tarifa de IVA (%)",
+      "invoicePrefix": "Prefijo de factura",
+      "nextNumber": "Próximo consecutivo: {number}",
+      "footer": "Texto al pie de la factura",
+      "footerPlaceholder": "Ej. Garantía de 30 días en repuestos eléctricos con factura.",
+      "dianNotice": "Las facturas son documentos internos del sistema. Para facturación electrónica ante la DIAN se requiere integrar un proveedor tecnológico autorizado."
+    },
+    "paymentMethods": {
+      "title": "Métodos de pago",
+      "subtitle": "Medios de pago disponibles en el punto de venta",
+      "new": "Nuevo método",
+      "edit": "Editar método de pago",
+      "name": "Nombre",
+      "active": "Disponible en el punto de venta",
+      "placeholder": "Ej. Nequi, Daviplata"
+    }
+  },
+  "profile": {
+    "title": "Mi perfil",
+    "info": {
+      "title": "Información personal",
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "role": "Rol"
+    },
+    "password": {
+      "title": "Cambiar contraseña",
+      "current": "Contraseña actual",
+      "new": "Nueva contraseña",
+      "confirm": "Confirmar nueva contraseña",
+      "submit": "Actualizar contraseña"
+    }
+  },
+  "validation": {
+    "required": "Este campo es obligatorio.",
+    "tooLong": "El texto es demasiado largo.",
+    "invalidEmail": "Ingrese un correo electrónico válido.",
+    "invalidPhone": "Ingrese un teléfono válido (7 a 20 dígitos).",
+    "invalidNumber": "Ingrese un número válido.",
+    "nonNegative": "El valor no puede ser negativo.",
+    "positive": "El valor debe ser mayor que cero.",
+    "integer": "Debe ser un número entero.",
+    "tooLarge": "El valor es demasiado grande.",
+    "invalidCode": "Use solo letras, números, guiones o puntos.",
+    "invalidDocument": "Número de identificación no válido.",
+    "salePriceBelowCost": "El precio de venta no puede ser menor que el de compra.",
+    "passwordMin": "La contraseña debe tener al menos 8 caracteres.",
+    "passwordWeak": "La contraseña debe combinar letras y números.",
+    "passwordMismatch": "Las contraseñas no coinciden.",
+    "emptyCart": "Agregue al menos un producto."
+  },
+  "errors": {
+    "generic": "Ocurrió un error inesperado. Intente nuevamente.",
+    "validation": "Revise los campos marcados.",
+    "unauthorized": "Su sesión expiró. Inicie sesión nuevamente.",
+    "forbidden": "No tiene permisos para realizar esta acción.",
+    "notFound": "El registro no existe o fue eliminado.",
+    "duplicate": "Ya existe un registro con esos datos.",
+    "duplicateCode": "Ya existe un producto con este código.",
+    "duplicateCategory": "Ya existe una categoría con este nombre.",
+    "duplicateDocument": "Ya existe un cliente con este documento.",
+    "duplicateTaxId": "Ya existe un proveedor con este NIT.",
+    "duplicateEmail": "Ya existe un usuario con este correo.",
+    "duplicatePaymentMethod": "Ya existe un método de pago con este nombre.",
+    "insufficientStock": "Stock insuficiente para «{product}» (disponible: {available}).",
+    "productInactive": "El producto «{product}» está inactivo.",
+    "inUse": "No se puede eliminar porque tiene registros relacionados.",
+    "invalidCredentials": "Correo o contraseña incorrectos.",
+    "inactiveUser": "Su usuario está desactivado. Contacte al administrador.",
+    "emptyCart": "El carrito está vacío.",
+    "imageTooLarge": "La imagen supera el tamaño máximo de 2 MB.",
+    "imageType": "Formato de imagen no permitido (use JPG, PNG o WEBP).",
+    "cannotDemoteSelf": "No puede desactivar ni quitar el rol de administrador a su propio usuario.",
+    "lastAdmin": "Debe existir al menos un administrador activo.",
+    "alreadyVoided": "La venta ya estaba anulada.",
+    "productHasHistory": "El producto tiene ventas o movimientos; desactívelo en lugar de eliminarlo.",
+    "categoryInUse": "La categoría tiene {count} productos asociados.",
+    "customerHasSales": "El cliente tiene {count} compras registradas.",
+    "supplierInUse": "El proveedor tiene {count} productos asociados.",
+    "wrongPassword": "La contraseña actual no es correcta.",
+    "customerRequired": "Seleccione un cliente válido.",
+    "paymentMethodRequired": "Seleccione un método de pago disponible.",
+    "amountReceivedTooLow": "El valor recibido es menor que el total.",
+    "noStockChange": "El movimiento no cambia las existencias.",
+    "loadFailed": "No fue posible cargar la información.",
+    "stockViaMovements": "Las existencias solo se modifican mediante movimientos de inventario."
+  },
+  "toast": {
+    "productCreated": "Producto registrado correctamente.",
+    "productUpdated": "Producto actualizado correctamente.",
+    "productDeactivated": "Producto desactivado.",
+    "productActivated": "Producto activado.",
+    "productDeleted": "Producto eliminado.",
+    "movementRegistered": "Movimiento de inventario registrado.",
+    "categoryCreated": "Categoría creada.",
+    "categoryUpdated": "Categoría actualizada.",
+    "categoryDeleted": "Categoría eliminada.",
+    "customerCreated": "Cliente registrado.",
+    "customerUpdated": "Cliente actualizado.",
+    "customerDeleted": "Cliente eliminado.",
+    "supplierCreated": "Proveedor registrado.",
+    "supplierUpdated": "Proveedor actualizado.",
+    "supplierDeleted": "Proveedor eliminado.",
+    "saleCreated": "Venta registrada y factura generada.",
+    "saleVoided": "Venta anulada. El inventario fue restituido.",
+    "userCreated": "Usuario creado.",
+    "userUpdated": "Usuario actualizado.",
+    "userActivated": "Usuario activado.",
+    "userDeactivated": "Usuario desactivado.",
+    "profileUpdated": "Perfil actualizado.",
+    "passwordChanged": "Contraseña actualizada.",
+    "settingsSaved": "Configuración guardada.",
+    "paymentMethodSaved": "Método de pago guardado.",
+    "languageChanged": "Idioma cambiado a español."
+  },
+  "notFound": {
+    "error": "ERROR",
+    "message": "No encontramos la página que busca.",
+    "backHome": "Volver al inicio"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "name": "masa-motos",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "db:setup": "node scripts/supabase-setup.mjs",
+    "db:reset": "node scripts/supabase-setup.mjs --reset",
+    "db:check": "node scripts/supabase-setup.mjs --check",
+    "test:e2e": "node scripts/e2e-smoke.mjs",
+    "evidence": "node scripts/capture-evidence.mjs"
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.119.0",
+    "@tailwindcss/postcss": "^4.3.3",
+    "apexcharts": "^7.1.0",
+    "clsx": "^2.1.1",
+    "jspdf": "^4.2.1",
+    "jspdf-autotable": "^5.0.9",
+    "next": "^16.3.4",
+    "next-intl": "^4.14.2",
+    "react": "^19.2.8",
+    "react-apexcharts": "^2.1.1",
+    "react-dom": "^19.2.8",
+    "tailwind-merge": "^2.6.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
+    "@types/node": "^20.19.25",
+    "@types/pg": "^8.23.1",
+    "@types/react": "^19.2.1",
+    "@types/react-dom": "^19.2.1",
+    "dotenv": "^18.0.10",
+    "eslint": "^9.39.1",
+    "eslint-config-next": "^16.3.4",
+    "pg": "^8.23.1",
+    "playwright-core": "^1.65.1",
+    "postcss": "^8.5.6",
+    "prettier": "^3.9.6",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "tailwindcss": "^4.1.17",
+    "typescript": "^5.9.3"
+  }
+}
