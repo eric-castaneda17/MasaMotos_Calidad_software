@@ -399,8 +399,7 @@
     "searchHint": "Type to search. Press Enter to add the first result.",
     "noResults": "No active products found.",
     "add": "Add",
-    "available": "{stock} avail.",
-    "outOfStock": "Out of stock",
+    "remainingToAdd": "{count, plural, =1 {# more unit can be added} other {# more units can be added}}",
     "stockLimit": "Only {stock} units of {product} are available.",
     "cart": {
       "title": "Cart",
@@ -414,6 +413,8 @@
       "clear": "Clear cart",
       "increase": "Increase quantity",
       "decrease": "Decrease quantity",
+      "stockAvailable": "In stock: {stock}",
+      "limitReached": "Cart has reached the stock limit",
       "items": "{count, plural, =1 {# product} other {# products}}"
     },
     "customer": {

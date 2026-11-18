@@ -1,5 +1,6 @@
 "use client";
 
+import { StockBadge } from "@/components/common/StatusBadges";
 import ProductThumb from "@/components/products/ProductThumb";
 import { useFormat } from "@/hooks/useFormat";
 import { PlusIcon, SearchIcon } from "@/icons";
@@ -94,7 +95,8 @@ export default function ProductSearch({ onAdd, inCart, refreshKey }: ProductSear
           </p>
         )}
         {results.map((p) => {
-          const left = available(p);
+          const inCartQuantity = inCart.get(p.id) ?? 0;
+          const left = p.stock - inCartQuantity;
           const disabled = left <= 0;
           return (
             <button
@@ -113,20 +115,28 @@ export default function ProductSearch({ onAdd, inCart, refreshKey }: ProductSear
               <ProductThumb productId={p.id} hasImage={p.hasImage} name={p.name} />
               <span className="min-w-0 flex-1">
                 <span className="block truncate text-sm font-medium text-gray-800 dark:text-white/90">{p.name}</span>
-                <span className="block truncate font-mono text-xs text-gray-500 dark:text-gray-400">{p.code}</span>
-                <span className="mt-1 flex items-center justify-between gap-2">
-                  <span className="text-sm font-semibold text-gray-900 tabular-nums dark:text-white">
-                    {f.money(p.salePrice)}
-                  </span>
-                  <span
-                    className={cn(
-                      "text-xs font-medium",
-                      disabled ? "text-error-600 dark:text-error-400" : "text-success-600 dark:text-success-400",
-                    )}
-                  >
-                    {disabled ? t("outOfStock") : t("available", { stock: left })}
+                <span className="block wrap-anywhere text-xs text-gray-500 dark:text-gray-400">
+                  <span className="font-mono">{p.code}</span> · {p.brand}
+                </span>
+                <span className="mt-1 block text-sm font-semibold text-gray-900 tabular-nums dark:text-white">
+                  {f.money(p.salePrice)}
+                </span>
+                <span className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1">
+                  <StockBadge status={p.stockStatus} />
+                  <span className="text-xs text-gray-600 dark:text-gray-300">
+                    {t("cart.stockAvailable", { stock: p.stock })}
                   </span>
                 </span>
+                {inCartQuantity > 0 && p.stock > 0 && (
+                  <span
+                    className={cn(
+                      "mt-1 block text-xs",
+                      disabled ? "font-medium text-warning-700 dark:text-warning-400" : "text-gray-600 dark:text-gray-300",
+                    )}
+                  >
+                    {disabled ? t("cart.limitReached") : t("remainingToAdd", { count: left })}
+                  </span>
+                )}
               </span>
               {!disabled && (
                 <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-600 transition group-hover:bg-brand-600 group-hover:text-white dark:bg-brand-500/15 dark:text-brand-400">

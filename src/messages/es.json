@@ -399,8 +399,7 @@
     "searchHint": "Escriba para buscar. Presione Enter para agregar el primer resultado.",
     "noResults": "No se encontraron productos activos.",
     "add": "Agregar",
-    "available": "{stock} disp.",
-    "outOfStock": "Agotado",
+    "remainingToAdd": "{count, plural, =1 {Queda # unidad por agregar} other {Quedan # unidades por agregar}}",
     "stockLimit": "Solo hay {stock} unidades disponibles de {product}.",
     "cart": {
       "title": "Carrito",
@@ -414,6 +413,8 @@
       "clear": "Vaciar carrito",
       "increase": "Aumentar cantidad",
       "decrease": "Disminuir cantidad",
+      "stockAvailable": "Existencias: {stock}",
+      "limitReached": "Límite de existencias alcanzado en el carrito",
       "items": "{count, plural, =1 {# producto} other {# productos}}"
     },
     "customer": {

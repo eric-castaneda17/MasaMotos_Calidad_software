@@ -3,6 +3,7 @@
 import EmptyState from "@/components/common/EmptyState";
 import { useFormat } from "@/hooks/useFormat";
 import { CartIcon, MinusIcon, PlusIcon, TrashBinIcon } from "@/icons";
+import { cn } from "@/utils";
 import { useTranslations } from "next-intl";
 import type { CartLine } from "./types";
 
@@ -32,6 +33,19 @@ export default function CartTable({ lines, onQuantity, onRemove }: CartTableProp
             <p className="text-xs text-gray-500 dark:text-gray-400">
               <span className="font-mono">{l.code}</span> · {f.money(l.unitPrice)}
             </p>
+            <p
+              id={`pos-cart-stock-${l.productId}`}
+              aria-live="polite"
+              className={cn(
+                "mt-1 text-xs",
+                l.quantity >= l.stock
+                  ? "font-medium text-warning-700 dark:text-warning-400"
+                  : "text-gray-600 dark:text-gray-300",
+              )}
+            >
+              {t("stockAvailable", { stock: l.stock })}
+              {l.quantity >= l.stock && <> · {t("limitReached")}</>}
+            </p>
           </div>
           <div className="flex items-center justify-between gap-3 sm:justify-end">
             <div className="flex items-center gap-1.5">
@@ -51,6 +65,7 @@ export default function CartTable({ lines, onQuantity, onRemove }: CartTableProp
                 value={l.quantity}
                 onChange={(e) => onQuantity(l.productId, Math.floor(Number(e.target.value) || 1))}
                 aria-label={t("quantity")}
+                aria-describedby={`pos-cart-stock-${l.productId}`}
                 className="h-9 w-16 rounded-lg border border-gray-300 bg-transparent text-center text-sm font-semibold text-gray-800 tabular-nums focus:border-brand-300 focus:ring-3 focus:ring-brand-500/20 focus:outline-hidden dark:border-gray-700 dark:text-white"
               />
               <button

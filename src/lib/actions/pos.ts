@@ -1,6 +1,7 @@
 "use server";
 
 import { requireActionUser } from "@/lib/auth/dal";
+import type { StockStatus } from "@/lib/data/products";
 import { searchTerm } from "@/lib/data/search";
 import { createClient } from "@/lib/supabase/server";
 
@@ -12,6 +13,7 @@ export type PosProduct = {
   compatibleModel: string | null;
   salePrice: number;
   stock: number;
+  stockStatus: StockStatus;
   hasImage: boolean;
 };
 
@@ -21,7 +23,7 @@ export async function searchPosProductsAction(query: string): Promise<PosProduct
   const supabase = await createClient();
   let req = supabase
     .from("products_view")
-    .select("id, code, name, brand, compatible_model, sale_price, stock, has_image")
+    .select("id, code, name, brand, compatible_model, sale_price, stock, stock_status, has_image")
     .eq("active", true);
   if (q) {
     req = req.or(`name.ilike.%${q}%,code.ilike.%${q}%,compatible_model.ilike.%${q}%,brand.ilike.%${q}%`);
@@ -35,6 +37,7 @@ export async function searchPosProductsAction(query: string): Promise<PosProduct
     compatibleModel: p.compatible_model,
     salePrice: Number(p.sale_price),
     stock: p.stock,
+    stockStatus: p.stock_status,
     hasImage: p.has_image,
   }));
 }

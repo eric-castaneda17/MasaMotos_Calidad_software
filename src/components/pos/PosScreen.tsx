@@ -58,13 +58,14 @@ export default function PosScreen({ methods, taxRate, taxEnabled, defaultCustome
   const isCash = methods.find((m) => m.id === methodId)?.code === "CASH";
 
   const addProduct = (p: PosProduct) => {
+    if ((inCart.get(p.id) ?? 0) >= p.stock) {
+      toast.error(t("stockLimit", { stock: p.stock, product: p.name }));
+      return;
+    }
     setLines((prev) => {
       const existing = prev.find((l) => l.productId === p.id);
       if (existing) {
-        if (existing.quantity >= p.stock) {
-          toast.error(t("stockLimit", { stock: p.stock, product: p.name }));
-          return prev;
-        }
+        if (existing.quantity >= p.stock) return prev;
         return prev.map((l) => (l.productId === p.id ? { ...l, quantity: l.quantity + 1, stock: p.stock } : l));
       }
       return [...prev, { productId: p.id, code: p.code, name: p.name, unitPrice: p.salePrice, stock: p.stock, quantity: 1 }];
@@ -72,15 +73,15 @@ export default function PosScreen({ methods, taxRate, taxEnabled, defaultCustome
   };
 
   const setQuantity = (productId: number, quantity: number) => {
+    const line = lines.find((l) => l.productId === productId);
+    if (!line) return;
+    if (quantity > line.stock) {
+      toast.error(t("stockLimit", { stock: line.stock, product: line.name }));
+    }
     setLines((prev) =>
-      prev.map((l) => {
-        if (l.productId !== productId) return l;
-        if (quantity > l.stock) {
-          toast.error(t("stockLimit", { stock: l.stock, product: l.name }));
-          return { ...l, quantity: l.stock };
-        }
-        return { ...l, quantity: Math.max(1, quantity) };
-      }),
+      prev.map((l) =>
+        l.productId === productId ? { ...l, quantity: Math.min(l.stock, Math.max(1, quantity)) } : l,
+      ),
     );
   };
 
