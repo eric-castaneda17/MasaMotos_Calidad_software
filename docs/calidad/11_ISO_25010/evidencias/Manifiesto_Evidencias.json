@@ -324,5 +324,158 @@
     "manualesSinAprobacionDocumental": 12,
     "notaHuellas": "El manifiesto se excluye de sus propias huellas para evitar autorreferencia.",
     "formatoGit": "PDF conservado como binario. Markdown y JSON de Fase 5 conservados con LF."
+  },
+  "consolidacionManualActual": {
+    "fecha": "2026-11-18",
+    "branch": "feature/continuous-quality",
+    "fuentesHistoricasConservadas": true,
+    "casosReportadosSatisfactorios": 11,
+    "passConsolidados": 11,
+    "bb07": "PASS por confirmación completa del usuario; sin capturas",
+    "bb10": "PASS; MM-000096/97 y 4→3→2 contrastados. Consumidor final.",
+    "bb12": "PENDIENTE",
+    "exploratoria": "REALIZADA SEGÚN USUARIO; sin detalle individualizado",
+    "desempeno": "PARCIAL: SQL y acción histórica, no latencia UI ni carga",
+    "ca15": "PASS",
+    "pdf": "Versión inicial conservada sin regenerar. Estado actual en matrices y Markdown.",
+    "archivos": [
+      {
+        "ruta": "docs/calidad/04_Matriz_Pruebas.xlsx",
+        "bytes": 18651,
+        "sha256": "4f6f828513bdb1264fb7a19a1196af8a1e7503e028cdcd71c3138f552d2580e6"
+      },
+      {
+        "ruta": "docs/calidad/Matriz_Maestra_Trazabilidad.xlsx",
+        "bytes": 11942,
+        "sha256": "ce8e4afd651511422beb17c4d0fcf511b8e80cc6828167b79acab3e5e7348120"
+      },
+      {
+        "ruta": "docs/calidad/11_ISO_25010/12_ISO25010.xlsx",
+        "bytes": 17000,
+        "sha256": "1b103d2d6e3da0e8e93540649321707423d2b9d45be29516b96a1b535d9347d4"
+      },
+      {
+        "ruta": "docs/calidad/11_ISO_25010/11_Errores_Defectos_Fallas_Incidentes.xlsx",
+        "bytes": 14976,
+        "sha256": "ef46ee122812a762325b8edaafbe4794f868952e0103fd5dffc44ebfaf6e66cc"
+      },
+      {
+        "ruta": "docs/calidad/05_Caja_Negra_Navegador/README.md",
+        "bytes": 18052,
+        "sha256": "b14226268f1eb26c16c40805a7c02923755787fc196088e0f66da33f557c682c"
+      },
+      {
+        "ruta": "docs/calidad/11_ISO_25010/README.md",
+        "bytes": 6296,
+        "sha256": "eba7be0230ac8a31437a4501feefe6627cf8c44acd4be038788b90ee10a5ae5d"
+      },
+      {
+        "ruta": "docs/calidad/11_ISO_25010/Referencias_y_Evidencias.md",
+        "bytes": 9193,
+        "sha256": "318eacda2e4c2298f7c0c81b51de5f01fb416417a312acca230169307cd002e1"
+      },
+      {
+        "ruta": "docs/calidad/11_ISO_25010/Revision_Cierre_Documental.md",
+        "bytes": 6390,
+        "sha256": "8b235a9ab0ccbf7e00fe7e65d626b6992a532a5262c63825e4ed8ee43894e30c"
+      },
+      {
+        "ruta": "docs/calidad/11_ISO_25010/Procedimiento_Sesion_Exploratoria.md",
+        "bytes": 9995,
+        "sha256": "148e1e0a9a1510634bc8d839389707709214799ce5559e02b350131924310137"
+      },
+      {
+        "ruta": "docs/calidad/11_ISO_25010/Procedimiento_Mediciones_Rendimiento.md",
+        "bytes": 11250,
+        "sha256": "c27cd26b9677a9e88509f2347bf2120622703dc5850064ff75da59d85ab2731f"
+      },
+      {
+        "ruta": "docs/calidad/05_Caja_Negra_Navegador/evidencias/resultados-manuales.json",
+        "bytes": 7196,
+        "sha256": "ac81e6ff253126452ac0d3589ebafb319841c6d9a6ba5bab3e0e2e297d34acef"
+      },
+      {
+        "ruta": "docs/calidad/05_Caja_Negra_Navegador/evidencias/depuradas/depuracion.json",
+        "bytes": 6996,
+        "sha256": "0868233cc3233b3ff4acb1625481f041836f10b03b3260161e2ba4349dc85022"
+      },
+      {
+        "ruta": "docs/calidad/11_ISO_25010/evidencias/rendimiento/consolidacion-manual/Lecturas_y_Limites.json",
+        "bytes": 9577,
+        "sha256": "6b842049e381349299e83f48fc5b848b0fe66066e4fb6d586786a4ec79831631"
+      },
+      {
+        "ruta": "docs/calidad/11_ISO_25010/evidencias/rendimiento/consolidacion-manual/Muestras.csv",
+        "bytes": 479,
+        "sha256": "7cb91bb3449e669fbaa0ee6a166a895f344c5bf20768a0e62e5311fc4699aa96"
+      },
+      {
+        "ruta": "docs/calidad/05_Caja_Negra_Navegador/evidencias/depuradas/BB-01-01-panel-depurada.png",
+        "bytes": 85800,
+        "sha256": "ff182d4efe58d9d2edf20f210108f17c492b5cd4a39ffdd9f41eb0fd9fb0d4f6"
+      },
+      {
+        "ruta": "docs/calidad/05_Caja_Negra_Navegador/evidencias/depuradas/BB-01-02-catalogo-depurada.png",
+        "bytes": 132160,
+        "sha256": "a9a7ccad4c87f02cec843d8834719e16b3560093fd4cb47316b02be56969dd0d"
+      },
+      {
+        "ruta": "docs/calidad/05_Caja_Negra_Navegador/evidencias/depuradas/BB-02-01-aviso-correo-existente-depurada.png",
+        "bytes": 161076,
+        "sha256": "9eda3239f6125f4664c603f7c64c95b32442d7eeec6b1d18baec949fef0e19a9"
+      },
+      {
+        "ruta": "docs/calidad/05_Caja_Negra_Navegador/evidencias/depuradas/BB-02-02-ruta-correo-existente-depurada.png",
+        "bytes": 147520,
+        "sha256": "b445b6bce60ad875d14e80b7b258fc424d8e9bd0c09edfa254011ca828f3463c"
+      },
+      {
+        "ruta": "docs/calidad/05_Caja_Negra_Navegador/evidencias/depuradas/BB-02-03-aviso-correo-inexistente-depurada.png",
+        "bytes": 163595,
+        "sha256": "77f1b2becfffd9551ad8b9fb5a9268a1ae92ac7e591a02785a12ec893d56783e"
+      },
+      {
+        "ruta": "docs/calidad/05_Caja_Negra_Navegador/evidencias/depuradas/BB-02-04-ruta-correo-inexistente-depurada.png",
+        "bytes": 147086,
+        "sha256": "22a82735718b0c3917b50971b1de369e32cb58ecb5ec94e8d3f76666d9a9ca52"
+      },
+      {
+        "ruta": "docs/calidad/05_Caja_Negra_Navegador/evidencias/depuradas/BB-03-01-redireccion-depurada.png",
+        "bytes": 157160,
+        "sha256": "77fbc8aaee52d9038ae3c7b2c392378182f13cf5e07607a0bb0b7f805b0431c0"
+      },
+      {
+        "ruta": "docs/calidad/05_Caja_Negra_Navegador/evidencias/depuradas/BB-03-02-ruta-solicitada-depurada.png",
+        "bytes": 34755,
+        "sha256": "3e252da7df850c75197c4a756b36b2b56c03bd28003f60faa767cee16ed086bb"
+      },
+      {
+        "ruta": "docs/calidad/05_Caja_Negra_Navegador/evidencias/depuradas/BB-03-03-redireccion-depurada.png",
+        "bytes": 156725,
+        "sha256": "6363032c046bebf368e6c91245e3ee5ae2059bc7633d9108a1677c6317a6cadf"
+      },
+      {
+        "ruta": "docs/calidad/05_Caja_Negra_Navegador/evidencias/depuradas/BB-05-01-filtros-combinados-depurada.png",
+        "bytes": 134259,
+        "sha256": "dc08da2ff91579e68dfd86e31ba862785548a6ae9e2d62a0054cc1489d17d265"
+      },
+      {
+        "ruta": "docs/calidad/05_Caja_Negra_Navegador/evidencias/depuradas/BB-06-01-sin-resultados-depurada.png",
+        "bytes": 96487,
+        "sha256": "5ddf1830ff9383aa7eb66ed16ea260cd4d81411b5bf2d2c742671fa60cb06f91"
+      },
+      {
+        "ruta": "docs/calidad/05_Caja_Negra_Navegador/evidencias/depuradas/BB-11-01-catalogo-vendedor-depurada.png",
+        "bytes": 118732,
+        "sha256": "47b88bc230a920c75a02bd2c90d26d7e3caa9b7d720a060b0e366be853da2d59"
+      },
+      {
+        "ruta": "docs/calidad/05_Caja_Negra_Navegador/evidencias/depuradas/BB-11-02-acceso-denegado-depurada.png",
+        "bytes": 84303,
+        "sha256": "afa3b736c1ff884e2f325ab8e518f82c25e9309281f74b178d202ff8d77d4715"
+      }
+    ],
+    "aclaracionTemporal": "Primera lectura 17:09 Bogotá, anterior a BB-10 de 17:15/17:16. Aclaración conservada en evidencia.",
+    "notaHuellas": "Contenido normalizado preparado en Git. Las fuentes históricas conservan sus huellas originales de revisión."
   }
 }

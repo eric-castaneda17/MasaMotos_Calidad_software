@@ -34,18 +34,23 @@ La ficha ISO confirma la edición y las nueve características. La vista GSO ado
 | E17 | Punto de venta | [src/components/pos/PosScreen.tsx](../../../src/components/pos/PosScreen.tsx) | Límite de cantidades, avisos, confirmación y conservación del carrito ante rechazo. |
 | E18 | Formulario de usuarios | [src/components/users/UserManager.tsx](../../../src/components/users/UserManager.tsx) | Campo de contraseña opcional en edición. Validación en schemas.ts. |
 | E19 | Comprobaciones Fase 4 | [docs/calidad/10_Playwright/comprobaciones.txt](../10_Playwright/comprobaciones.txt) | Salidas archivadas de unitarias, RTL, lint, TypeScript y compilación. Resultados históricos. |
-| E20 | Caja negra pendiente | [docs/calidad/04_Matriz_Pruebas.xlsx](../04_Matriz_Pruebas.xlsx) | 12 casos pendientes en matriz. Tres reportados por el usuario con capturas aún sin aprobación. |
+| E20 | Caja negra consolidada | [docs/calidad/04_Matriz_Pruebas.xlsx](../04_Matriz_Pruebas.xlsx) | Once PASS por confirmación completa del usuario, con capturas parciales. BB-09/10 contrastados por lectura y BB-12 pendiente. |
 | E21 | Seguridad y transacción | [supabase/migrations/003_functions.sql](../../../supabase/migrations/003_functions.sql) | create_sale y guardas de inventario. RLS y autorización en 002_security.sql. |
+
+| E22 | Confirmaciones manuales y exploración | [resultados-manuales.json](../05_Caja_Negra_Navegador/evidencias/resultados-manuales.json) | Declaraciones del usuario, inventario de capturas y límites sin reconstruir evidencia. |
+| E23 | Lecturas y tiempos SQL | [Lecturas_y_Limites.json](evidencias/rendimiento/consolidacion-manual/Lecturas_y_Limites.json) | READ ONLY, TLS y ROLLBACK. BB-09 y BB-10 contrastados; unicidad auxiliar. No acredita latencia UI. |
+| E24 | Shift Right | [resultados-locales.json](../12_Shift_Right/evidencias/resultados-locales.json) | Logs históricos con duraciones de acción, no cronometraje de BB. |
+| E25 | CI local | [resultados-locales.json](../13_Continuous_Quality/evidencias/resultados-locales.json) | Instalación aislada, 64 pruebas y build; GitHub Actions remoto pendiente. |
 
 ## Interpretación de la evidencia
 
-- Los resultados de las suites conservan sus ejecuciones anteriores. Esta fase no generó nuevos resultados de pruebas funcionales.
+- Las suites conservan sus ejecuciones anteriores. La consolidación añade confirmaciones manuales, revisión de capturas y lecturas reales, sin repetir ventas ni suites.
 - E16 registra el GET administrativo que devolvió 401 en el diagnóstico previo. El resultado original proviene de la conversación y fue transcrito con su procedencia. No representa una captura de red ni un nuevo re-test.
 - El mensaje al guardar contraseña fue reportado por el usuario. Su transformación a errors.generic se confirmó en código. No se demostró que el intento de escritura completara una actualización parcial.
 - La recuperación de ventas CA-15 y el riesgo Auth/perfil pertenecen a operaciones diferentes. CA-15 mantiene PASS.
 - La inspección de las fuentes no se contabiliza como la sesión exploratoria requerida por el profesor.
-- Las tres pruebas manuales reportadas y las nueve pendientes conservan PENDIENTE en la matriz hasta revisar o completar su evidencia.
-- Las mediciones de carga, accesibilidad, disponibilidad y resistencia no se ejecutaron. NO EVALUADA no significa un resultado de desempeño desfavorable.
+- Los PASS manuales proceden de la declaración explícita del usuario, con respaldo fotográfico parcial identificado. BB-10 se aclaró con MM-000096/97 y movimientos 4→3→2: la lectura inicial fue anterior. Consumidor final es una variación documentada. No se atribuyó un defecto del producto.
+- Hay mediciones SQL y logs históricos acotados. Carga, interfaz completa, comprobante imprimible, recursos, accesibilidad formal, disponibilidad y resistencia siguen sin evaluar. La sesión exploratoria fue confirmada por el usuario sin detalle por módulo.
 
 El manifiesto registra SHA-256 de las fuentes revisadas. Se excluyen archivos privados, valores de entorno y las capturas manuales.
 
@@ -55,7 +60,7 @@ El manifiesto registra SHA-256 de las fuentes revisadas. Se excluyen archivos pr
 - [Sesión exploratoria pendiente](Procedimiento_Sesion_Exploratoria.md).
 - [Mediciones pendientes](Procedimiento_Mediciones_Rendimiento.md).
 
-Los procedimientos son planes para actividades futuras. Sus recorridos, tamaños de muestra y nombres de archivo no representan ejecuciones ni resultados.
+Los procedimientos conservan planes y condiciones de referencia. Sus introducciones distinguen lo confirmado o medido de lo que sigue sin comprobar; no se atribuyen recorridos, muestras ni archivos inexistentes.
 
 Las referencias técnicas del procedimiento de rendimiento se consultaron el 18 de noviembre de 2026. La documentación de k6 permite distinguir las métricas HTTP de los intervalos completos del navegador. La documentación de DevTools describe la exportación HAR depurada, que aun así exige revisar cuerpos y URLs antes de incluirla en el dossier.
 

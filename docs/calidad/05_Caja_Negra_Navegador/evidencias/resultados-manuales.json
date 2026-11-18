@@ -1,0 +1,165 @@
+{
+  "fechaConsolidacion": "2026-11-18",
+  "fechaHoraEjecucionManual": "No proporcionada; no se deduce de la fecha de los archivos.",
+  "procedencia": "Confirmación explícita del usuario en esta conversación. El agente no ejecutó casos manuales ni repitió ventas.",
+  "reportedSatisfactory": [
+    "BB-01",
+    "BB-02",
+    "BB-03",
+    "BB-04",
+    "BB-05",
+    "BB-06",
+    "BB-07",
+    "BB-08",
+    "BB-09",
+    "BB-10",
+    "BB-11"
+  ],
+  "cases": [
+    {
+      "id": "BB-01",
+      "estado": "PASS",
+      "resultadoObservado": "Usuario confirma ingreso y catálogo satisfactorios. Capturas de ambas pantallas.",
+      "capturas": [
+        "evidencias/depuradas/BB-01-01-panel-depurada.png",
+        "evidencias/depuradas/BB-01-02-catalogo-depurada.png"
+      ],
+      "respaldo": "Confirmación manual y capturas de alcance descrito",
+      "capturasNoPruebanTodaLaSecuencia": true
+    },
+    {
+      "id": "BB-02",
+      "estado": "PASS",
+      "resultadoObservado": "Usuario confirma rechazo y protección en ambas variantes. Avisos archivados; capturas de retorno sin barra de URL.",
+      "capturas": [
+        "evidencias/depuradas/BB-02-01-aviso-correo-existente-depurada.png",
+        "evidencias/depuradas/BB-02-02-ruta-correo-existente-depurada.png",
+        "evidencias/depuradas/BB-02-03-aviso-correo-inexistente-depurada.png",
+        "evidencias/depuradas/BB-02-04-ruta-correo-inexistente-depurada.png"
+      ],
+      "respaldo": "Confirmación manual y capturas de alcance descrito",
+      "capturasNoPruebanTodaLaSecuencia": true
+    },
+    {
+      "id": "BB-03",
+      "estado": "PASS",
+      "resultadoObservado": "Usuario confirma redirección. Capturas de ruta escrita y signin; secuencia sustentada por su declaración.",
+      "capturas": [
+        "evidencias/depuradas/BB-03-01-redireccion-depurada.png",
+        "evidencias/depuradas/BB-03-02-ruta-solicitada-depurada.png",
+        "evidencias/depuradas/BB-03-03-redireccion-depurada.png"
+      ],
+      "respaldo": "Confirmación manual y capturas de alcance descrito",
+      "capturasNoPruebanTodaLaSecuencia": true
+    },
+    {
+      "id": "BB-04",
+      "estado": "PASS",
+      "resultadoObservado": "Comparación catálogo/POS satisfactoria confirmada por usuario. Sin capturas del caso.",
+      "capturas": [],
+      "respaldo": "Confirmación manual sin captura del caso",
+      "capturasNoPruebanTodaLaSecuencia": true
+    },
+    {
+      "id": "BB-05",
+      "estado": "PASS",
+      "resultadoObservado": "Filtros satisfactorios confirmados por usuario. Archivo llamado filtros-combinados muestra filtros sin selección y las tres referencias: solo apoya estado restablecido.",
+      "capturas": [
+        "evidencias/depuradas/BB-05-01-filtros-combinados-depurada.png"
+      ],
+      "respaldo": "Confirmación manual y capturas de alcance descrito",
+      "capturasNoPruebanTodaLaSecuencia": true
+    },
+    {
+      "id": "BB-06",
+      "estado": "PASS",
+      "resultadoObservado": "Búsqueda vacía y recuperación satisfactorias confirmadas por usuario. Captura de estado vacío; catálogo válido visible en archivo BB-05.",
+      "capturas": [
+        "evidencias/depuradas/BB-06-01-sin-resultados-depurada.png"
+      ],
+      "respaldo": "Confirmación manual y capturas de alcance descrito",
+      "capturasNoPruebanTodaLaSecuencia": true
+    },
+    {
+      "id": "BB-07",
+      "estado": "PASS",
+      "resultadoObservado": "Usuario confirma BB-07 completo satisfactorio. Sin capturas de rechazo/unicidad. Lectura auxiliar preliminar: una referencia equivalente; no se presenta como captura ni ejecución manual del agente.",
+      "capturas": [],
+      "respaldo": "Confirmación manual sin captura del caso",
+      "capturasNoPruebanTodaLaSecuencia": true
+    },
+    {
+      "id": "BB-08",
+      "estado": "PASS",
+      "resultadoObservado": "Límites y recuperación del carrito satisfactorios confirmados por usuario. Sin capturas.",
+      "capturas": [],
+      "respaldo": "Confirmación manual sin captura del caso",
+      "capturasNoPruebanTodaLaSecuencia": true
+    },
+    {
+      "id": "BB-09",
+      "estado": "PASS",
+      "resultadoObservado": "Usuario confirma factura y saldo 10 a 8. Lectura confirma venta 96, factura MM-000095, cantidad 2 y movimiento 10 a 8.",
+      "capturas": [],
+      "respaldo": "Confirmación manual sin captura del caso",
+      "capturasNoPruebanTodaLaSecuencia": true
+    },
+    {
+      "id": "BB-10",
+      "estado": "PASS",
+      "resultadoObservado": "Usuario confirma consecutivos y stock. Lectura posterior confirma MM-000096/97, total 29.750 cada una, cantidad 1, producto BB_INVOICE, movimientos 4→3→2 y saldo 2. Variante: Consumidor final. Lectura inicial era anterior a las ventas.",
+      "capturas": [],
+      "respaldo": "Confirmación manual sin captura del caso",
+      "capturasNoPruebanTodaLaSecuencia": true
+    },
+    {
+      "id": "BB-11",
+      "estado": "PASS",
+      "resultadoObservado": "Permisos satisfactorios confirmados por usuario. Capturas de catálogo vendedor y panel tras denegación.",
+      "capturas": [
+        "evidencias/depuradas/BB-11-01-catalogo-vendedor-depurada.png",
+        "evidencias/depuradas/BB-11-02-acceso-denegado-depurada.png"
+      ],
+      "respaldo": "Confirmación manual y capturas de alcance descrito",
+      "capturasNoPruebanTodaLaSecuencia": true
+    },
+    {
+      "id": "BB-12",
+      "estado": "PENDIENTE",
+      "resultadoObservado": "Usuario declara pendiente. No se ejecutó ni se atribuye resultado.",
+      "capturas": [],
+      "respaldo": "Confirmación manual sin captura del caso",
+      "capturasNoPruebanTodaLaSecuencia": true
+    }
+  ],
+  "exploratoria": {
+    "estado": "REALIZADA SEGÚN CONFIRMACIÓN DEL USUARIO",
+    "observacion": "Módulos recorridos por el usuario sin nuevos errores observados.",
+    "limitaciones": "No se proporcionaron tiempos, secuencia, navegador, lista individualizada de módulos ni registro por EXP. No se inventan esos datos ni se equipara ausencia de errores observados a ausencia de defectos.",
+    "evidencia": "Declaración del usuario archivada en este JSON; sin capturas específicas de la exploración."
+  },
+  "minimumTenCases": {
+    "reportedSatisfactory": 11,
+    "consolidatedPass": 11,
+    "minimumTenCoveredBy": "Confirmaciones explícitas del usuario, capturas parciales y lecturas auxiliares identificadas.",
+    "limitation": "BB-12 PENDIENTE. No hay capturas de todos los casos ni se las inventa. El mínimo manual no cierra el criterio específico de cuenta inactiva ni toda ISO."
+  },
+  "technicalReadEvidence": "../11_ISO_25010/evidencias/rendimiento/consolidacion-manual/Lecturas_y_Limites.json",
+  "followupUserConfirmation": {
+    "BB07": "Usuario confirma caso completo satisfactorio. Sin capturas del caso.",
+    "BB10": "MM-000096 y MM-000097, 17:15 y 17:16 Bogotá; 29.750 y Completada; Consumidor final.",
+    "technicalVerification": "docs/calidad/11_ISO_25010/evidencias/rendimiento/consolidacion-manual/Lecturas_y_Limites.json"
+  },
+  "initialReportedSatisfactory": [
+    "BB-01",
+    "BB-02",
+    "BB-03",
+    "BB-04",
+    "BB-05",
+    "BB-06",
+    "BB-08",
+    "BB-09",
+    "BB-10",
+    "BB-11"
+  ]
+}

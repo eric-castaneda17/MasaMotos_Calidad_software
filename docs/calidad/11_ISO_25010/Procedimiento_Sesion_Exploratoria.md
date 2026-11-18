@@ -1,6 +1,6 @@
-# Sesión exploratoria pendiente
+# Sesión exploratoria y confirmación de ejecución
 
-**Estado PENDIENTE DE EJECUCIÓN.** Este documento prepara una actividad posterior. Los registros y tiempos descritos son campos a completar, sin resultados atribuidos.
+**REALIZADA SEGÚN CONFIRMACIÓN DEL USUARIO.** El usuario declaró recorridos por los módulos sin nuevos errores observados. Su declaración está archivada en ../05_Caja_Negra_Navegador/evidencias/resultados-manuales.json. No aportó duración, secuencia ni lista individualizada de módulos: esos campos quedan sin completar. No se inventan pasos EXP ni se declara ausencia general de defectos. Las secciones siguientes conservan el protocolo de referencia; no describen acciones ejecutadas por el agente ni exigen repetir la sesión.
 
 ## Exigencia exacta de la guía
 

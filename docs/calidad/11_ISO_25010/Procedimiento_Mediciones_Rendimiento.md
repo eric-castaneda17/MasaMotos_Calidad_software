@@ -1,6 +1,10 @@
-# Mediciones de rendimiento pendientes
+# Mediciones de rendimiento y alcance comprobado
 
-**Estado PENDIENTE DE DISEÑO EJECUTABLE Y MEDICIÓN.** El procedimiento define el trabajo futuro y sus criterios. El plan permanece sin ejecutar.
+**MEDICIÓN PARCIAL.** Se archivaron nueve lecturas SQL reales, un cliente, TLS verificado y transacción READ ONLY con ROLLBACK, sobre 49 productos y 91 ventas. Las búsquedas con coincidencias tardaron 110,71–113,58 ms; sin coincidencias 111,19–113,42 ms; el agregado SQL de doce meses 111,00–114,34 ms. Son tiempos de consulta con ida/vuelta, no de interfaz. Caché no controlada.
+
+Fuentes: evidencias/rendimiento/consolidacion-manual/Lecturas_y_Limites.json y Muestras.csv. El JSON incluye muestras, estadísticos, SQL, condiciones y el incidente DNS inicial del sandbox. Se reutilizaron logs históricos SALE_CREATED de Shift Right; sus tiempos de acción no corresponden a BB-09/10 ni al intervalo completo clic–acuse.
+
+No se midió acuse–comprobante imprimible, interfaz de reporte, recursos, cinco usuarios ni volumen objetivo. PERF-001/002/004 quedan con apoyo parcial; PERF-003/005 NO EVALUADAS. No se generaron ventas adicionales. El diseño siguiente conserva las condiciones necesarias para interpretar o ampliar la medición, sin atribuir resultados inexistentes.
 
 ## Requisitos originales y alcance
 
