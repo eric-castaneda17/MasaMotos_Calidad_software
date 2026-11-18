@@ -1,0 +1,682 @@
+{
+  "numTotalTestSuites": 14,
+  "numPassedTestSuites": 14,
+  "numFailedTestSuites": 0,
+  "numPendingTestSuites": 0,
+  "numTotalTests": 49,
+  "numPassedTests": 49,
+  "numFailedTests": 0,
+  "numPendingTests": 0,
+  "numTodoTests": 0,
+  "snapshot": {
+    "added": 0,
+    "failure": false,
+    "filesAdded": 0,
+    "filesRemoved": 0,
+    "filesRemovedList": [],
+    "filesUnmatched": 0,
+    "filesUpdated": 0,
+    "matched": 0,
+    "total": 0,
+    "unchecked": 0,
+    "uncheckedKeysByFile": [],
+    "unmatched": 0,
+    "updated": 0,
+    "didUpdate": false
+  },
+  "startTime": 1795036112455,
+  "success": true,
+  "testResults": [
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "SWR-AUTH-006 · can"
+          ],
+          "fullName": "SWR-AUTH-006 · can UT-05 · deniega registrar ventas cuando no existe un rol",
+          "status": "passed",
+          "title": "UT-05 · deniega registrar ventas cuando no existe un rol",
+          "duration": 2.8985999999999876,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "SWR-AUTH-006 · can"
+          ],
+          "fullName": "SWR-AUTH-006 · can UT-06 · permite al vendedor registrar ventas",
+          "status": "passed",
+          "title": "UT-06 · permite al vendedor registrar ventas",
+          "duration": 0.37039999999990414,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "SWR-AUTH-006 · can"
+          ],
+          "fullName": "SWR-AUTH-006 · can UT-07 · deniega al vendedor el alta de productos",
+          "status": "passed",
+          "title": "UT-07 · deniega al vendedor el alta de productos",
+          "duration": 0.27719999999999345,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "SWR-AUTH-006 · can"
+          ],
+          "fullName": "SWR-AUTH-006 · can UT-08 · permite al administrador dar de alta productos",
+          "status": "passed",
+          "title": "UT-08 · permite al administrador dar de alta productos",
+          "duration": 0.2501999999999498,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1795036113443,
+      "endTime": 1795036113447.277,
+      "status": "passed",
+      "message": "",
+      "name": "<copia-aislada>/docs/calidad/06_Pruebas_Unitarias/permissions.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "SWR-VEN-003 · calculateTotals"
+          ],
+          "fullName": "SWR-VEN-003 · calculateTotals UT-01 · calcula el descuento porcentual antes del IVA",
+          "status": "passed",
+          "title": "UT-01 · calcula el descuento porcentual antes del IVA",
+          "duration": 3.866899999999987,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "SWR-VEN-003 · calculateTotals"
+          ],
+          "fullName": "SWR-VEN-003 · calculateTotals UT-02 · aplica un descuento fijo con el IVA deshabilitado",
+          "status": "passed",
+          "title": "UT-02 · aplica un descuento fijo con el IVA deshabilitado",
+          "duration": 0.4813000000000329,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "SWR-VEN-003 · calculateTotals"
+          ],
+          "fullName": "SWR-VEN-003 · calculateTotals UT-03 · limita un descuento fijo superior al subtotal",
+          "status": "passed",
+          "title": "UT-03 · limita un descuento fijo superior al subtotal",
+          "duration": 0.3652000000000726,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "SWR-VEN-003 · calculateTotals"
+          ],
+          "fullName": "SWR-VEN-003 · calculateTotals UT-04 · ignora un descuento negativo en el cálculo de la vista previa",
+          "status": "passed",
+          "title": "UT-04 · ignora un descuento negativo en el cálculo de la vista previa",
+          "duration": 0.33819999999991524,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1795036113487,
+      "endTime": 1795036113492.3652,
+      "status": "passed",
+      "message": "",
+      "name": "<copia-aislada>/docs/calidad/06_Pruebas_Unitarias/sale-calc.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "SWR-VEN-001 · saleSchema"
+          ],
+          "fullName": "SWR-VEN-001 · saleSchema UT-09 · acepta un carrito con una línea de una unidad",
+          "status": "passed",
+          "title": "UT-09 · acepta un carrito con una línea de una unidad",
+          "duration": 6.109700000000203,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "SWR-VEN-001 · saleSchema"
+          ],
+          "fullName": "SWR-VEN-001 · saleSchema UT-10 · rechaza un carrito sin líneas",
+          "status": "passed",
+          "title": "UT-10 · rechaza un carrito sin líneas",
+          "duration": 1.2570000000000618,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "SWR-VEN-001 · saleSchema"
+          ],
+          "fullName": "SWR-VEN-001 · saleSchema UT-11 · rechaza una línea con cantidad cero",
+          "status": "passed",
+          "title": "UT-11 · rechaza una línea con cantidad cero",
+          "duration": 0.5312000000001262,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1795036113798,
+      "endTime": 1795036113806.5312,
+      "status": "passed",
+      "message": "",
+      "name": "<copia-aislada>/docs/calidad/06_Pruebas_Unitarias/sale-schema.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Punto de venta"
+          ],
+          "fullName": "Punto de venta RTL-05 · SWR-BUS-005 · informa que una búsqueda no tuvo coincidencias",
+          "status": "passed",
+          "title": "RTL-05 · SWR-BUS-005 · informa que una búsqueda no tuvo coincidencias",
+          "duration": 611.4583000000002,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Punto de venta"
+          ],
+          "fullName": "Punto de venta RTL-06 · SWR-BUS-003 · muestra los seis datos del repuesto y distingue un agotado",
+          "status": "passed",
+          "title": "RTL-06 · SWR-BUS-003 · muestra los seis datos del repuesto y distingue un agotado",
+          "duration": 77.9982,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Punto de venta"
+          ],
+          "fullName": "Punto de venta RTL-07 · SWR-VEN-001 · impide confirmar un carrito vacío",
+          "status": "passed",
+          "title": "RTL-07 · SWR-VEN-001 · impide confirmar un carrito vacío",
+          "duration": 114.02349999999933,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Punto de venta"
+          ],
+          "fullName": "Punto de venta RTL-08 · SWR-VEN-001 · agrega dos repuestos y cambia solo una cantidad",
+          "status": "passed",
+          "title": "RTL-08 · SWR-VEN-001 · agrega dos repuestos y cambia solo una cantidad",
+          "duration": 243.6867000000002,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Punto de venta"
+          ],
+          "fullName": "Punto de venta RTL-09 · SWR-VEN-002 · limita el exceso escrito y explica cuántas unidades hay",
+          "status": "passed",
+          "title": "RTL-09 · SWR-VEN-002 · limita el exceso escrito y explica cuántas unidades hay",
+          "duration": 196.14339999999993,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Punto de venta"
+          ],
+          "fullName": "Punto de venta RTL-10 · SWR-VEN-002 · distingue el límite del carrito y reabre la opción al reducir",
+          "status": "passed",
+          "title": "RTL-10 · SWR-VEN-002 · distingue el límite del carrito y reabre la opción al reducir",
+          "duration": 306.60130000000026,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Punto de venta"
+          ],
+          "fullName": "Punto de venta RTL-11 · SWR-VEN-003 · actualiza subtotal, descuento, IVA y total al editar el porcentaje",
+          "status": "passed",
+          "title": "RTL-11 · SWR-VEN-003 · actualiza subtotal, descuento, IVA y total al editar el porcentaje",
+          "duration": 238.4934000000003,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Punto de venta"
+          ],
+          "fullName": "Punto de venta RTL-12 · SWR-CPB-001 · muestra el número recibido y permite abrir la factura",
+          "status": "passed",
+          "title": "RTL-12 · SWR-CPB-001 · muestra el número recibido y permite abrir la factura",
+          "duration": 276.2476000000006,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Punto de venta"
+          ],
+          "fullName": "Punto de venta RTL-13 · SWR-VEN-002 · informa el nuevo saldo si el servidor rechaza la venta",
+          "status": "passed",
+          "title": "RTL-13 · SWR-VEN-002 · informa el nuevo saldo si el servidor rechaza la venta",
+          "duration": 205.17889999999898,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1795036118705,
+      "endTime": 1795036120975.179,
+      "status": "passed",
+      "message": "",
+      "name": "<copia-aislada>/docs/calidad/08_RTL/point-of-sale.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Inicio de sesión"
+          ],
+          "fullName": "Inicio de sesión RTL-01 · SWR-AUTH-002 · asocia el aviso de formato con el correo y conserva lo escrito",
+          "status": "passed",
+          "title": "RTL-01 · SWR-AUTH-002 · asocia el aviso de formato con el correo y conserva lo escrito",
+          "duration": 837.5797000000002,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Inicio de sesión"
+          ],
+          "fullName": "Inicio de sesión RTL-02 · SWR-AUTH-002 · muestra el rechazo genérico de credenciales",
+          "status": "passed",
+          "title": "RTL-02 · SWR-AUTH-002 · muestra el rechazo genérico de credenciales",
+          "duration": 703.7581,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Inicio de sesión"
+          ],
+          "fullName": "Inicio de sesión RTL-03 · SWR-AUTH-004 · informa que una cuenta está desactivada",
+          "status": "passed",
+          "title": "RTL-03 · SWR-AUTH-004 · informa que una cuenta está desactivada",
+          "duration": 696.7721000000001,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Inicio de sesión"
+          ],
+          "fullName": "Inicio de sesión RTL-04 · SWR-AUTH-002 · bloquea un segundo envío mientras llega la respuesta",
+          "status": "passed",
+          "title": "RTL-04 · SWR-AUTH-002 · bloquea un segundo envío mientras llega la respuesta",
+          "duration": 826.3585000000012,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1795036118207,
+      "endTime": 1795036121271.3584,
+      "status": "passed",
+      "message": "",
+      "name": "<copia-aislada>/docs/calidad/08_RTL/sign-in.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Acciones reales con dependencias simuladas"
+          ],
+          "fullName": "Acciones reales con dependencias simuladas SIM-01 · credencial incorrecta conserva el rechazo y emite WARN",
+          "status": "passed",
+          "title": "SIM-01 · credencial incorrecta conserva el rechazo y emite WARN",
+          "duration": 37.33200000000011,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Acciones reales con dependencias simuladas"
+          ],
+          "fullName": "Acciones reales con dependencias simuladas SIM-02 · inicio correcto registra INFO antes de la redirección",
+          "status": "passed",
+          "title": "SIM-02 · inicio correcto registra INFO antes de la redirección",
+          "duration": 2.00630000000001,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Acciones reales con dependencias simuladas"
+          ],
+          "fullName": "Acciones reales con dependencias simuladas SIM-03 · formulario inválido se registra sin tocar el cliente Supabase",
+          "status": "passed",
+          "title": "SIM-03 · formulario inválido se registra sin tocar el cliente Supabase",
+          "duration": 2.5842999999999847,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Acciones reales con dependencias simuladas"
+          ],
+          "fullName": "Acciones reales con dependencias simuladas SIM-04 · venta válida registra IDs técnicos y duración",
+          "status": "passed",
+          "title": "SIM-04 · venta válida registra IDs técnicos y duración",
+          "duration": 3.192600000000084,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Acciones reales con dependencias simuladas"
+          ],
+          "fullName": "Acciones reales con dependencias simuladas SIM-05 · stock insuficiente conserva el error y correlaciona los eventos",
+          "status": "passed",
+          "title": "SIM-05 · stock insuficiente conserva el error y correlaciona los eventos",
+          "duration": 1.0373999999999342,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Acciones reales con dependencias simuladas"
+          ],
+          "fullName": "Acciones reales con dependencias simuladas SIM-06 · venta inválida se rechaza antes del RPC",
+          "status": "passed",
+          "title": "SIM-06 · venta inválida se rechaza antes del RPC",
+          "duration": 1.0492999999999029,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Acciones reales con dependencias simuladas"
+          ],
+          "fullName": "Acciones reales con dependencias simuladas SIM-07 · caída del cliente mantiene errors.generic y emite ERROR depurado",
+          "status": "passed",
+          "title": "SIM-07 · caída del cliente mantiene errors.generic y emite ERROR depurado",
+          "duration": 1.1900000000000546,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Acciones reales con dependencias simuladas"
+          ],
+          "fullName": "Acciones reales con dependencias simuladas SIM-08 · autorización denegada conserva la respuesta y evita RPC",
+          "status": "passed",
+          "title": "SIM-08 · autorización denegada conserva la respuesta y evita RPC",
+          "duration": 0.7260999999998603,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Acciones reales con dependencias simuladas"
+          ],
+          "fullName": "Acciones reales con dependencias simuladas SIM-09 · logger roto permite completar la venta",
+          "status": "passed",
+          "title": "SIM-09 · logger roto permite completar la venta",
+          "duration": 0.8152000000000044,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Acciones reales con dependencias simuladas"
+          ],
+          "fullName": "Acciones reales con dependencias simuladas SIM-10 · login con fallo de red registra ERROR y conserva la excepción",
+          "status": "passed",
+          "title": "SIM-10 · login con fallo de red registra ERROR y conserva la excepción",
+          "duration": 2.927199999999857,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Acciones reales con dependencias simuladas"
+          ],
+          "fullName": "Acciones reales con dependencias simuladas SIM-11 · rechazo genérico del proveedor se registra como error interno",
+          "status": "passed",
+          "title": "SIM-11 · rechazo genérico del proveedor se registra como error interno",
+          "duration": 1.1211000000000695,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1795036113882,
+      "endTime": 1795036113936.121,
+      "status": "passed",
+      "message": "",
+      "name": "<copia-aislada>/docs/calidad/12_Shift_Right/actions.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "Registro estructurado"
+          ],
+          "fullName": "Registro estructurado LOG-01 · registra campos obligatorios y correlación",
+          "status": "passed",
+          "title": "LOG-01 · registra campos obligatorios y correlación",
+          "duration": 13.996400000000108,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Registro estructurado"
+          ],
+          "fullName": "Registro estructurado LOG-02 · usa la salida correspondiente a AUTH_LOGIN_FAILED",
+          "status": "passed",
+          "title": "LOG-02 · usa la salida correspondiente a AUTH_LOGIN_FAILED",
+          "duration": 1.8704000000000178,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Registro estructurado"
+          ],
+          "fullName": "Registro estructurado LOG-03 · usa la salida correspondiente a ACTION_ERROR",
+          "status": "passed",
+          "title": "LOG-03 · usa la salida correspondiente a ACTION_ERROR",
+          "duration": 0.5606000000000222,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Registro estructurado"
+          ],
+          "fullName": "Registro estructurado LOG-04 · usa la salida correspondiente a APPLICATION_STARTED",
+          "status": "passed",
+          "title": "LOG-04 · usa la salida correspondiente a APPLICATION_STARTED",
+          "duration": 0.5052000000000589,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Registro estructurado"
+          ],
+          "fullName": "Registro estructurado LOG-05 · excluye secretos, datos personales y errores completos",
+          "status": "passed",
+          "title": "LOG-05 · excluye secretos, datos personales y errores completos",
+          "duration": 5.298199999999952,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Registro estructurado"
+          ],
+          "fullName": "Registro estructurado LOG-06 · evita números no finitos y campos numéricos de texto",
+          "status": "passed",
+          "title": "LOG-06 · evita números no finitos y campos numéricos de texto",
+          "duration": 0.9963999999999942,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Registro estructurado"
+          ],
+          "fullName": "Registro estructurado LOG-07 · el fallo del destino no interrumpe al llamador",
+          "status": "passed",
+          "title": "LOG-07 · el fallo del destino no interrumpe al llamador",
+          "duration": 0.5493999999999915,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Registro estructurado"
+          ],
+          "fullName": "Registro estructurado LOG-08 · el fallo de console tampoco interrumpe al llamador",
+          "status": "passed",
+          "title": "LOG-08 · el fallo de console tampoco interrumpe al llamador",
+          "duration": 1.8861000000000558,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Registro estructurado"
+          ],
+          "fullName": "Registro estructurado LOG-09 · rechaza eventos arbitrarios",
+          "status": "passed",
+          "title": "LOG-09 · rechaza eventos arbitrarios",
+          "duration": 0.9221999999999753,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Registro estructurado"
+          ],
+          "fullName": "Registro estructurado LOG-10 · reemplaza correlación externa inválida",
+          "status": "passed",
+          "title": "LOG-10 · reemplaza correlación externa inválida",
+          "duration": 0.9759999999999991,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Registro estructurado"
+          ],
+          "fullName": "Registro estructurado LOG-11 · conserva correlación entre eventos de una operación",
+          "status": "passed",
+          "title": "LOG-11 · conserva correlación entre eventos de una operación",
+          "duration": 0.6367000000000189,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Registro estructurado"
+          ],
+          "fullName": "Registro estructurado LOG-12 · calcula duración sin aceptar valores negativos",
+          "status": "passed",
+          "title": "LOG-12 · calcula duración sin aceptar valores negativos",
+          "duration": 0.5715999999999894,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Registro estructurado"
+          ],
+          "fullName": "Registro estructurado LOG-13 · un getter hostil no propaga errores ni publica registros incompletos",
+          "status": "passed",
+          "title": "LOG-13 · un getter hostil no propaga errores ni publica registros incompletos",
+          "duration": 0.48329999999998563,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        },
+        {
+          "ancestorTitles": [
+            "Registro estructurado"
+          ],
+          "fullName": "Registro estructurado LOG-14 · lee una sola vez los campos antes de validar su contenido",
+          "status": "passed",
+          "title": "LOG-14 · lee una sola vez los campos antes de validar su contenido",
+          "duration": 0.6150000000000091,
+          "failureMessages": [],
+          "meta": {},
+          "tags": []
+        }
+      ],
+      "startTime": 1795036113434,
+      "endTime": 1795036113464.615,
+      "status": "passed",
+      "message": "",
+      "name": "<copia-aislada>/docs/calidad/12_Shift_Right/logger.test.ts"
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+name: Continuous Quality
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: continuous-quality-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality-gate:
+    name: Quality Gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        shell: bash
+    env:
+      CI: 'true'
+      NEXT_TELEMETRY_DISABLED: '1'
+      # Destino ficticio .invalid. No se utilizan secrets ni credenciales QA.
+      NEXT_PUBLIC_SUPABASE_URL: https://ci.invalid
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: ci-placeholder-not-a-credential
+    steps:
+      - name: Obtener el código
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Preparar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - name: Verificar aislamiento
+        run: |
+          test ! -e .env.local
+          test ! -e .env
+          test ! -e .qa
+          mkdir -p artifacts
+      - name: Instalar dependencias del lockfile
+        run: npm ci --no-audit --no-fund 2>&1 | tee artifacts/install.txt
+      - name: ESLint sin advertencias
+        run: npm run lint -- --max-warnings=0 2>&1 | tee artifacts/lint.txt
+      - name: TypeScript y tipos de rutas
+        run: |
+          node node_modules/next/dist/bin/next typegen 2>&1 | tee artifacts/typegen.txt
+          node node_modules/typescript/bin/tsc --noEmit --incremental false 2>&1 | tee artifacts/typescript.txt
+      - name: Unitarias, RTL y observabilidad con mocks
+        run: |
+          node node_modules/vitest/vitest.mjs run --project unit --project rtl --project observability --reporter=default --reporter=json --outputFile.json=artifacts/vitest.json 2>&1 | tee artifacts/vitest.txt
+          node -e "const r=require('./artifacts/vitest.json'); if(r.numTotalTests < 49 || r.numFailedTests !== 0 || r.numPendingTests !== 0 || r.numPassedTests !== r.numTotalTests) process.exit(1)"
+      - name: Simulaciones de reversión sin base de datos
+        run: node --test --test-reporter=spec scripts/qa-reversion.test.mjs 2>&1 | tee artifacts/reversion.txt
+      - name: Compilar para producción
+        run: npm run build -- --webpack 2>&1 | tee artifacts/build.txt
+      - name: Conservar evidencia de esta ejecución
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: continuous-quality-${{ github.run_id }}-${{ github.run_attempt }}
+          path: artifacts/
+          if-no-files-found: error
+          retention-days: 14
+      - name: Decisión del Quality Gate
+        if: always()
+        env:
+          GATE_STATUS: ${{ job.status }}
+        run: |
+          echo "## Quality Gate: $GATE_STATUS" >> "$GITHUB_STEP_SUMMARY"
+          echo "Instalación, lint sin advertencias, tipos, Vitest, simulaciones y build deben aprobar. No se ejecutan pruebas de integración con Supabase." >> "$GITHUB_STEP_SUMMARY"
+          test "$GATE_STATUS" = success

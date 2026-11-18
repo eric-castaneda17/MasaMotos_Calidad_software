@@ -1,0 +1,23 @@
+
+ RUN  v4.1.12 <copia-aislada>
+
+ ✓ |unit| docs/calidad/06_Pruebas_Unitarias/permissions.test.ts (4 tests) 7ms
+ ✓ |observability| docs/calidad/12_Shift_Right/logger.test.ts (14 tests) 33ms
+ ✓ |unit| docs/calidad/06_Pruebas_Unitarias/sale-calc.test.ts (4 tests) 8ms
+ ✓ |unit| docs/calidad/06_Pruebas_Unitarias/sale-schema.test.ts (3 tests) 11ms
+ ✓ |observability| docs/calidad/12_Shift_Right/actions.test.ts (11 tests) 60ms
+ ✓ |rtl| docs/calidad/08_RTL/point-of-sale.test.tsx (9 tests) 2272ms
+     ✓ RTL-05 · SWR-BUS-005 · informa que una búsqueda no tuvo coincidencias  611ms
+     ✓ RTL-10 · SWR-VEN-002 · distingue el límite del carrito y reabre la opción al reducir  307ms
+ ✓ |rtl| docs/calidad/08_RTL/sign-in.test.tsx (4 tests) 3067ms
+     ✓ RTL-01 · SWR-AUTH-002 · asocia el aviso de formato con el correo y conserva lo escrito  838ms
+     ✓ RTL-02 · SWR-AUTH-002 · muestra el rechazo genérico de credenciales  704ms
+     ✓ RTL-03 · SWR-AUTH-004 · informa que una cuenta está desactivada  697ms
+     ✓ RTL-04 · SWR-AUTH-002 · bloquea un segundo envío mientras llega la respuesta  826ms
+
+ Test Files  7 passed (7)
+      Tests  49 passed (49)
+   Start at  16:08:32
+   Duration  8.81s (transform 1.79s, setup 2.75s, import 4.46s, tests 5.46s, environment 5.03s)
+
+JSON report written to <copia-aislada>/artifacts/vitest.json

@@ -1,0 +1,101 @@
+{
+  "date": "2026-11-18T21:07:57.804Z",
+  "branch": "feature/continuous-quality",
+  "baseCommit": "2fb1537e4f8611763298c3b8006417b9adeb83f8",
+  "node": "v24.21.0",
+  "platform": "win32",
+  "isolatedCheckout": true,
+  "privateFilesPresent": false,
+  "supabaseUrl": "https://ci.invalid",
+  "supabaseWrites": false,
+  "remoteExecution": "PENDIENTE",
+  "installation": {
+    "command": "npm ci --no-audit --no-fund",
+    "exitCode": 0,
+    "evidence": "install.txt",
+    "initialSandboxAttempt": {
+      "exitCode": 1,
+      "reason": "ENOTFOUND registry.npmjs.org y EPERM de limpieza. Se repitió solo la instalación con autorización fuera del sandbox."
+    }
+  },
+  "checks": [
+    {
+      "name": "lint",
+      "command": "node C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js run lint -- --max-warnings=0",
+      "exitCode": 0,
+      "durationMs": 22511,
+      "evidence": "lint.txt"
+    },
+    {
+      "name": "typegen",
+      "command": "node node_modules/next/dist/bin/next typegen",
+      "exitCode": 0,
+      "durationMs": 2456,
+      "evidence": "typegen.txt"
+    },
+    {
+      "name": "typescript",
+      "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+      "exitCode": 0,
+      "durationMs": 7708,
+      "evidence": "typescript.txt"
+    },
+    {
+      "name": "vitest",
+      "command": "node node_modules/vitest/vitest.mjs run --project unit --project rtl --project observability --reporter=default --reporter=json --outputFile.json=artifacts/vitest.json",
+      "exitCode": 0,
+      "durationMs": 10857,
+      "evidence": "vitest.txt",
+      "total": 49,
+      "passed": 49,
+      "failed": 0,
+      "pending": 0
+    },
+    {
+      "name": "reversion",
+      "command": "node --test --test-reporter=spec scripts/qa-reversion.test.mjs",
+      "exitCode": 0,
+      "durationMs": 914,
+      "evidence": "reversion.txt"
+    },
+    {
+      "name": "build",
+      "command": "node C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js run build -- --webpack",
+      "exitCode": 0,
+      "durationMs": 39490,
+      "evidence": "build.txt"
+    }
+  ],
+  "localGate": "PASS_LOCAL",
+  "initialBuildAttempt": {
+    "name": "build",
+    "command": "node C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js run build -- --webpack",
+    "exitCode": 1,
+    "durationMs": 26233,
+    "evidence": "build-sandbox.txt",
+    "reason": "ENOTFOUND fonts.googleapis.com en sandbox; se repite solo build con autorización de red."
+  },
+  "testResults": {
+    "unit": 11,
+    "rtl": 13,
+    "observability": 25,
+    "reversionSimulated": 15,
+    "total": 64,
+    "failed": 0,
+    "pending": 0
+  },
+  "workflowValidation": "configuracion-workflow.json",
+  "evidenceNormalization": "Se sustituyó únicamente la ruta absoluta de la copia temporal por <copia-aislada>. Salidas y resultados conservados. No se trasladaron archivos temporales al repositorio.",
+  "limitations": [
+    "Ejecución local Windows, no Ubuntu/GitHub Actions. Evidencia remota pendiente.",
+    "Instalación y build tuvieron fallos de red del sandbox; se repitió solo el comando afectado con autorización.",
+    "npm ci mostró advertencias de dependencias obsoletas y scripts de instalación. Terminó con 0; no se cambiaron versiones ni se realizó una auditoría de seguridad.",
+    "No se ejecutaron suites de integración ni se cerraron defectos o casos manuales pendientes. No se configuró protección de ramas ni despliegue."
+  ],
+  "sha256": {
+    ".github/workflows/continuous-quality.yml": "c2fb633c1ef4c70453cc4beb5430b008874e9f60f92a9cd04b81bf2df8ae486c",
+    "package-lock.json": "6adb79a5a81c7f656fd9273d827dd0f5c8719f4b8d851e14e870132266b24786",
+    "docs/calidad/14_Consulta_Lint_Sonar.pdf": "758fbbe1be7aef9d42772c8c864dfd8484065799b233f77989a8a28ec5217181",
+    "ProyectoFinalCalidad2026.docx": "7e38c22f9a9e69a5f815834422a9247202710ea9fd510e4ac678181c97ba39e7"
+  }
+}

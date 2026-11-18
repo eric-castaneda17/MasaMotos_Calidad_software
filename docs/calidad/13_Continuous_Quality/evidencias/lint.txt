@@ -1,0 +1,4 @@
+
+> masa-motos@1.0.0 lint
+> eslint . --max-warnings=0
+

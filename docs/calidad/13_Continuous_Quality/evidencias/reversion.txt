@@ -1,0 +1,23 @@
+✔ solo permite el proyecto académico y descarta opciones del DSN (2.4827ms)
+✔ SQL, migraciones y auditoría histórica son compatibles en el repositorio (1.2841ms)
+✔ la colisión exacta, las dos comparaciones y tres sesiones cerradas producen PASS simulado (4.6733ms)
+✔ una conexión rechazada cierra el cliente sin enviar consultas (1.0885ms)
+✔ un error durante BEGIN o el bloqueo todavía solicita ROLLBACK (1.8217ms)
+✔ una respuesta inesperada a BEGIN evita las siguientes consultas y solicita ROLLBACK (1.091ms)
+✔ un evento de error no omite ROLLBACK aunque la consulta todavía responda (0.8751ms)
+✔ ROLLBACK fallido o sin confirmación impide PASS con las demás comparaciones favorables (1.7851ms)
+✔ conserva el error de consulta aunque fallen también ROLLBACK y el cierre (1.1026ms)
+✔ un error reportado durante el cierre excluye PASS aunque ROLLBACK responda (1.241ms)
+✔ un cierre remoto sin evento error excluye PASS aunque ROLLBACK responda (0.8837ms)
+✔ éxito inesperado, otro duplicado o un error de negocio dejan el caso inconcluso (1.6012ms)
+✔ un SAVEPOINT que falla impide PASS y fuerza el ROLLBACK exterior (0.595ms)
+✔ una lectura final fallida o distinta impide PASS (4.2247ms)
+✔ huella, función o identidad inesperadas detienen el flujo antes de vender (1.3429ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 818.3044
