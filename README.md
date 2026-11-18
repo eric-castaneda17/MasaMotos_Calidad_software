@@ -82,7 +82,7 @@ Aplica los scripts SQL, crea los usuarios de prueba en Supabase Auth, siembra da
 
 **Opción B — manual en el SQL Editor de Supabase:**
 1. **SQL Editor → New query**: pegue y ejecute, en orden, `supabase/migrations/001_schema.sql`, `002_security.sql`, `003_functions.sql` y `004_grants.sql`.
-2. **Authentication → Users → Add user → Create new user** (marque *Auto Confirm User*): cree `admin@masamotos.com` / `Admin123*` y `vendedor@masamotos.com` / `Vendedor123*`.
+2. **Authentication → Users → Add user → Create new user** (marque *Auto Confirm User*). Cree las cuentas indicadas en QA_ADMIN_EMAIL y QA_SELLER_EMAIL con contraseñas únicas, guardadas en QA_ADMIN_PASSWORD y QA_SELLER_PASSWORD en su entorno privado.
 3. Ejecute `supabase/seed.sql` en el SQL Editor (activa a los dos usuarios, asigna los roles y carga los datos de prueba).
 
 ### 6. Ejecutar la aplicación
@@ -107,12 +107,11 @@ Para usar otra URL en las pruebas: `BASE_URL=http://localhost:3000 npm run test:
 
 ## Credenciales de prueba
 
-| Rol | Correo | Contraseña |
-| --- | --- | --- |
-| Administrador | `admin@masamotos.com` | `Admin123*` |
-| Vendedor | `vendedor@masamotos.com` | `Vendedor123*` |
+Los scripts de navegador, las suites de QA y la preparación de cuentas usan QA_ADMIN_EMAIL, QA_ADMIN_PASSWORD, QA_SELLER_EMAIL y QA_SELLER_PASSWORD. Complete estas variables en el entorno privado con las cuentas académicas autorizadas. La plantilla .env.example incluye los cuatro campos vacíos. La ausencia de una credencial detiene el script que la necesita.
 
-**Solo para pruebas: cámbielas antes de usar el sistema en producción** (Mi perfil → Cambiar contraseña).
+La preparación automática requiere ambas cuentas antes de conectarse. El modo npm run db:check solo requiere las variables de conexión. La semilla manual reconoce los correos de demostración definidos en supabase/seed.sql, que deben coincidir con las cuentas creadas para ese procedimiento.
+
+Las contraseñas de demostración se retiraron del código y de esta guía. Las cuentas académicas de administrador y vendedor deben rotarse si conservan esos valores, porque permanecen en el historial de Git. El responsable realizará esa rotación desde la administración de usuarios y actualizará su entorno privado.
 
 ## Base de datos (Supabase)
 

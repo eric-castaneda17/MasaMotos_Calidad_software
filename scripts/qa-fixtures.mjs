@@ -5,46 +5,68 @@ import { pathToFileURL } from "node:url";
 import { createClient } from "@supabase/supabase-js";
 import { parse } from "dotenv";
 import pg from "pg";
+import { qaCredentials } from "./lib/qa-credentials.mjs";
 
 export const qaDirectory = ".qa";
 export const lotFile = `${qaDirectory}/lote.json`;
 export const appUrl = process.env.QA_APP_URL ?? "http://localhost:3000";
+export const academicProject = "mrlasbwtjpbqfzhvdjru";
+
+function parseEndpoint(value) {
+  try {
+    return new URL(value);
+  } catch {
+    throw new Error("Endpoint QA inválido.");
+  }
+}
+
+export function academicEndpoints(config) {
+  const url = parseEndpoint(config.NEXT_PUBLIC_SUPABASE_URL);
+  const pgUrl = parseEndpoint(config.SUPABASE_DB_URL);
+  assert(config.QA_SUPABASE_REF === academicProject, "Confirme el proyecto académico en QA_SUPABASE_REF.");
+  assert(
+    url.origin === `https://${academicProject}.supabase.co` && url.pathname === "/" &&
+      !url.username && !url.password && !url.search && !url.hash,
+    "La URL de la API no corresponde al proyecto académico.",
+  );
+  const direct = pgUrl.hostname === `db.${academicProject}.supabase.co` && pgUrl.username === "postgres";
+  const pooled = pgUrl.hostname === "aws-1-us-east-2.pooler.supabase.com" &&
+    pgUrl.username === `postgres.${academicProject}`;
+  assert(
+    ["postgresql:", "postgres:"].includes(pgUrl.protocol) && (direct || pooled) &&
+      ["", "5432"].includes(pgUrl.port) && pgUrl.pathname === "/postgres" && pgUrl.password && !pgUrl.hash,
+    "La conexión PostgreSQL no corresponde al destino académico en modo sesión.",
+  );
+  // Ningún parámetro del DSN puede reemplazar el destino o las opciones TLS verificadas.
+  pgUrl.search = "";
+  pgUrl.port = "5432";
+  return { project: academicProject, url: url.origin, dbUrl: pgUrl.toString() };
+}
 
 export async function qaConfig() {
   const config = { ...parse(await readFile(".env.local")), ...process.env };
-  const url = new URL(config.NEXT_PUBLIC_SUPABASE_URL);
-  const pgUrl = new URL(config.SUPABASE_DB_URL);
-  const project = url.hostname.split(".")[0];
-  assert.equal(config.QA_SUPABASE_REF, project, "Confirme la referencia en QA_SUPABASE_REF.");
+  const localApp = parseEndpoint(appUrl);
   assert(
-    decodeURIComponent(pgUrl.username).endsWith(`.${project}`) || pgUrl.hostname === `db.${project}.supabase.co`,
-    "El pooler PostgreSQL y la aplicación apuntan a proyectos distintos.",
+    ["http:", "https:"].includes(localApp.protocol) && ["localhost", "127.0.0.1"].includes(localApp.hostname) &&
+      !localApp.username && !localApp.password,
+    "Use una instancia local de la aplicación.",
   );
-  assert(["localhost", "127.0.0.1"].includes(new URL(appUrl).hostname), "Use una instancia local de la aplicación.");
   return {
-    project,
-    url: url.origin,
-    dbUrl: config.SUPABASE_DB_URL,
+    ...academicEndpoints(config),
     apiKey: config.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? config.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY,
     serviceKey: config.SUPABASE_SERVICE_ROLE_KEY,
   };
 }
 
 export async function credentials(role) {
-  const email = process.env[`QA_${role}_EMAIL`];
-  const password = process.env[`QA_${role}_PASSWORD`];
-  if (email && password) return { email, password };
-  const browser = await import("./lib/browser.mjs");
-  return browser[role];
+  return qaCredentials(role);
 }
 
 async function connect() {
   const config = await qaConfig();
-  const dbUrl = new URL(config.dbUrl);
-  dbUrl.searchParams.delete("sslmode");
   const ca = process.env.QA_DB_CA_FILE ? await readFile(process.env.QA_DB_CA_FILE, "utf8") : undefined;
   const db = new pg.Client({
-    connectionString: dbUrl.toString(),
+    connectionString: config.dbUrl,
     ssl: { ca, rejectUnauthorized: true },
     connectionTimeoutMillis: 10000,
   });

@@ -53,7 +53,7 @@ Organizar los ocho casos de la matriz en las carpetas **Auth**, **Catálogo**, *
 
 - Para Supabase usar `{{supabaseUrl}}`, la clave pública en `apikey` y el JWT de la cuenta de QA como `Authorization: Bearer` cuando aplique. Crear la sesión de cada rol en la ejecución y conservar el token solo durante ella. No usar la clave de servicio con Postman. Exportar la colección y el entorno con valores de sesión y credenciales vacíos. Variables de ejemplo adicionales: `{{appUrl}}`, `{{runId}}`, IDs de fixtures y datos de venta.
 - Los casos de Next.js requieren la cookie de una sesión normal obtenida en el navegador de QA. Mantenerla en el almacén local de cookies de Postman para el host correspondiente. El caso anónimo usa el almacén limpio y el de vendedor usa una sesión de ese rol. No exportar cookies, capturas de tokens ni cuerpos de login en las evidencias.
-- Para los rechazos de `create_sale`, verificar `P0001` y el mensaje de dominio, junto con el estado 400 documentado por PostgREST. API-04 y API-05 comprueban rechazo antes de escribir. Para demostrar reversión después de una escritura según CA-15 de `SWR-REL-001`, quedará pendiente acordar un fallo controlado en QA y observar los efectos transaccionales.
+- Para los rechazos de `create_sale`, verificar `P0001` y el mensaje de dominio, junto con el estado 400 documentado por PostgREST. API-04 y API-05 comprueban rechazo antes de escribir. La reversión después de una escritura se verificó por separado mediante un fallo controlado de factura en QA. [Resultado de CA-15](10_Playwright/Procedimiento_Reversion_SWR-REL-001.md#resultado-de-la-ejecución-autorizada)
 
 ### Decisión sobre endpoints adicionales
 

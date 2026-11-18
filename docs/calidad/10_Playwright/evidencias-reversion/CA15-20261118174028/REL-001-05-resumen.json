@@ -1,0 +1,17 @@
+{
+  "requirement": "SWR-REL-001",
+  "criterion": "CA-15",
+  "lot": "QA_TEST-MWLP83ZG",
+  "note": "QA_TEST-MWLP83ZG-REL001-CA15-20261118174028",
+  "startedAt": "2026-11-18T17:40:34.667Z",
+  "timeZone": "America/Bogota",
+  "sqlSha256": "4426cdcd4e4d7bb407456f771fc7c3c1d2618cb32411fc54217d4e148d0c34c4",
+  "status": "PASS",
+  "stage": "lectura final en conexión nueva",
+  "finalMatchesInitial": true,
+  "outerRollbackAcknowledged": true,
+  "writeTransactionClean": true,
+  "lateFailureVerified": true,
+  "savepointVerified": true,
+  "finishedAt": "2026-11-18T17:40:40.110Z"
+}

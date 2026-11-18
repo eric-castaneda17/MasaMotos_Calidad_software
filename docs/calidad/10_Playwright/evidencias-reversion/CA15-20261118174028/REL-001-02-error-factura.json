@@ -1,0 +1,9 @@
+{
+  "expected": true,
+  "sqlstate": "23505",
+  "table": "public.invoices",
+  "constraint": "invoices_number_key",
+  "statement": "INSERT INTO public.invoices (number, sale_id)",
+  "functionLine": 99,
+  "matchedReferenceNumber": "MM-000085"
+}

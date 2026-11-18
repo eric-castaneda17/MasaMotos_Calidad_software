@@ -1,0 +1,33 @@
+{
+  "state": {
+    "items": [],
+    "sales": [],
+    "product": {
+      "code": "QA_TEST-MWLP83ZG-API_LOW",
+      "stock": 3,
+      "active": true,
+      "updatedAt": "2026-11-18T05:46:43.769779+00:00"
+    },
+    "invoices": [],
+    "settings": {
+      "next": 85,
+      "prefix": "MM"
+    },
+    "movements": [
+      {
+        "id": 224,
+        "type": "ADJUSTMENT",
+        "saleId": null,
+        "quantity": 3,
+        "stockAfter": 3,
+        "stockBefore": 0
+      }
+    ],
+    "referenceInvoice": {
+      "id": 85,
+      "number": "MM-000085",
+      "saleId": 85
+    }
+  },
+  "expectedTemporaryCounter": 85
+}
