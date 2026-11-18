@@ -5,15 +5,18 @@ import { requireActionUser } from "@/lib/auth/dal";
 import { createClient } from "@/lib/supabase/server";
 import { type SaleInput, saleSchema, toFieldErrors } from "@/lib/validation/schemas";
 import { DomainError, refreshAll, runAction, throwDbError } from "./helpers";
+import { createLogContext, elapsed, logEvent } from "@/lib/observability/logger";
 
 export type CreateSaleResult = { saleId: number; invoiceId: number; invoiceNumber: string };
 
 /** Toda la venta (stock, totales, detalle, movimientos y factura) ocurre en una transacción dentro de create_sale. */
 export async function createSaleAction(input: SaleInput): Promise<ActionResult<CreateSaleResult>> {
+  const context = createLogContext();
   return runAction(async () => {
-    await requireActionUser("sales.create");
+    await requireActionUser("sales.create", context);
     const parsed = saleSchema.safeParse(input);
     if (!parsed.success) {
+      logEvent("SALE_VALIDATION_REJECTED", context, { reason: "validation", durationMs: elapsed(context) });
       const fieldErrors = toFieldErrors(parsed.error);
       const message = fieldErrors.items === "emptyCart" ? "errors.emptyCart" : "errors.validation";
       return { ok: false, message, fieldErrors };
@@ -32,14 +35,26 @@ export async function createSaleAction(input: SaleInput): Promise<ActionResult<C
     try {
       throwDbError(error);
     } catch (e) {
+      if (e instanceof DomainError && e.key === "insufficientStock") {
+        logEvent("SALE_STOCK_REJECTED", context, {
+          available: typeof e.params?.available === "number" ? e.params.available : undefined,
+          durationMs: elapsed(context),
+        });
+      }
       if (e instanceof DomainError && e.key === "amountReceivedTooLow") {
         throw new DomainError(e.key, undefined, "amountReceived");
       }
       throw e;
     }
+    logEvent("SALE_CREATED", context, {
+      saleId: (data as CreateSaleResult)?.saleId,
+      invoiceId: (data as CreateSaleResult)?.invoiceId,
+      itemCount: d.items.length,
+      durationMs: elapsed(context),
+    });
     refreshAll();
     return { ok: true, message: "toast.saleCreated", data: data as CreateSaleResult };
-  });
+  }, context, "createSale");
 }
 
 export async function voidSaleAction(saleId: number, reason: string): Promise<ActionResult> {

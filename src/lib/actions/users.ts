@@ -15,6 +15,7 @@ import {
 } from "@/lib/validation/schemas";
 import { createClient as createPlainClient } from "@supabase/supabase-js";
 import { DomainError, refreshAll, runAction, throwDbError } from "./helpers";
+import { createLogContext, logEvent } from "@/lib/observability/logger";
 
 // Bloqueo de ~100 años para usuarios desactivados (Supabase Auth rechaza su inicio de sesión).
 const BAN_FOREVER = "876000h";
@@ -38,7 +39,8 @@ async function assertNotLastAdmin(userId: string) {
   if ((count ?? 0) <= 1) throw new DomainError("lastAdmin");
 }
 
-function authError(message: string | undefined): never {
+function authError(message: string | undefined, status?: number): never {
+  logEvent("ADMIN_AUTH_ERROR", createLogContext(), { status, reason: "upstream" });
   if (message && /already|registered|exists/i.test(message)) throw new DomainError("duplicateEmail", undefined, "email");
   if (message && /password/i.test(message)) throw new DomainError("validation", undefined, "password");
   throw new DomainError("generic");
@@ -69,7 +71,7 @@ export async function saveUserAction(userId: string | null, _prev: FormState, fo
         ban_duration: d.active ? "none" : BAN_FOREVER,
         ...(d.password ? { password: d.password } : {}),
       });
-      if (authErr) authError(authErr.message);
+      if (authErr) authError(authErr.message, authErr.status);
 
       // Perfil (rol, estado): con la sesión del administrador → pasa por RLS.
       const supabase = await createClient();
@@ -94,7 +96,7 @@ export async function saveUserAction(userId: string | null, _prev: FormState, fo
         app_metadata: { role: d.role, active: d.active },
         ...(d.active ? {} : { ban_duration: BAN_FOREVER }),
       });
-      if (authErr) authError(authErr.message);
+      if (authErr) authError(authErr.message, authErr.status);
     }
     refreshAll();
     return { ok: true, message: userId ? "toast.userUpdated" : "toast.userCreated" };
@@ -116,7 +118,7 @@ export async function toggleUserActiveAction(userId: string): Promise<ActionResu
       ban_duration: active ? "none" : BAN_FOREVER,
       app_metadata: { role: user.role, active },
     });
-    if (error) authError(error.message);
+    if (error) authError(error.message, error.status);
     refreshAll();
     return { ok: true, message: active ? "toast.userActivated" : "toast.userDeactivated" };
   });
@@ -156,7 +158,7 @@ export async function changePasswordAction(_prev: FormState, formData: FormData)
     const { error } = await createAdminClient().auth.admin.updateUserById(current.id, {
       password: parsed.data.newPassword,
     });
-    if (error) authError(error.message);
+    if (error) authError(error.message, error.status);
     return { ok: true, message: "toast.passwordChanged" };
   });
 }

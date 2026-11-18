@@ -1,0 +1,167 @@
+{
+  "fecha": "2026-11-18",
+  "branch": "feature/shift-right-observabilidad",
+  "baseCommit": "0dce1715",
+  "regla": "Huellas SHA-256 del contenido normalizado preparado en Git para Fase 6. Excluye este mismo archivo. En una copia con conversión CRLF, verificar contra el contenido del blob Git.",
+  "archivos": [
+    {
+      "ruta": "docs/calidad/12_Shift_Right/.gitattributes",
+      "sha256": "9712dc3387517a730029506ef65c300a3b680590cbb085b454096ca97c6e9fd2",
+      "bytes": 87
+    },
+    {
+      "ruta": "docs/calidad/12_Shift_Right/Documentacion_Tecnica.md",
+      "sha256": "06e7005b5798b60d243ebe76ebdb6dceaf18eb254594af6d98c748e6fd637527",
+      "bytes": 6393
+    },
+    {
+      "ruta": "docs/calidad/12_Shift_Right/Incidentes_y_Pendientes.md",
+      "sha256": "d54ceba460bb959b57c3c3fff68c18a168639aac4ebe0fba12caf53eb2e7db7c",
+      "bytes": 3480
+    },
+    {
+      "ruta": "docs/calidad/12_Shift_Right/Informe_Shift_Right.pdf",
+      "sha256": "17c63a32b075f309d01870b76e98f9feb54a02b766a908431207344ce1a609d2",
+      "bytes": 13715
+    },
+    {
+      "ruta": "docs/calidad/12_Shift_Right/Matriz_Escenarios_Logs.xlsx",
+      "sha256": "1ff75864b13e915ef9e1d633b36bc302d4f560f5ed3d93d2ef4aec41036dc7ba",
+      "bytes": 9596
+    },
+    {
+      "ruta": "docs/calidad/12_Shift_Right/Procedimiento_Escenarios.md",
+      "sha256": "4b5fcaa869f21d669d9ff58c62eebc369165df0c8b8aa01c2b1d7be0a8b54c1a",
+      "bytes": 7701
+    },
+    {
+      "ruta": "docs/calidad/12_Shift_Right/README.md",
+      "sha256": "45c26c0ca7e6a174b1b44413bec2f59838fdc047a140dc1554d507ab0f01ed7b",
+      "bytes": 7595
+    },
+    {
+      "ruta": "docs/calidad/12_Shift_Right/actions.test.ts",
+      "sha256": "dedb0e288497a1b0c6fa5058997be6c43904b32a2cea8d31568991192894d5ad",
+      "bytes": 7383
+    },
+    {
+      "ruta": "docs/calidad/12_Shift_Right/evidencias/compilacion.txt",
+      "sha256": "ec629d2eb8614140555c634c530bdac2cd2d9e2085efd5ab6576d4f1b36388a9",
+      "bytes": 1622
+    },
+    {
+      "ruta": "docs/calidad/12_Shift_Right/evidencias/comprobaciones.json",
+      "sha256": "46aee9d86cd26034643114b27a797be62497610050dc74d4cd89150c3de6830e",
+      "bytes": 2604
+    },
+    {
+      "ruta": "docs/calidad/12_Shift_Right/evidencias/eventos-reales-locales.jsonl",
+      "sha256": "dc5bc951a39a9becf372fd9fec86b90a0ec4a30525aafd24a14b7a94ecd1365c",
+      "bytes": 5123
+    },
+    {
+      "ruta": "docs/calidad/12_Shift_Right/evidencias/eventos-simulados.jsonl",
+      "sha256": "a03f6e91fcce27b30e6d272a0c0e15500272afb4825ecf7c2dbc8e4c583f0646",
+      "bytes": 4700
+    },
+    {
+      "ruta": "docs/calidad/12_Shift_Right/evidencias/resultados-locales.json",
+      "sha256": "859efafbb0169e2981605bc363db542e13a1e3b2af83ec0f0db100c3d16f99b6",
+      "bytes": 11531
+    },
+    {
+      "ruta": "docs/calidad/12_Shift_Right/evidencias/resultados-observabilidad.json",
+      "sha256": "b38fa4f9c5417f001fdfc3b42d67d035c29fbbe5b0cbf8cdecc96efd7b2a64b6",
+      "bytes": 8951
+    },
+    {
+      "ruta": "docs/calidad/12_Shift_Right/logger.test.ts",
+      "sha256": "bae9152ff66519697f449a07ae61c5b1f41bfc234b726dcbcc6247e6bfc543a0",
+      "bytes": 5064
+    },
+    {
+      "ruta": "docs/calidad/12_Shift_Right/server-only.ts",
+      "sha256": "288e88b4093d8818b18982ebae804854c847fad1e7a2f8ddef04d574eb3b0d68",
+      "bytes": 99
+    },
+    {
+      "ruta": "docs/calidad/Matriz_Maestra_Trazabilidad.xlsx",
+      "sha256": "5e736028cc28708ae0c15814f529771138051fe53b9abe6be3c4633a9d4a40ae",
+      "bytes": 11751
+    },
+    {
+      "ruta": "scripts/qa-shift-right-readonly.mjs",
+      "sha256": "07e15cac59b290ddfb7981540952e4ae76a61f1103a9a287a3fa2008d13e4f25",
+      "bytes": 4806
+    },
+    {
+      "ruta": "src/instrumentation.ts",
+      "sha256": "fd0903eef243b8a590502f59ecfb92c39e3e5e492661b25e3724ba874c6441c8",
+      "bytes": 516
+    },
+    {
+      "ruta": "src/lib/actions/auth.ts",
+      "sha256": "d65aaa9052b8acdb4c1232a2c01fd6396c69ca09f6730c0f1d48726f572376df",
+      "bytes": 2195
+    },
+    {
+      "ruta": "src/lib/actions/helpers.ts",
+      "sha256": "8ec1f4b2211019a7b6cc651c876dbf3dd0f27d36623671d5c29fc791c5957b9e",
+      "bytes": 3521
+    },
+    {
+      "ruta": "src/lib/actions/sales.ts",
+      "sha256": "43106c3997cc1fdd3194a298c1b66222722c5be1315d2cf0085f3347a7b30047",
+      "bytes": 3118
+    },
+    {
+      "ruta": "src/lib/actions/users.ts",
+      "sha256": "9e164a8326ca47d8c7d9021fcc0a717cc9ed6b8c9bf3e5db01fb3bb212a5058b",
+      "bytes": 7361
+    },
+    {
+      "ruta": "src/lib/auth/dal.ts",
+      "sha256": "ef2fc53a3728a97f9da1d033433737ca5337b291e157366e1abf8ef2596b4bfd",
+      "bytes": 2406
+    },
+    {
+      "ruta": "src/lib/observability/logger.ts",
+      "sha256": "d908359ab71750642db7a7ba12f72075fe9843b3a29640022fcc58bc1ddad3bd",
+      "bytes": 3857
+    },
+    {
+      "ruta": "src/proxy.ts",
+      "sha256": "78eeb350de1039f32ad1ee30df6cdafb48ba59cdc75208e0f92347da9eff549d",
+      "bytes": 2137
+    },
+    {
+      "ruta": "vitest.config.mts",
+      "sha256": "8655aa949e8e34427cc2849f3078c6a599d598ff609739992c900e61750f551f",
+      "bytes": 1526
+    }
+  ],
+  "guiaExterna": {
+    "nombre": "ProyectoFinalCalidad2026.docx",
+    "sha256": "7e38c22f9a9e69a5f815834422a9247202710ea9fd510e4ac678181c97ba39e7"
+  },
+  "resultados": {
+    "loggerYAccionesConMocks": 25,
+    "localesReales": 3,
+    "unitarias": 11,
+    "rtl": 13,
+    "simulacionesReversion": 15,
+    "supabaseWrites": true,
+    "academicosReales": 5,
+    "supabaseWritesScope": "Dos ventas y preparación sintética expresamente autorizadas. Comprobaciones locales iniciales sin escrituras."
+  },
+  "limitacion": "Fallo de comunicación inducido localmente antes del envío. SR-04 validado con logs y consulta final; aserción de toast interrumpida y conservada. No acredita caída remota ni rendimiento estadístico. Documentación e informe existente actualizados al cierre.",
+  "ultimoIntentoReal": {
+    "fecha": "2026-11-18",
+    "estado": "COMPLETADO",
+    "lote": "QA_SR-MWMKXTFW",
+    "cincoObjetivosGuia": "COMPROBADOS",
+    "ventasCreadas": 2,
+    "solicitudesBloqueadasAntesEnvio": 1,
+    "evidencia": "evidencias/resultados-locales.json"
+  }
+}

@@ -4,6 +4,7 @@ import { type NextRequest, NextResponse } from "next/server";
 
 import { routing } from "./i18n/routing";
 import { supabasePublicEnv } from "./lib/supabase/env";
+import { createLogContext, logEvent } from "./lib/observability/logger";
 
 const intlMiddleware = createMiddleware(routing);
 
@@ -40,6 +41,7 @@ export default async function proxy(request: NextRequest) {
 
   let response: NextResponse;
   if (!isAuthenticated && !isPublic) {
+    logEvent("ACCESS_DENIED", createLogContext(), { reason: "unauthorized", operation: "proxy" });
     response = NextResponse.redirect(new URL("/signin", request.nextUrl));
   } else if (isAuthenticated && isPublic) {
     response = NextResponse.redirect(new URL("/", request.nextUrl));

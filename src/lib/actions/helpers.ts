@@ -4,6 +4,7 @@ import type { ActionResult } from "@/lib/action-result";
 import { AuthError } from "@/lib/auth/dal";
 import type { PostgrestError } from "@supabase/supabase-js";
 import { revalidatePath } from "next/cache";
+import { createLogContext, elapsed, logEvent, type LogContext } from "@/lib/observability/logger";
 
 export class DomainError extends Error {
   constructor(
@@ -61,14 +62,24 @@ export function throwDbError(
   throw error;
 }
 
-export async function runAction<T>(fn: () => Promise<ActionResult<T>>): Promise<ActionResult<T>> {
+export async function runAction<T>(
+  fn: () => Promise<ActionResult<T>>,
+  context: LogContext = createLogContext(),
+  operation: "createSale" | "serverAction" = "serverAction",
+): Promise<ActionResult<T>> {
   try {
     return await fn();
   } catch (err) {
     if (err instanceof AuthError) {
+      logEvent("ACTION_REJECTED", context, { reason: err.key, operation, durationMs: elapsed(context) });
       return { ok: false, message: `errors.${err.key}` };
     }
     if (err instanceof DomainError) {
+      logEvent(err.key === "generic" ? "ACTION_ERROR" : "ACTION_REJECTED", context, {
+        reason: err.key === "generic" ? "internal" : "validation",
+        operation,
+        durationMs: elapsed(context),
+      });
       return {
         ok: false,
         message: `errors.${err.key}`,
@@ -80,7 +91,7 @@ export async function runAction<T>(fn: () => Promise<ActionResult<T>>): Promise<
     if (err && typeof err === "object" && "digest" in err && String((err as { digest: unknown }).digest).startsWith("NEXT_")) {
       throw err;
     }
-    console.error("[action error]", err);
+    logEvent("ACTION_ERROR", context, { reason: "internal", operation, durationMs: elapsed(context) });
     return { ok: false, message: "errors.generic" };
   }
 }
