@@ -14,7 +14,12 @@
     "evidence": "node scripts/capture-evidence.mjs",
     "test:unit": "vitest run --project unit",
     "test:unit:coverage": "vitest run --project unit --coverage",
-    "test:rtl": "vitest run --project rtl"
+    "test:rtl": "vitest run --project rtl",
+    "test:e2e:qa": "playwright test",
+    "test:api:qa": "node scripts/qa-postman.mjs",
+    "qa:check": "node scripts/qa-fixtures.mjs check",
+    "qa:prepare": "node scripts/qa-fixtures.mjs prepare",
+    "qa:after": "node scripts/qa-fixtures.mjs after"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",
@@ -33,6 +38,7 @@
     "zod": "^4.6.7"
   },
   "devDependencies": {
+    "@playwright/test": "^1.65.1",
     "@svgr/webpack": "^8.1.0",
     "@testing-library/dom": "^10.4.2",
     "@testing-library/jest-dom": "^6.9.1",
@@ -47,6 +53,7 @@
     "eslint": "^9.39.1",
     "eslint-config-next": "^16.3.4",
     "jsdom": "^26.1.0",
+    "newman": "^6.2.3",
     "pg": "^8.23.1",
     "playwright-core": "^1.65.1",
     "postcss": "^8.5.6",

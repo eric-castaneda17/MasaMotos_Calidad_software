@@ -1,0 +1,9 @@
+# Propuesta de reversión transaccional
+
+**Estado PENDIENTE DE REVISIÓN.** Los rechazos de API-04, API-05 y E2E-04 comprueban que las validaciones previas dejan el saldo y las ventas intactos. Para CA-15 hace falta observar una falla después de iniciar las escrituras.
+
+Propuesta para el proyecto académico en una ventana exclusiva. Preparar un producto y cliente exclusivos del lote, y usar una única sesión PostgreSQL con TLS verificado y transacción explícita. Registrar saldo, conteos y consecutivo. Dentro de la transacción, obtener el candado de la fila de configuración con un tiempo de espera corto. Conservar el prefijo y apuntar temporalmente el siguiente consecutivo a un comprobante de prueba ya existente del mismo prefijo. Este cambio queda exclusivamente dentro de la transacción y se mantiene fuera del código del sistema.
+
+Establecer un punto de restauración después de preparar el consecutivo. Ejecutar `create_sale` con la identidad autorizada de QA y entradas válidas. Esperar `23505` en la restricción de número único de comprobante, al final de la operación. Retroceder al punto de restauración para consultar que no se agregó una venta, línea, factura ni movimiento del fixture, y que no cambió su saldo. Ejecutar `ROLLBACK` exterior en todos los caminos. Reconectar y verificar que el consecutivo de configuración y el estado de los registros coinciden con el punto de partida. Documentar salidas depuradas.
+
+La sesión puede bloquear brevemente otras confirmaciones que necesitan la misma fila. Los identificadores generados por secuencias PostgreSQL pueden dejar saltos aunque los registros se reviertan. Si hay actividad concurrente o no se obtiene el candado dentro del límite, cancelar. El procedimiento queda a revisión y no requiere modificar SQL compartido, triggers ni restricciones.

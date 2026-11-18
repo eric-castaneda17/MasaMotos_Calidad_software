@@ -1,0 +1,21 @@
+{
+  "objects": {
+    "table": 19,
+    "policy": 23,
+    "function": 21,
+    "trigger": 20
+  },
+  "structuralHash": "97bedf65b378ba6bc3de4bf5e30382d969ce58eea3d96c88f690ee16ba02ed2b",
+  "counts": {
+    "existing_products": 29,
+    "other_sales": 78,
+    "total_invoices": 78,
+    "total_movements": 202
+  },
+  "settings": {
+    "tax_rate": "19.00",
+    "tax_enabled": true,
+    "next_invoice_number": 83
+  },
+  "cashActive": true
+}

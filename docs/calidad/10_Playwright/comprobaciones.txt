@@ -1,0 +1,97 @@
+MASA MOTOS · Fase 4 · 18 de noviembre de 2026
+Rama: feature/pruebas-integracion-e2e
+
+$ npm run test:unit
+Código de salida: 0
+> masa-motos@1.0.0 test:unit
+> vitest run --project unit
+
+
+ RUN  v4.1.12 C:/Calidad de software/MasaMotos-Calidad
+
+
+ Test Files  3 passed (3)
+      Tests  11 passed (11)
+   Start at  01:12:09
+   Duration  945ms (transform 241ms, setup 0ms, import 701ms, tests 32ms, environment 1ms)
+
+$ npm run test:rtl
+Código de salida: 0
+> masa-motos@1.0.0 test:rtl
+> vitest run --project rtl
+
+
+ RUN  v4.1.12 C:/Calidad de software/MasaMotos-Calidad
+
+
+ Test Files  2 passed (2)
+      Tests  13 passed (13)
+   Start at  01:12:13
+   Duration  7.36s (transform 995ms, setup 1.84s, import 2.34s, tests 6.12s, environment 3.14s)
+
+$ npm run lint
+Código de salida: 0
+> masa-motos@1.0.0 lint
+> eslint .
+
+$ npm run build -- --webpack
+Código de salida: 0
+> masa-motos@1.0.0 build
+> next build --webpack
+
+▲ Next.js 16.3.4 (webpack)
+- Environments: .env.local
+✓ Running next.config.ts took 113ms
+- Experiments (use with caution):
+  · serverActions
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 10.7s
+  Running TypeScript ...
+  Finished TypeScript in 8.0s ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/35) ...
+  Generating static pages using 7 workers (8/35) 
+  Generating static pages using 7 workers (17/35) 
+  Generating static pages using 7 workers (26/35) 
+✓ Generating static pages using 7 workers (35/35) in 1062ms
+  Finalizing page optimization ...
+  Collecting build traces ...
+
+Route (app)
+┌ ○ /_not-found
+├ ƒ /[locale]
+├ ƒ /[locale]/categorias
+├ ƒ /[locale]/clientes
+├ ƒ /[locale]/clientes/[id]
+├ ƒ /[locale]/configuracion
+├ ƒ /[locale]/facturas
+├ ƒ /[locale]/facturas/[id]
+├ ƒ /[locale]/inventario
+├ ƒ /[locale]/perfil
+├ ƒ /[locale]/productos
+├ ƒ /[locale]/productos/[id]
+├ ƒ /[locale]/productos/[id]/editar
+├ ƒ /[locale]/productos/nuevo
+├ ƒ /[locale]/proveedores
+├ ƒ /[locale]/proveedores/[id]
+├ ƒ /[locale]/reportes
+├   /[locale]/signin
+│ ├ ● /es/signin
+│ └ ● /en/signin
+├ ƒ /[locale]/usuarios
+├ ƒ /[locale]/ventas
+├ ƒ /[locale]/ventas/nueva
+├ ƒ /api/products/[id]/image
+├ ƒ /api/reports/export
+└ ○ /apple-icon.png
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+$ node node_modules/typescript/bin/tsc --noEmit --incremental false
+Código de salida: 0. Ejecución posterior a la compilación sin diagnósticos.
